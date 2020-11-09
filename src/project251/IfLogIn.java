@@ -103,6 +103,8 @@ public class IfLogIn extends javax.swing.JFrame {
         Scanner input = new Scanner(System.in);
         String email = input.next();
         
+        System.out.println("K");
+        
     }//GEN-LAST:event_EmailActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
