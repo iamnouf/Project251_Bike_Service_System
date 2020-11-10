@@ -164,12 +164,33 @@ public class IfNew extends javax.swing.JFrame {
         String Address = addressText.getText();
         String phoneNum = phoneNumber.getText();
 
-        if (lastName.contains("Al-") && Email.contains("A") && userName.contains("aA") && Password.contains("1") && conPassword.contains("7") && firstName.contains("AB")
-                && Address.contains("Jeddah") && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
+              /* 
+    - The password must be at least 8 characters long.
+    - The password must contain at least:
+    - one alpha character [a-zA-Z]
+    - one numeric character [0-9]
+    - one character that is not alpha or numeric, such as ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' " , < . > / ?
+    - The password must not contain spaces
+        */
+        String upperCase = "(.*[A-Z].*)";
+        String numbers = "(.*[0-9].*)";
+        String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
+        String space = "(.*[   ].*)";
+
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher email = p.matcher(Email);
+
+        
+        if (lastName.matches(upperCase) && email.matches() && userName.matches(upperCase)&&userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) &&  Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
+                && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
 
             BookBike signUp = new BookBike();
             signUp.setVisible(true);
-        } else {
+            
+        }else
+        {
+            password.setText(null);
             emText.setText(null);
             username.setText(null);
             confirmPassword.setText(null);
