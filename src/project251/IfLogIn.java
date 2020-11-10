@@ -104,14 +104,23 @@ public class IfLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_EmailTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String Email = EmailText.getText();
-         String Password = PasswordText.getText();
-         
-     if (Email.contains("A") && (Password.contains("1"))){
-         
-         BookBike login = new BookBike();
-         login.setVisible(true);
-}
+       
+        String Email = EmailText.getText();
+        String Password = PasswordText.getText();
+
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(Email);
+
+        if (m.matches() && (Password.contains("1"))) {
+
+            BookBike login = new BookBike();
+            login.setVisible(true);
+        } else {
+            EmailText.setText(null);
+            PasswordText.setText(null);
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
