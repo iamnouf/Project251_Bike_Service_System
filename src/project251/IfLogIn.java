@@ -208,7 +208,7 @@ public class IfLogIn extends javax.swing.JFrame {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(Email);
 
-        if (m.matches()&& Email.isEmpty() && Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8) {
+        if (m.matches()&& !Email.isEmpty() && !Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8) {
 
             BookBike login = new BookBike();
             login.setVisible(true);

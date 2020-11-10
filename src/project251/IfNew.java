@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package project251;
-
+import project251.BookBike;
+import project251.ErrorMsg;
 /**
  *
  * @author AmalA
@@ -180,22 +181,32 @@ public class IfNew extends javax.swing.JFrame {
         java.util.regex.Matcher email = p.matcher(Email);
 
         
-        if (Email.isEmpty() && userName.isEmpty()&& Password.isEmpty()&& conPassword.isEmpty()&& firstName.isEmpty()&&lastName.isEmpty()&&Address.isEmpty()&&phoneNum.isEmpty()&& lastName.matches(upperCase) && email.matches() && userName.matches(upperCase)&&userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) &&  Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
-                && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
+        if ( lastName.matches(upperCase) && email.matches() && userName.matches(upperCase)&&userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) &&  Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
+                && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("[0-9]{10}")) 
+        {
 
-            BookBike signUp = new BookBike();
+
+           BookBike signUp = new BookBike();
             signUp.setVisible(true);
             
-        }else
+        }
+        if (Email.isEmpty() && userName.isEmpty()&& Password.isEmpty()&& conPassword.isEmpty()&& firstName.isEmpty()&& lastName.isEmpty()&& Address.isEmpty()&& phoneNum.isEmpty())
+                {
+          ErrorMsg info = new ErrorMsg();
+            info.setVisible(true);
+                }
+        else
         {
-            password.setText(null);
-            emText.setText(null);
-            username.setText(null);
-            confirmPassword.setText(null);
-            Fname.setText(null);
-            Lname.setText(null);
-            addressText.setText(null);
-            phoneNumber.setText(null);
+
+         emText.setText(null);
+         username.setText(null);
+         password.setText(null);
+         confirmPassword.setText(null);
+         Fname.setText(null);
+         Lname.setText(null);
+         addressText.setText(null);
+         phoneNumber.setText(null);
+
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
