@@ -8,6 +8,8 @@ package project251;
 import java.awt.Color;
 import java.util.*;
 import project251.BookBike;
+import project251.ErrorMsg;
+import project251.ForgetPassword;
 /**
  *
  * @author AmalA
@@ -33,6 +35,18 @@ public class IfLogIn extends javax.swing.JFrame {
 
         jPasswordField2 = new javax.swing.JPasswordField();
         jPasswordField3 = new javax.swing.JPasswordField();
+        label1 = new java.awt.Label();
+        popupMenu1 = new java.awt.PopupMenu();
+        popupMenu2 = new java.awt.PopupMenu();
+        popupMenu3 = new java.awt.PopupMenu();
+        popupMenu4 = new java.awt.PopupMenu();
+        popupMenu5 = new java.awt.PopupMenu();
+        menuBar1 = new java.awt.MenuBar();
+        menu1 = new java.awt.Menu();
+        menu2 = new java.awt.Menu();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -47,6 +61,26 @@ public class IfLogIn extends javax.swing.JFrame {
         jPasswordField2.setText("jPasswordField2");
 
         jPasswordField3.setText("jPasswordField3");
+
+        label1.setForeground(new java.awt.Color(204, 0, 0));
+        label1.setText("label1");
+        label1.getAccessibleContext().setAccessibleName("*");
+
+        popupMenu1.setLabel("popupMenu1");
+
+        popupMenu2.setLabel("popupMenu2");
+
+        popupMenu3.setLabel("popupMenu3");
+
+        popupMenu4.setLabel("popupMenu4");
+
+        popupMenu5.setLabel("popupMenu5");
+
+        menu1.setLabel("File");
+        menuBar1.add(menu1);
+
+        menu2.setLabel("Edit");
+        menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -84,12 +118,32 @@ public class IfLogIn extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("FORGET PASSWORD?");
+        jLabel5.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jLabel5AncestorMoved(evt);
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel5AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jLabel5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel5MouseMoved(evt);
+            }
+        });
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel5);
         jLabel5.setBounds(140, 400, 192, 21);
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 470, 490);
+        jLabel7.setBounds(0, 0, 440, 470);
 
         EmailText.setForeground(new java.awt.Color(204, 204, 204));
         EmailText.setText("someone@example.com");
@@ -154,14 +208,18 @@ public class IfLogIn extends javax.swing.JFrame {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(Email);
 
-        if (m.matches() && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8) {
+        if (m.matches()&& Email.isEmpty() && Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8) {
 
             BookBike login = new BookBike();
             login.setVisible(true);
         } 
         else {
+               ErrorMsg info = new ErrorMsg();
+            info.setVisible(true);
+            
             EmailText.setText(null);
             PasswordText.setText(null);
+            
         }
 
 
@@ -211,6 +269,29 @@ public class IfLogIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PasswordTextFocusLost
 
+    private void jLabel5AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorAdded
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jLabel5AncestorAdded
+
+    private void jLabel5AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorMoved
+
+          ;
+                // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5AncestorMoved
+
+    private void jLabel5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseMoved
+        // TODO add your handling code here:
+          
+        
+    }//GEN-LAST:event_jLabel5MouseMoved
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+   ForgetPassword login = new ForgetPassword();
+            login.setVisible(true);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+         
     /**
      * @param args the command line arguments
      */
@@ -257,7 +338,19 @@ public class IfLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private java.awt.Label label1;
+    private java.awt.Menu menu1;
+    private java.awt.Menu menu2;
+    private java.awt.MenuBar menuBar1;
+    private java.awt.PopupMenu popupMenu1;
+    private java.awt.PopupMenu popupMenu2;
+    private java.awt.PopupMenu popupMenu3;
+    private java.awt.PopupMenu popupMenu4;
+    private java.awt.PopupMenu popupMenu5;
     // End of variables declaration//GEN-END:variables
 }
