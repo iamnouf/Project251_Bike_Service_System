@@ -16,6 +16,7 @@ public class BookBike extends javax.swing.JFrame {
      */
     public BookBike() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**

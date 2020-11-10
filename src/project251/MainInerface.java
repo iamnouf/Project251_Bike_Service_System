@@ -16,6 +16,7 @@ public class MainInerface extends javax.swing.JFrame {
      */
     public MainInerface() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**

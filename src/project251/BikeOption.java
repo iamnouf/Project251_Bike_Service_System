@@ -16,6 +16,7 @@ public class BikeOption extends javax.swing.JFrame {
      */
     public BikeOption() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**

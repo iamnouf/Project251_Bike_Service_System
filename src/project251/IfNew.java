@@ -16,6 +16,7 @@ public class IfNew extends javax.swing.JFrame {
      */
     public IfNew() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**

@@ -16,6 +16,7 @@ public class PayInterface extends javax.swing.JFrame {
      */
     public PayInterface() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
