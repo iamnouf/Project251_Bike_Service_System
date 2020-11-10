@@ -169,6 +169,14 @@ public class IfNew extends javax.swing.JFrame {
 
             BookBike signUp = new BookBike();
             signUp.setVisible(true);
+        } else {
+            emText.setText(null);
+            username.setText(null);
+            confirmPassword.setText(null);
+            Fname.setText(null);
+            Lname.setText(null);
+            addressText.setText(null);
+            phoneNumber.setText(null);
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
