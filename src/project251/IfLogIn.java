@@ -99,20 +99,19 @@ public class IfLogIn extends javax.swing.JFrame {
    // Email
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
        
-        String Email = EmailText.getText();
-       String Password = PasswordText.getText();
-       
-       if (Email.contains("ABC")&&(Password.contains("1"))){
-           
-        BookBike info = new BookBike();
-        info.setVisible(true);
-    }
         
-        System.out.println("Hiii nouf");  
+     
     }//GEN-LAST:event_EmailTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+       String Email = EmailText.getText();
+         String Password = PasswordText.getText();
+         
+     if (Email.contains("A") && (Password.contains("1"))){
+         
+         BookBike login = new BookBike();
+         login.setVisible(true);
+}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
