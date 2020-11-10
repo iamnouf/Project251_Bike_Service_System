@@ -16,7 +16,7 @@ public class IfNew extends javax.swing.JFrame {
      */
     public IfNew() {
         initComponents();
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -155,22 +155,22 @@ public class IfNew extends javax.swing.JFrame {
 
     // Sign up
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     String Email = emText.getText();
-     String userName = username.getText();
-     String Password = password.getText();
-     String conPassword = confirmPassword.getText();
-     String firstName = Fname.getText();
-     String lastName = Lname.getText();
-     String Address = addressText.getText();
-     String phoneNum = phoneNumber.getText();
-         
-  if (lastName.contains("Al-") && Email.contains("A") && userName.contains("aA") && Password.contains("1") && conPassword.contains("7") && firstName.contains("AB")
-          && Address.contains("Jeddah") && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
-         
-         BookBike signUp = new BookBike();
-         signUp.setVisible(true);
-    }
-        
+        String Email = emText.getText();
+        String userName = username.getText();
+        String Password = password.getText();
+        String conPassword = confirmPassword.getText();
+        String firstName = Fname.getText();
+        String lastName = Lname.getText();
+        String Address = addressText.getText();
+        String phoneNum = phoneNumber.getText();
+
+        if (lastName.contains("Al-") && Email.contains("A") && userName.contains("aA") && Password.contains("1") && conPassword.contains("7") && firstName.contains("AB")
+                && Address.contains("Jeddah") && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
+
+            BookBike signUp = new BookBike();
+            signUp.setVisible(true);
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
