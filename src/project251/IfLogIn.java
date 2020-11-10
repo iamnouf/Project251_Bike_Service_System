@@ -6,7 +6,7 @@
 package project251;
 
 import java.util.*;
-
+import project251.BookBike;
 /**
  *
  * @author AmalA
@@ -30,10 +30,10 @@ public class IfLogIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Email = new javax.swing.JTextField();
+        EmailText = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        PasswordText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         checkbox1 = new java.awt.Checkbox();
         jLabel3 = new javax.swing.JLabel();
@@ -44,25 +44,25 @@ public class IfLogIn extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        Email.addActionListener(new java.awt.event.ActionListener() {
+        EmailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailActionPerformed(evt);
+                EmailTextActionPerformed(evt);
             }
         });
-        getContentPane().add(Email);
-        Email.setBounds(80, 130, 310, 26);
+        getContentPane().add(EmailText);
+        EmailText.setBounds(80, 130, 310, 26);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(100, 100, 41, 22);
+        jLabel1.setBounds(100, 100, 43, 21);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(90, 180, 70, 22);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(80, 210, 310, 26);
+        jLabel2.setBounds(90, 180, 69, 21);
+        getContentPane().add(PasswordText);
+        PasswordText.setBounds(80, 210, 310, 26);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -79,18 +79,17 @@ public class IfLogIn extends javax.swing.JFrame {
 
         jLabel3.setText("Stay signed in");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(116, 329, 99, 20);
+        jLabel3.setBounds(116, 329, 88, 16);
 
         jLabel4.setText("____________________________________________________________");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(15, 359, 480, 20);
+        jLabel4.setBounds(15, 359, 480, 16);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("FORGET PASSWORD?");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(140, 400, 188, 22);
+        jLabel5.setBounds(140, 400, 192, 21);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\AmalA\\Downloads\\PHOTO-2020-10-31-16-51-32.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, 0, 470, 490);
@@ -98,14 +97,17 @@ public class IfLogIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
    // Email
-    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
-        Email.setText("Email: ");
-        Scanner input = new Scanner(System.in);
-        String email = input.next();
+    private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
+       String Email = EmailText.getText();
+       String Password = PasswordText.getText();
+       
+       if (Email.contains("ABC")&&(Password.contains("1"))){
+        BookBike info = new BookBike();
+        info.setVisible(true);
+    }
         
-        System.out.println("K");
         
-    }//GEN-LAST:event_EmailActionPerformed
+    }//GEN-LAST:event_EmailTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
@@ -147,7 +149,8 @@ public class IfLogIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Email;
+    private javax.swing.JTextField EmailText;
+    private javax.swing.JTextField PasswordText;
     private java.awt.Checkbox checkbox1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -156,6 +159,5 @@ public class IfLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
