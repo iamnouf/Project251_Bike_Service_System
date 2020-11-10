@@ -96,14 +96,16 @@ public class IfLogIn extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   // Email
+   
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
        
         
      
     }//GEN-LAST:event_EmailTextActionPerformed
 
+    // Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
        
         String Email = EmailText.getText();
         String Password = PasswordText.getText();
@@ -120,6 +122,7 @@ public class IfLogIn extends javax.swing.JFrame {
             EmailText.setText(null);
             PasswordText.setText(null);
         }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

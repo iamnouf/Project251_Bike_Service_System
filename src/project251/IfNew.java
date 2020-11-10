@@ -16,6 +16,7 @@ public class IfNew extends javax.swing.JFrame {
      */
     public IfNew() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
@@ -28,21 +29,21 @@ public class IfNew extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        emText = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        password = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        confirmPassword = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        Fname = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        Lname = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        addressText = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        phoneNumber = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
@@ -54,77 +55,82 @@ public class IfNew extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(70, 30, 55, 22);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        emText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                emTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(70, 60, 317, 26);
+        getContentPane().add(emText);
+        emText.setBounds(70, 60, 317, 26);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Username *");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(70, 100, 87, 22);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                usernameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(70, 130, 317, 26);
+        getContentPane().add(username);
+        username.setBounds(70, 130, 317, 26);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Password *");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(70, 170, 84, 22);
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                passwordActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(70, 200, 317, 26);
+        getContentPane().add(password);
+        password.setBounds(70, 200, 317, 26);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Confirm Password *");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(70, 240, 149, 22);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(70, 270, 317, 26);
+        getContentPane().add(confirmPassword);
+        confirmPassword.setBounds(70, 270, 317, 26);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("First Name *");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(70, 310, 94, 22);
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(70, 340, 317, 26);
+        getContentPane().add(Fname);
+        Fname.setBounds(70, 340, 317, 26);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Last Name *");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(70, 380, 93, 22);
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(70, 410, 317, 26);
+        getContentPane().add(Lname);
+        Lname.setBounds(70, 410, 317, 26);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Address");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(70, 440, 58, 22);
-        getContentPane().add(jTextField8);
-        jTextField8.setBounds(70, 470, 317, 26);
+        getContentPane().add(addressText);
+        addressText.setBounds(70, 470, 317, 26);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Phone");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(70, 500, 46, 22);
-        getContentPane().add(jTextField9);
-        jTextField9.setBounds(70, 530, 317, 26);
+        getContentPane().add(phoneNumber);
+        phoneNumber.setBounds(70, 530, 317, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("REGISTER");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(160, 590, 123, 31);
 
@@ -135,17 +141,37 @@ public class IfNew extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void emTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_emTextActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_passwordActionPerformed
+
+    // Sign up
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     String Email = emText.getText();
+     String userName = username.getText();
+     String Password = password.getText();
+     String conPassword = confirmPassword.getText();
+     String firstName = Fname.getText();
+     String lastName = Lname.getText();
+     String Address = addressText.getText();
+     String phoneNum = phoneNumber.getText();
+         
+  if (lastName.contains("Al-") && Email.contains("A") && userName.contains("aA") && Password.contains("1") && conPassword.contains("7") && firstName.contains("AB")
+          && Address.contains("Jeddah") && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
+         
+         BookBike signUp = new BookBike();
+         signUp.setVisible(true);
+    }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +209,11 @@ public class IfNew extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Fname;
+    private javax.swing.JTextField Lname;
+    private javax.swing.JTextField addressText;
+    private javax.swing.JTextField confirmPassword;
+    private javax.swing.JTextField emText;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -193,13 +224,8 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField password;
+    private javax.swing.JTextField phoneNumber;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

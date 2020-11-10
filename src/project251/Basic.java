@@ -16,6 +16,7 @@ public class Basic extends javax.swing.JFrame {
      */
     public Basic() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
