@@ -98,10 +98,12 @@ public class IfLogIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    // Email
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
-       String Email = EmailText.getText();
+       
+        String Email = EmailText.getText();
        String Password = PasswordText.getText();
        
        if (Email.contains("ABC")&&(Password.contains("1"))){
+           
         BookBike info = new BookBike();
         info.setVisible(true);
     }
