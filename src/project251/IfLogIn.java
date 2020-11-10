@@ -5,6 +5,7 @@
  */
 package project251;
 
+import java.awt.Color;
 import java.util.*;
 import project251.BookBike;
 /**
@@ -40,8 +41,8 @@ public class IfLogIn extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        PasswordText = new javax.swing.JPasswordField();
         EmailText = new javax.swing.JTextField();
+        PasswordText = new javax.swing.JPasswordField();
 
         jPasswordField2.setText("jPasswordField2");
 
@@ -88,21 +89,19 @@ public class IfLogIn extends javax.swing.JFrame {
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(400, -70, 470, 490);
-
-        PasswordText.setForeground(new java.awt.Color(204, 204, 204));
-        PasswordText.setText("***************");
-        PasswordText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordTextActionPerformed(evt);
-            }
-        });
-        getContentPane().add(PasswordText);
-        PasswordText.setBounds(80, 200, 310, 26);
+        jLabel7.setBounds(0, 0, 470, 490);
 
         EmailText.setForeground(new java.awt.Color(204, 204, 204));
         EmailText.setText("someone@example.com");
         EmailText.setToolTipText("");
+        EmailText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                EmailTextFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EmailTextFocusLost(evt);
+            }
+        });
         EmailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailTextActionPerformed(evt);
@@ -110,6 +109,24 @@ public class IfLogIn extends javax.swing.JFrame {
         });
         getContentPane().add(EmailText);
         EmailText.setBounds(80, 130, 310, 26);
+
+        PasswordText.setForeground(new java.awt.Color(204, 204, 204));
+        PasswordText.setText("***************");
+        PasswordText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PasswordTextFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PasswordTextFocusLost(evt);
+            }
+        });
+        PasswordText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PasswordText);
+        PasswordText.setBounds(80, 210, 310, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,16 +136,30 @@ public class IfLogIn extends javax.swing.JFrame {
 
        
         String Email = EmailText.getText();
+        String Password = PasswordText.getText();
+        /* 
+    - The password must be at least 8 characters long.
+    - The password must contain at least:
+    - one alpha character [a-zA-Z]
+    - one numeric character [0-9]
+    - one character that is not alpha or numeric, such as ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' " , < . > / ?
+    - The password must not contain spaces
+        */
+        String upperCase = "(.*[A-Z].*)";
+        String numbers = "(.*[0-9].*)";
+        String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
+        String space = "(.*[   ].*)";
 
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(Email);
 
-        if (m.matches()) {
+        if (m.matches() && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8) {
 
             BookBike login = new BookBike();
             login.setVisible(true);
-        } else {
+        } 
+        else {
             EmailText.setText(null);
             PasswordText.setText(null);
         }
@@ -136,22 +167,49 @@ public class IfLogIn extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void PasswordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTextActionPerformed
-        String Password = PasswordText.getText();
-if (Password.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")){
-    BookBike login = new BookBike();
-            login.setVisible(true);
-}else {
-            EmailText.setText(null);
-            PasswordText.setText(null);
-        }
-
-
-    }//GEN-LAST:event_PasswordTextActionPerformed
-
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EmailTextActionPerformed
+
+    private void EmailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailTextFocusGained
+        // TODO add your handling code here:
+        if(EmailText.getText().equals("someone@example.com"))
+        {
+            EmailText.setText("");
+            EmailText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_EmailTextFocusGained
+
+    private void EmailTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailTextFocusLost
+        // TODO add your handling code here:
+          if(EmailText.getText().equals(""))
+        {
+            EmailText.setText("someone@example.com");
+            EmailText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_EmailTextFocusLost
+
+    private void PasswordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordTextActionPerformed
+
+    private void PasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordTextFocusGained
+        // TODO add your handling code here:
+          if(PasswordText.getText().equals("***************"))
+        {
+            PasswordText.setText("");
+            PasswordText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_PasswordTextFocusGained
+
+    private void PasswordTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordTextFocusLost
+        // TODO add your handling code here:
+           if(PasswordText.getText().equals(""))
+        {
+            PasswordText.setText("***************");
+            PasswordText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_PasswordTextFocusLost
 
     /**
      * @param args the command line arguments
