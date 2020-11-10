@@ -30,27 +30,25 @@ public class IfLogIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        EmailText = new javax.swing.JTextField();
+        jPasswordField2 = new javax.swing.JPasswordField();
+        jPasswordField3 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        PasswordText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         checkbox1 = new java.awt.Checkbox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        PasswordText = new javax.swing.JPasswordField();
+        EmailText = new javax.swing.JTextField();
+
+        jPasswordField2.setText("jPasswordField2");
+
+        jPasswordField3.setText("jPasswordField3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        EmailText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailTextActionPerformed(evt);
-            }
-        });
-        getContentPane().add(EmailText);
-        EmailText.setBounds(80, 130, 310, 26);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email");
@@ -61,8 +59,6 @@ public class IfLogIn extends javax.swing.JFrame {
         jLabel2.setText("Password");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(90, 180, 69, 21);
-        getContentPane().add(PasswordText);
-        PasswordText.setBounds(80, 210, 310, 26);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -92,29 +88,43 @@ public class IfLogIn extends javax.swing.JFrame {
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 470, 490);
+        jLabel7.setBounds(400, -70, 470, 490);
+
+        PasswordText.setForeground(new java.awt.Color(204, 204, 204));
+        PasswordText.setText("***************");
+        PasswordText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PasswordText);
+        PasswordText.setBounds(80, 200, 310, 26);
+
+        EmailText.setForeground(new java.awt.Color(204, 204, 204));
+        EmailText.setText("someone@example.com");
+        EmailText.setToolTipText("");
+        EmailText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmailTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EmailText);
+        EmailText.setBounds(80, 130, 310, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
-    private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
-       
-        
-     
-    }//GEN-LAST:event_EmailTextActionPerformed
-
     // Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
        
         String Email = EmailText.getText();
-        String Password = PasswordText.getText();
 
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(Email);
 
-        if (m.matches() && (Password.contains("1"))) {
+        if (m.matches()) {
 
             BookBike login = new BookBike();
             login.setVisible(true);
@@ -125,6 +135,23 @@ public class IfLogIn extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void PasswordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTextActionPerformed
+        String Password = PasswordText.getText();
+if (Password.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")){
+    BookBike login = new BookBike();
+            login.setVisible(true);
+}else {
+            EmailText.setText(null);
+            PasswordText.setText(null);
+        }
+
+
+    }//GEN-LAST:event_PasswordTextActionPerformed
+
+    private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +190,7 @@ public class IfLogIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailText;
-    private javax.swing.JTextField PasswordText;
+    private javax.swing.JPasswordField PasswordText;
     private java.awt.Checkbox checkbox1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -172,5 +199,7 @@ public class IfLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jPasswordField3;
     // End of variables declaration//GEN-END:variables
 }
