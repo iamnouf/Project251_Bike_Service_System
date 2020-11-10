@@ -53,7 +53,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email *");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 30, 55, 22);
+        jLabel1.setBounds(70, 30, 57, 21);
 
         emText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +66,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Username *");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 100, 87, 22);
+        jLabel2.setBounds(70, 100, 87, 21);
 
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Password *");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 170, 84, 22);
+        jLabel3.setBounds(70, 170, 83, 21);
 
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,35 +92,35 @@ public class IfNew extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Confirm Password *");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 240, 149, 22);
+        jLabel4.setBounds(70, 240, 149, 21);
         getContentPane().add(confirmPassword);
         confirmPassword.setBounds(70, 270, 317, 26);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("First Name *");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, 310, 94, 22);
+        jLabel5.setBounds(70, 310, 95, 21);
         getContentPane().add(Fname);
         Fname.setBounds(70, 340, 317, 26);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Last Name *");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(70, 380, 93, 22);
+        jLabel6.setBounds(70, 380, 93, 21);
         getContentPane().add(Lname);
         Lname.setBounds(70, 410, 317, 26);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Address");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(70, 440, 58, 22);
+        jLabel7.setBounds(70, 440, 59, 21);
         getContentPane().add(addressText);
         addressText.setBounds(70, 470, 317, 26);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Phone");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(70, 500, 46, 22);
+        jLabel8.setBounds(70, 500, 45, 21);
         getContentPane().add(phoneNumber);
         phoneNumber.setBounds(70, 530, 317, 26);
 
@@ -132,9 +132,7 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(160, 590, 123, 31);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\AmalA\\Downloads\\PHOTO-2020-10-31-16-51-32.jpg")); // NOI18N
+        jButton1.setBounds(160, 590, 137, 29);
         getContentPane().add(jLabel9);
         jLabel9.setBounds(1, 0, 760, 740);
 
@@ -182,7 +180,7 @@ public class IfNew extends javax.swing.JFrame {
         java.util.regex.Matcher email = p.matcher(Email);
 
         
-        if (lastName.matches(upperCase) && email.matches() && userName.matches(upperCase)&&userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) &&  Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
+        if (Email.isEmpty() && userName.isEmpty()&& Password.isEmpty()&& conPassword.isEmpty()&& firstName.isEmpty()&&lastName.isEmpty()&&Address.isEmpty()&&phoneNum.isEmpty()&& lastName.matches(upperCase) && email.matches() && userName.matches(upperCase)&&userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) &&  Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
                 && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("^(?=(?:[8-9]){1})(?=[0-9]{8}).*")) {
 
             BookBike signUp = new BookBike();
