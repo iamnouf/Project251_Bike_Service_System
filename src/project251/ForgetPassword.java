@@ -159,7 +159,7 @@ public class ForgetPassword extends javax.swing.JFrame {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(Email);
 
-        if (m.matches() && Email.isEmpty()) {
+        if (m.matches() && !Email.isEmpty()) {
             ValidationCode info = new ValidationCode();
             info.setVisible(true);
         } else {

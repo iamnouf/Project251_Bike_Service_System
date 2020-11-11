@@ -6,7 +6,7 @@
 package project251;
 
 import java.awt.Color;
-
+import project251.Thanku;
 /**
  *
  * @author AmalA
@@ -81,6 +81,11 @@ public class BikeOption extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("Done");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(160, 450, 79, 29);
         getContentPane().add(jLabel6);
@@ -138,6 +143,13 @@ public class BikeOption extends javax.swing.JFrame {
             DateTime.setForeground(new Color(0, 0, 0));
         }
     }//GEN-LAST:event_DateTimeFocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+  
+        Thanku thank = new Thanku();
+            thank.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

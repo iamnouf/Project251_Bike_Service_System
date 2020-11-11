@@ -121,7 +121,7 @@ public class ValidationCode extends javax.swing.JFrame {
 
                 String numbers = "(.*[0-9].*)";
                 
-                if(Code.matches(numbers) && Code.length() == 6 && Code.isEmpty() ){
+                if(Code.matches(numbers) && Code.length() == 6 && !Code.isEmpty() ){
                       NewPassword login = new NewPassword();
                            login.setVisible(true);
                 }

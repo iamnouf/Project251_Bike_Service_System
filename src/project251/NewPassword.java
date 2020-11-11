@@ -194,7 +194,7 @@ public class NewPassword extends javax.swing.JFrame {
         String numbers = "(.*[0-9].*)";
         String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
         String space = "(.*[   ].*)";
-        if (NewPassword.isEmpty() && ConfirmPassword.isEmpty() && NewPassword.matches(upperCase) && NewPassword.matches(numbers) && NewPassword.matches(specialChars) && !NewPassword.matches(space) && NewPassword.length() > 8 && ConfirmPassword.equals(NewPassword)) {
+        if (!NewPassword.isEmpty() && !ConfirmPassword.isEmpty() && NewPassword.matches(upperCase) && NewPassword.matches(numbers) && NewPassword.matches(specialChars) && !NewPassword.matches(space) && NewPassword.length() > 8 && ConfirmPassword.equals(NewPassword)) {
 
             IfLogIn login = new IfLogIn();
             login.setVisible(true);
