@@ -88,6 +88,8 @@ public class Thanku extends javax.swing.JFrame {
         // TODO add your handling code here:
          BookBike main = new BookBike();
             main.setVisible(true);
+            
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
