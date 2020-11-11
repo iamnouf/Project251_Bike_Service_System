@@ -45,7 +45,7 @@ public class MainInerface extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(250, 100, 130, 40);
+        jButton1.setBounds(170, 130, 130, 40);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton2.setText("Register");
@@ -55,27 +55,30 @@ public class MainInerface extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(250, 160, 130, 40);
+        jButton2.setBounds(170, 180, 130, 40);
 
         jLabel1.setBackground(new java.awt.Color(153, 51, 0));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("BOOK YOUR DREAM BIKE");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(150, 50, 360, 28);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\AmalA\\Downloads\\BookBike.png")); // NOI18N
+        jLabel1.setBounds(70, 90, 360, 29);
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(1, 0, 680, 490);
+        jLabel2.setBounds(1, 0, 510, 340);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        IfNew reg = new IfNew();
+            reg.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+           IfLogIn log = new IfLogIn();
+            log.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

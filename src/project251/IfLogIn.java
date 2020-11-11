@@ -57,6 +57,7 @@ public class IfLogIn extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         EmailText = new javax.swing.JTextField();
         PasswordText = new javax.swing.JPasswordField();
+        jButton2 = new javax.swing.JButton();
 
         jPasswordField2.setText("jPasswordField2");
 
@@ -182,6 +183,16 @@ public class IfLogIn extends javax.swing.JFrame {
         getContentPane().add(PasswordText);
         PasswordText.setBounds(80, 210, 310, 26);
 
+        jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 10, 50, 40);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
@@ -291,6 +302,12 @@ public class IfLogIn extends javax.swing.JFrame {
             login.setVisible(true);
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+          MainInerface main = new MainInerface();
+            main.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
          
     /**
      * @param args the command line arguments
@@ -332,6 +349,7 @@ public class IfLogIn extends javax.swing.JFrame {
     private javax.swing.JPasswordField PasswordText;
     private java.awt.Checkbox checkbox1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

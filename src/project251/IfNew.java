@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package project251;
+import java.awt.Color;
 import project251.BookBike;
 import project251.ErrorMsg;
+import project251.MainInerface;
+
 /**
  *
  * @author AmalA
@@ -34,9 +37,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        confirmPassword = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         Fname = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -47,6 +48,9 @@ public class IfNew extends javax.swing.JFrame {
         phoneNumber = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
+        confirmPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -54,76 +58,136 @@ public class IfNew extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email *");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 30, 57, 21);
+        jLabel1.setBounds(60, 110, 57, 21);
 
+        emText.setForeground(new java.awt.Color(204, 204, 204));
+        emText.setText("someone@example.com");
+        emText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emTextFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emTextFocusLost(evt);
+            }
+        });
         emText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emTextActionPerformed(evt);
             }
         });
         getContentPane().add(emText);
-        emText.setBounds(70, 60, 317, 26);
+        emText.setBounds(50, 140, 317, 26);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Username *");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 100, 87, 21);
+        jLabel2.setBounds(60, 170, 87, 21);
 
+        username.setForeground(new java.awt.Color(204, 204, 204));
+        username.setText("Contain characters and numbers");
+        username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameFocusLost(evt);
+            }
+        });
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
         getContentPane().add(username);
-        username.setBounds(70, 130, 317, 26);
+        username.setBounds(50, 190, 317, 26);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Password *");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 170, 83, 21);
-
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
-            }
-        });
-        getContentPane().add(password);
-        password.setBounds(70, 200, 317, 26);
+        jLabel3.setBounds(60, 220, 83, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Confirm Password *");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 240, 149, 21);
-        getContentPane().add(confirmPassword);
-        confirmPassword.setBounds(70, 270, 317, 26);
+        jLabel4.setBounds(60, 270, 149, 21);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("First Name *");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, 310, 95, 21);
+        jLabel5.setBounds(60, 320, 95, 21);
+
+        Fname.setForeground(new java.awt.Color(204, 204, 204));
+        Fname.setText("First Name");
+        Fname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FnameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FnameFocusLost(evt);
+            }
+        });
         getContentPane().add(Fname);
-        Fname.setBounds(70, 340, 317, 26);
+        Fname.setBounds(50, 340, 317, 26);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Last Name *");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(70, 380, 93, 21);
+        jLabel6.setBounds(60, 370, 93, 21);
+
+        Lname.setForeground(new java.awt.Color(204, 204, 204));
+        Lname.setText("Last Name");
+        Lname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                LnameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                LnameFocusLost(evt);
+            }
+        });
         getContentPane().add(Lname);
-        Lname.setBounds(70, 410, 317, 26);
+        Lname.setBounds(50, 390, 317, 26);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Address");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(70, 440, 59, 21);
+        jLabel7.setBounds(60, 420, 59, 21);
+
+        addressText.setForeground(new java.awt.Color(204, 204, 204));
+        addressText.setText("Building number , street name ...etc");
+        addressText.setToolTipText("");
+        addressText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                addressTextFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                addressTextFocusLost(evt);
+            }
+        });
+        addressText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressTextActionPerformed(evt);
+            }
+        });
         getContentPane().add(addressText);
-        addressText.setBounds(70, 470, 317, 26);
+        addressText.setBounds(50, 450, 317, 26);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Phone");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(70, 500, 45, 21);
+        jLabel8.setBounds(60, 480, 45, 21);
+
+        phoneNumber.setForeground(new java.awt.Color(204, 204, 204));
+        phoneNumber.setText("05xxxxxxxx");
+        phoneNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phoneNumberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phoneNumberFocusLost(evt);
+            }
+        });
         getContentPane().add(phoneNumber);
-        phoneNumber.setBounds(70, 530, 317, 26);
+        phoneNumber.setBounds(50, 500, 317, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("REGISTER");
@@ -133,9 +197,50 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(160, 590, 137, 29);
+        jButton1.setBounds(120, 560, 137, 29);
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(1, 0, 760, 740);
+        jLabel9.setBounds(-20, 380, 760, 740);
+
+        jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 10, 50, 50);
+
+        password.setForeground(new java.awt.Color(204, 204, 204));
+        password.setText("***************");
+        password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFocusLost(evt);
+            }
+        });
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(password);
+        password.setBounds(50, 240, 320, 26);
+
+        confirmPassword.setForeground(new java.awt.Color(204, 204, 204));
+        confirmPassword.setText("***************");
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                confirmPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                confirmPasswordFocusLost(evt);
+            }
+        });
+        getContentPane().add(confirmPassword);
+        confirmPassword.setBounds(50, 290, 320, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,10 +252,6 @@ public class IfNew extends javax.swing.JFrame {
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
-
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
 
     // Sign up
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -211,6 +312,165 @@ public class IfNew extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        MainInerface main = new MainInerface();
+            main.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void addressTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressTextActionPerformed
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
+
+    private void emTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emTextFocusGained
+        // TODO add your handling code here:
+           if(emText.getText().equals("someone@example.com"))
+        {
+            emText.setText("");
+            emText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_emTextFocusGained
+
+    private void emTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emTextFocusLost
+        // TODO add your handling code here:
+           if(emText.getText().equals(""))
+        {
+            emText.setText("someone@example.com");
+            emText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_emTextFocusLost
+
+    private void usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusGained
+        // TODO add your handling code here:
+             if(username.getText().equals("Contain characters and numbers"))
+        {
+            username.setText("");
+            username.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_usernameFocusGained
+
+    private void usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusLost
+        // TODO add your handling code here:
+               if(username.getText().equals(""))
+        {
+            username.setText("Contain characters and numbers");
+            username.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_usernameFocusLost
+
+    private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
+        // TODO add your handling code here:
+          if(password.getText().equals("***************"))
+        {
+            password.setText("");
+            password.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_passwordFocusGained
+
+    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
+        // TODO add your handling code here:
+               if(password.getText().equals(""))
+        {
+            password.setText("***************");
+            password.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_passwordFocusLost
+
+    private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordFocusGained
+        // TODO add your handling code here:
+           if(confirmPassword.getText().equals("***************"))
+        {
+            confirmPassword.setText("");
+            confirmPassword.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_confirmPasswordFocusGained
+
+    private void confirmPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordFocusLost
+        // TODO add your handling code here:
+             if(confirmPassword.getText().equals("***************"))
+        {
+            confirmPassword.setText("");
+            confirmPassword.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_confirmPasswordFocusLost
+
+    private void FnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FnameFocusGained
+        // TODO add your handling code here:
+             if(Fname.getText().equals("First Name"))
+        {
+            Fname.setText("");
+            Fname.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_FnameFocusGained
+
+    private void FnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FnameFocusLost
+        // TODO add your handling code here:
+              if(Fname.getText().equals(""))
+        {
+            Fname.setText("First Name");
+            Fname.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_FnameFocusLost
+
+    private void LnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LnameFocusGained
+        // TODO add your handling code here:
+               if(Lname.getText().equals("Last Name"))
+        {
+            Lname.setText("");
+            Lname.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_LnameFocusGained
+
+    private void LnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LnameFocusLost
+        // TODO add your handling code here:
+               if(Lname.getText().equals(""))
+        {
+            Lname.setText("Last Name");
+            Lname.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_LnameFocusLost
+
+    private void addressTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFocusGained
+        // TODO add your handling code here: 
+               if(addressText.getText().equals("Building number , street name ...etc"))
+        {
+            addressText.setText("");
+            addressText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_addressTextFocusGained
+
+    private void addressTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFocusLost
+        // TODO add your handling code here:
+                  if(addressText.getText().equals(""))
+        {
+            addressText.setText("Building number , street name ...etc");
+            addressText.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_addressTextFocusLost
+
+    private void phoneNumberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFocusGained
+        // TODO add your handling code here:
+                       if(phoneNumber.getText().equals("05xxxxxxxx"))
+        {
+            phoneNumber.setText("");
+            phoneNumber.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_phoneNumberFocusGained
+
+    private void phoneNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFocusLost
+        // TODO add your handling code here:
+        if(phoneNumber.getText().equals(""))
+        {
+            phoneNumber.setText("05xxxxxxxx");
+            phoneNumber.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_phoneNumberFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -250,9 +510,10 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JTextField Fname;
     private javax.swing.JTextField Lname;
     private javax.swing.JTextField addressText;
-    private javax.swing.JTextField confirmPassword;
+    private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JTextField emText;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -262,7 +523,7 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField password;
+    private javax.swing.JPasswordField password;
     private javax.swing.JTextField phoneNumber;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

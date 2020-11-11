@@ -41,6 +41,7 @@ public class BikeOption extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -48,53 +49,67 @@ public class BikeOption extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("The Type of bike:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(126, 35, 131, 22);
+        jLabel1.setBounds(70, 110, 131, 21);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(126, 66, 282, 26);
+        jTextField1.setBounds(70, 140, 282, 26);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Quantity:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(126, 101, 66, 22);
+        jLabel2.setBounds(70, 170, 68, 21);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(126, 132, 282, 26);
+        jTextField2.setBounds(70, 200, 282, 26);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Number of rental hours:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(126, 167, 173, 22);
+        jLabel3.setBounds(70, 240, 175, 21);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(126, 198, 282, 26);
+        jTextField3.setBounds(70, 270, 282, 26);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Date:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(126, 233, 38, 22);
+        jLabel4.setBounds(70, 310, 39, 21);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(126, 264, 282, 26);
+        jTextField4.setBounds(70, 340, 282, 26);
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(126, 327, 282, 26);
+        jTextField5.setBounds(70, 400, 282, 26);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("Time:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(126, 296, 42, 22);
+        jLabel5.setBounds(70, 370, 43, 21);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("Done");
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 379, 79, 29);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\AmalA\\Downloads\\PHOTO-2020-10-31-16-51-32.jpg")); // NOI18N
+        jButton1.setBounds(160, 450, 79, 29);
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(1, 0, 790, 610);
+        jLabel6.setBounds(0, 0, 790, 610);
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
-        jButton2.setBounds(550, 30, 93, 29);
+        jButton2.setBounds(550, 30, 97, 29);
+
+        jButton3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jButton3.setText("<");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(10, 10, 50, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         BookBike main = new BookBike();
+            main.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,6 +149,7 @@ public class BikeOption extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
