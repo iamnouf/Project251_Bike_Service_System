@@ -5,6 +5,8 @@
  */
 package project251;
 
+import java.awt.Color;
+
 /**
  *
  * @author AmalA
@@ -29,19 +31,17 @@ public class BikeOption extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        DateTime = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -50,43 +50,41 @@ public class BikeOption extends javax.swing.JFrame {
         jLabel1.setText("The Type of bike:");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(70, 110, 131, 21);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(70, 140, 282, 26);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Quantity:");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(70, 170, 68, 21);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(70, 200, 282, 26);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel3.setText("Number of rental hours:");
+        jLabel3.setText("Rental Hours");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 240, 175, 21);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(70, 270, 282, 26);
+        jLabel3.setBounds(70, 240, 96, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel4.setText("Date:");
+        jLabel4.setText("Date & Time");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 310, 39, 21);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(70, 340, 282, 26);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(70, 400, 282, 26);
+        jLabel4.setBounds(70, 310, 120, 21);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("Time:");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, 370, 43, 21);
+        DateTime.setForeground(new java.awt.Color(204, 204, 204));
+        DateTime.setText("Nov 7 at 7:30 PM");
+        DateTime.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                DateTimeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DateTimeFocusLost(evt);
+            }
+        });
+        getContentPane().add(DateTime);
+        DateTime.setBounds(70, 340, 282, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("Done");
         getContentPane().add(jButton1);
         jButton1.setBounds(160, 450, 79, 29);
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 790, 610);
+        jLabel6.setBounds(-30, 390, 790, 610);
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
@@ -102,6 +100,20 @@ public class BikeOption extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(10, 10, 50, 40);
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Street Bike", "Sport Bike", "Naked Bike", "Cruiser Bike", "Commuter Bike" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(70, 140, 150, 27);
+
+        jComboBox2.setMaximumRowCount(10);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4،5", "6", "7", "8", "9", "10" }));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(70, 200, 70, 27);
+
+        jComboBox3.setMaximumRowCount(24);
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 hour", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours", "11 hours", "12 hours", "24 hours" }));
+        getContentPane().add(jComboBox3);
+        jComboBox3.setBounds(70, 270, 112, 27);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -110,6 +122,22 @@ public class BikeOption extends javax.swing.JFrame {
          BookBike main = new BookBike();
             main.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void DateTimeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusGained
+        // TODO add your handling code here:
+          if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
+            DateTime.setText("");
+            DateTime.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_DateTimeFocusGained
+
+    private void DateTimeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusLost
+        // TODO add your handling code here:
+         if (DateTime.getText().equals("")) {
+            DateTime.setText("Nov 7 at 7:30 PM");
+            DateTime.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_DateTimeFocusLost
 
     /**
      * @param args the command line arguments
@@ -147,19 +175,17 @@ public class BikeOption extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DateTime;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
