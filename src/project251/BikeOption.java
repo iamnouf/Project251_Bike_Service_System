@@ -151,8 +151,12 @@ public class BikeOption extends javax.swing.JFrame {
         Thanku thank = new Thanku();
             thank.setVisible(true);
             System.out.println("f");
-                        System.out.println("f");
-
+            System.out.println("f");
+            System.out.println("f");
+            System.out.println("f");System.out.println("f");
+            System.out.println("f");System.out.println("f");
+            System.out.println("f");System.out.println("f");
+            System.out.println("f");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
