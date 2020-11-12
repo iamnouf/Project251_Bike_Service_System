@@ -6,6 +6,8 @@
 package project251;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -110,6 +112,11 @@ public class FixBike extends javax.swing.JFrame {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Street Bike", "Sport Bike", "Naked Bike", "Cruiser Bike", "Commuter Bike" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,6 +217,10 @@ public class FixBike extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DateTimeActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,8 +253,10 @@ public class FixBike extends javax.swing.JFrame {
             public void run() {
                 new FixBike().setVisible(true);
             }
+                   
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DateTime;
