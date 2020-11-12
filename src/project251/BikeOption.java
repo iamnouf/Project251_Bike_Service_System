@@ -150,8 +150,7 @@ public class BikeOption extends javax.swing.JFrame {
   
         Thanku thank = new Thanku();
             thank.setVisible(true);
-            System.out.println("waad");
-                        System.out.println("Nouf");
+
 
             
     }//GEN-LAST:event_jButton1ActionPerformed
