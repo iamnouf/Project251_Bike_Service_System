@@ -68,6 +68,7 @@ public class BookBike extends javax.swing.JFrame {
         jButton3.setBounds(160, 200, 203, 29);
 
         jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(333, 592));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 540, 470);
 
@@ -122,6 +123,8 @@ public class BookBike extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new BookBike().setVisible(true);
+                
+                
             }
         });
     }
