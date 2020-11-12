@@ -50,22 +50,22 @@ public class BikeOption extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("The Type of bike:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 110, 131, 21);
+        jLabel1.setBounds(70, 110, 131, 22);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Quantity:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 170, 68, 21);
+        jLabel2.setBounds(70, 170, 66, 22);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Rental Hours");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 240, 96, 21);
+        jLabel3.setBounds(70, 240, 95, 22);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Date & Time");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 310, 120, 21);
+        jLabel4.setBounds(70, 310, 120, 22);
 
         DateTime.setForeground(new java.awt.Color(204, 204, 204));
         DateTime.setText("Nov 7 at 7:30 PM");
@@ -94,7 +94,7 @@ public class BikeOption extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
-        jButton2.setBounds(550, 30, 97, 29);
+        jButton2.setBounds(550, 30, 93, 29);
 
         jButton3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jButton3.setText("<");
@@ -108,17 +108,17 @@ public class BikeOption extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Street Bike", "Sport Bike", "Naked Bike", "Cruiser Bike", "Commuter Bike" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(70, 140, 150, 27);
+        jComboBox1.setBounds(70, 140, 150, 26);
 
         jComboBox2.setMaximumRowCount(10);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4،5", "6", "7", "8", "9", "10" }));
         getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(70, 200, 70, 27);
+        jComboBox2.setBounds(70, 200, 70, 26);
 
         jComboBox3.setMaximumRowCount(24);
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 hour", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours", "11 hours", "12 hours", "24 hours" }));
         getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(70, 270, 112, 27);
+        jComboBox3.setBounds(70, 270, 94, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,13 +150,8 @@ public class BikeOption extends javax.swing.JFrame {
   
         Thanku thank = new Thanku();
             thank.setVisible(true);
-            System.out.println("f");
-            System.out.println("f");
-            System.out.println("f");
-            System.out.println("f");System.out.println("f");
-            System.out.println("f");System.out.println("f");
-            System.out.println("f");System.out.println("f");
-            System.out.println("f");
+            System.out.println("waad");
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
