@@ -77,6 +77,11 @@ public class BikeOption extends javax.swing.JFrame {
                 DateTimeFocusLost(evt);
             }
         });
+        DateTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DateTimeActionPerformed(evt);
+            }
+        });
         getContentPane().add(DateTime);
         DateTime.setBounds(70, 340, 282, 26);
 
@@ -154,6 +159,10 @@ public class BikeOption extends javax.swing.JFrame {
 
             
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateTimeActionPerformed
 
     /**
      * @param args the command line arguments
