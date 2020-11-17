@@ -10,14 +10,27 @@ package project251;
  * @author fatima
  */
 public class Register {
-    String Email;
-    String userName;
-    String Password;
-    String conPassword;
-    String firstName;
-    String lastName;
-    String Address;
-    String phoneNum;
+
+    private String Email;
+    private String userName;
+    private String Password;
+    private String conPassword;
+    private String firstName;
+    private String lastName;
+    private String Address;
+    private String phoneNum;
+
+    public Register (String Email,String userName,String Password,String conPassword, String firstName,String lastName,String Address,String phoneNum){
+        this.Email = Email;
+        this.userName = userName;
+        this.Password = Password;
+        this.conPassword = conPassword;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.Address = Address;
+        this.phoneNum = phoneNum;
+
+    }
 
     public String getEmail() {
         return Email;
