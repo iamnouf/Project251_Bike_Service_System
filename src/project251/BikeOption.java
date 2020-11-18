@@ -121,6 +121,16 @@ public class BikeOption extends javax.swing.JFrame {
         jComboBox3.setBounds(30, 320, 112, 27);
 
         jCheckBox1.setText("Street Bike");
+        jCheckBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jCheckBox1FocusGained(evt);
+            }
+        });
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jCheckBox1);
         jCheckBox1.setBounds(30, 110, 240, 23);
 
@@ -180,6 +190,16 @@ public class BikeOption extends javax.swing.JFrame {
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DateTimeActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jCheckBox1FocusGained
 
     /**
      * @param args the command line arguments

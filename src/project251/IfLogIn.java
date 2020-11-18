@@ -7,6 +7,7 @@ package project251;
 
 import java.awt.Color;
 import java.util.*;
+import javax.swing.JOptionPane;
 import project251.BookBike;
 import project251.ErrorMsg;
 import project251.ForgetPassword;
@@ -15,7 +16,7 @@ import project251.ForgetPassword;
  * @author AmalA
  */
 public class IfLogIn extends javax.swing.JFrame {
-
+int price = 20;
     /**
      * Creates new form IfLogIn
      */
@@ -226,10 +227,11 @@ public class IfLogIn extends javax.swing.JFrame {
 
             BookBike login = new BookBike();
             login.setVisible(true);
+
         } 
         else {
-               ErrorMsg info = new ErrorMsg();
-            info.setVisible(true);
+     JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );  
+
             
             EmailText.setText(null);
             PasswordText.setText(null);
