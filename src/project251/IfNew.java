@@ -6,16 +6,12 @@
 package project251;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import project251.BookBike;
@@ -395,38 +391,7 @@ public class IfNew extends javax.swing.JFrame {
             phoneNumber.setText(null);
 
         }
-            try {
-        File e_mail = new File("t.txt"); //To create a universal file for Input & Output
-        e_mail.getParentFile().mkdirs(); //To denote the parent file
-        Scanner sc= new Scanner(e_mail).useDelimiter("#"); //To scan the Username file
-         Email = emText.getText();
-        int pos = 0; //Indicates the position of the Username in the save file
-        boolean loggedIn = false; //Flag to check if it's logged in
-
-        while(sc.hasNext()) //Runs files in congruency
-        {
-            if(sc.next().equalsIgnoreCase(Email))
-            {
-                loggedIn = true;
-                sc.close();
-                main.setVisible(true);
-                this.dispose();
-                break;
-            }
-        }
-        sc.close();
-        if(loggedIn == false)
-        {
-            JOptionPane.showMessageDialog(null,"Incorrect Username or Password!");
-        }
-
-    }
-    catch (FileNotFoundException ex)
-    {
-        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-    }
-
-
+        
         JFrame frame = new JFrame("Demo");
         frame.setLayout(new FlowLayout());
  
