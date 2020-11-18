@@ -6,6 +6,7 @@
 package project251;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -419,10 +420,11 @@ public class IfNew extends javax.swing.JFrame {
         JTextField phoneNumber = new JTextField();
         phoneNumber.setText(phoneNum);
 
-        String file = "t.txt";
-        try (FileWriter fileWriter = new FileWriter(file,true)) {
-            
-            emText.write(fileWriter);
+        String file = "userData.txt";
+        try{
+            BufferedWriter fileWriter = new BufferedWriter(new FileWriter(file,true));
+                
+             emText.write(fileWriter);
             fileWriter.write(" ");
             Fname.write(fileWriter);
             fileWriter.write(" ");
@@ -437,11 +439,14 @@ public class IfNew extends javax.swing.JFrame {
             addressText.write(fileWriter);
             fileWriter.write(" ");
             phoneNumber.write(fileWriter);
-            fileWriter.write(" \n");
+            fileWriter.newLine();
 
+                fileWriter.close();
+                
+            
+         
         } catch (IOException ex) {
-            Logger.getLogger(IfNew.class.getName()).log(Level.SEVERE, null, ex);
-        
+           
            }
 
 

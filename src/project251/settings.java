@@ -263,7 +263,7 @@ public class settings extends javax.swing.JFrame {
 
         
                    try {
-            sc = new Scanner (new File ("t.txt"));
+            sc = new Scanner (new File ("userData.txt"));
             String[] line = sc.nextLine().split(" ");
             jTextField2.setText(line[0]);
             jTextField2.setForeground(new Color(0, 0, 0));
@@ -277,7 +277,7 @@ public class settings extends javax.swing.JFrame {
         // TODO add your handling code here:
     
                     try {
-            sc = new Scanner (new File ("t.txt"));
+            sc = new Scanner (new File ("userData.txt"));
             String[] line = sc.nextLine().split(" ");
             jTextField1.setText(line[1]+" "+line[2]);
             jTextField1.setForeground(new Color(0, 0, 0));
@@ -289,7 +289,7 @@ public class settings extends javax.swing.JFrame {
     private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
         // TODO add your handling code here:
              try {
-            sc = new Scanner (new File ("t.txt"));
+            sc = new Scanner (new File ("userData.txt"));
             String[] line = sc.nextLine().split(" ");
             jTextField5.setText(line[3]);
             jTextField5.setForeground(new Color(0, 0, 0));
@@ -301,7 +301,7 @@ public class settings extends javax.swing.JFrame {
     private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
         // TODO add your handling code here:
              try {
-            sc = new Scanner (new File ("t.txt"));
+            sc = new Scanner (new File ("userData.txt"));
             String[] line = sc.nextLine().split(" ");
             jPasswordField1.setText(line[4]);
             jPasswordField1.setForeground(new Color(0, 0, 0));
@@ -313,7 +313,7 @@ public class settings extends javax.swing.JFrame {
     private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
         // TODO add your handling code here:
              try {
-            sc = new Scanner (new File ("t.txt"));
+            sc = new Scanner (new File ("userData.txt"));
             String[] line = sc.nextLine().split(" ");
             jTextField7.setText(line[6]);
             jTextField7.setForeground(new Color(0, 0, 0));
@@ -325,7 +325,7 @@ public class settings extends javax.swing.JFrame {
     private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
         // TODO add your handling code here:
              try {
-            sc = new Scanner (new File ("t.txt"));
+            sc = new Scanner (new File ("userData.txt"));
             String[] line = sc.nextLine().split(" ");
             jTextField4.setText(line[8]);
             jTextField4.setForeground(new Color(0, 0, 0));
