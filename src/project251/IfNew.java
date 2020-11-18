@@ -437,7 +437,7 @@ public class IfNew extends javax.swing.JFrame {
             addressText.write(fileWriter);
             fileWriter.write(" ");
             phoneNumber.write(fileWriter);
-            fileWriter.write(" ");
+            fileWriter.write(" \n");
 
         } catch (IOException ex) {
             Logger.getLogger(IfNew.class.getName()).log(Level.SEVERE, null, ex);
