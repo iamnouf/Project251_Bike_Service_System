@@ -51,7 +51,7 @@ public class BookBike extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(190, 100, 119, 31);
+        jButton1.setBounds(90, 110, 132, 29);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton2.setText("Fix your bike");
@@ -61,7 +61,7 @@ public class BookBike extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(190, 150, 127, 31);
+        jButton2.setBounds(90, 160, 142, 29);
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton3.setText("View previews orders");
@@ -71,7 +71,7 @@ public class BookBike extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(160, 200, 189, 31);
+        jButton3.setBounds(60, 210, 203, 29);
 
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(333, 592));

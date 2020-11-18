@@ -39,9 +39,13 @@ public class BikeOption extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jSpinner1 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(333, 592));
@@ -50,22 +54,22 @@ public class BikeOption extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("The Type of bike:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 110, 131, 21);
+        jLabel1.setBounds(30, 90, 131, 21);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Quantity:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 170, 68, 21);
+        jLabel2.setBounds(30, 220, 68, 21);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Rental Hours");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 240, 96, 21);
+        jLabel3.setBounds(30, 290, 96, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Date & Time");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 310, 120, 21);
+        jLabel4.setBounds(30, 360, 120, 21);
 
         DateTime.setForeground(new java.awt.Color(204, 204, 204));
         DateTime.setText("Nov 7 at 7:30 PM");
@@ -83,7 +87,7 @@ public class BikeOption extends javax.swing.JFrame {
             }
         });
         getContentPane().add(DateTime);
-        DateTime.setBounds(70, 340, 282, 26);
+        DateTime.setBounds(30, 390, 282, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("Done");
@@ -93,9 +97,9 @@ public class BikeOption extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(160, 450, 79, 29);
+        jButton1.setBounds(130, 480, 79, 29);
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(-30, 390, 790, 610);
+        jLabel6.setBounds(-60, 440, 790, 610);
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
@@ -111,19 +115,32 @@ public class BikeOption extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(10, 10, 50, 40);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Street Bike", "Sport Bike", "Naked Bike", "Cruiser Bike", "Commuter Bike" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(70, 140, 150, 27);
-
-        jComboBox2.setMaximumRowCount(10);
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4،5", "6", "7", "8", "9", "10" }));
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(70, 200, 70, 27);
-
         jComboBox3.setMaximumRowCount(24);
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 hour", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours", "11 hours", "12 hours", "24 hours" }));
         getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(70, 270, 112, 27);
+        jComboBox3.setBounds(30, 320, 112, 27);
+
+        jCheckBox1.setText("Street Bike");
+        getContentPane().add(jCheckBox1);
+        jCheckBox1.setBounds(30, 110, 240, 23);
+
+        jCheckBox2.setText("Sport Bike");
+        getContentPane().add(jCheckBox2);
+        jCheckBox2.setBounds(30, 130, 95, 23);
+
+        jCheckBox3.setText("Naked Bike");
+        getContentPane().add(jCheckBox3);
+        jCheckBox3.setBounds(30, 150, 102, 23);
+
+        jCheckBox4.setText("Cruiser Bike");
+        getContentPane().add(jCheckBox4);
+        jCheckBox4.setBounds(30, 170, 107, 23);
+
+        jCheckBox5.setText("Commuter Bike");
+        getContentPane().add(jCheckBox5);
+        jCheckBox5.setBounds(30, 190, 140, 23);
+        getContentPane().add(jSpinner1);
+        jSpinner1.setBounds(40, 250, 40, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,8 +170,8 @@ public class BikeOption extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
   
-        Thanku thank = new Thanku();
-            thank.setVisible(true);
+        PayInterface pay = new PayInterface();
+            pay.setVisible(true);
 
 
             
@@ -204,13 +221,17 @@ public class BikeOption extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JSpinner jSpinner1;
     // End of variables declaration//GEN-END:variables
 }
