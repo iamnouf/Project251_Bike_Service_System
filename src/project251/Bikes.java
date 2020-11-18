@@ -16,16 +16,19 @@ public class Bikes {
     private Date date = new Date();
     private double time;
     private double price;
+  
+   
     
       public String[] getBikeType() {
         return BikeType;
+        
     }
 
     /**
      * @param BikeType the BikeType to set
      */
     public void setBikeType(String[] BikeType) {
-        this.BikeType = BikeType;
+        this.setBikeType(BikeType);
     }
 
     /**
@@ -54,5 +57,21 @@ public class Bikes {
      */
     public void setTime(double time) {
         this.time = time;
+    }
+
+   
+
+    /**
+     * @return the price
+     */
+    public double getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

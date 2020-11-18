@@ -596,8 +596,12 @@ public class ViewOrder extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-            c.setVisible(true);
+//        CancelMsg c = new CancelMsg();
+//            c.setVisible(true);
+            Customer c1 = new Customer();
+            c1.cancelOrder();
+            System.exit(0);
+       
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
