@@ -28,12 +28,13 @@ public class MainInerface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 592));
         getContentPane().setLayout(null);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -45,7 +46,7 @@ public class MainInerface extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(170, 130, 130, 40);
+        jButton1.setBounds(100, 130, 130, 40);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton2.setText("Register");
@@ -55,15 +56,13 @@ public class MainInerface extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(170, 180, 130, 40);
+        jButton2.setBounds(100, 180, 130, 40);
 
         jLabel1.setBackground(new java.awt.Color(153, 51, 0));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("BOOK YOUR DREAM BIKE");
+        jLabel1.setText("RENT YOUR DREAM BIKE");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 90, 360, 29);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1, 0, 510, 340);
+        jLabel1.setBounds(10, 90, 360, 29);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

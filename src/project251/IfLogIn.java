@@ -84,17 +84,18 @@ public class IfLogIn extends javax.swing.JFrame {
         menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 592));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(100, 100, 43, 21);
+        jLabel1.setBounds(50, 80, 43, 21);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(90, 180, 69, 21);
+        jLabel2.setBounds(40, 160, 69, 21);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -105,17 +106,19 @@ public class IfLogIn extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(170, 260, 130, 39);
+        jButton1.setBounds(70, 240, 130, 39);
         getContentPane().add(checkbox1);
-        checkbox1.setBounds(94, 329, 18, 20);
+        checkbox1.setBounds(50, 310, 18, 20);
 
         jLabel3.setText("Stay signed in");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(116, 329, 88, 16);
+        jLabel3.setBounds(70, 310, 88, 16);
 
-        jLabel4.setText("____________________________________________________________");
+        jLabel4.setText("_________________________________________");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(15, 359, 480, 16);
+        jLabel4.setBounds(30, 340, 510, 20);
+        jLabel4.getAccessibleContext().setAccessibleName("_______________________________");
+        jLabel4.getAccessibleContext().setAccessibleDescription("");
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("FORGET PASSWORD?");
@@ -140,11 +143,11 @@ public class IfLogIn extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(140, 400, 192, 21);
+        jLabel5.setBounds(60, 370, 192, 21);
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 440, 470);
+        jLabel7.setBounds(0, 270, 440, 470);
 
         EmailText.setForeground(new java.awt.Color(204, 204, 204));
         EmailText.setText("someone@example.com");
@@ -163,7 +166,7 @@ public class IfLogIn extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EmailText);
-        EmailText.setBounds(80, 130, 310, 26);
+        EmailText.setBounds(30, 110, 220, 26);
 
         PasswordText.setForeground(new java.awt.Color(204, 204, 204));
         PasswordText.setText("***************");
@@ -181,7 +184,7 @@ public class IfLogIn extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PasswordText);
-        PasswordText.setBounds(80, 210, 310, 26);
+        PasswordText.setBounds(30, 190, 220, 26);
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jButton2.setText("<");
@@ -191,7 +194,7 @@ public class IfLogIn extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(10, 10, 50, 40);
+        jButton2.setBounds(10, 0, 50, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -5,6 +5,19 @@
  */
 package project251;
 import java.awt.Color;
+import java.awt.FlowLayout;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import project251.BookBike;
 import project251.ErrorMsg;
 import project251.MainInerface;
@@ -51,14 +64,25 @@ public class IfNew extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
         confirmPassword = new javax.swing.JPasswordField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 592));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel1.setText("Email *");
+        jLabel1.setText("Email ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 110, 57, 21);
+        jLabel1.setBounds(50, 80, 60, 21);
 
         emText.setForeground(new java.awt.Color(204, 204, 204));
         emText.setText("someone@example.com");
@@ -76,12 +100,12 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(emText);
-        emText.setBounds(50, 140, 317, 26);
+        emText.setBounds(40, 110, 270, 26);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel2.setText("Username *");
+        jLabel2.setText("Username ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 170, 87, 21);
+        jLabel2.setBounds(50, 250, 100, 21);
 
         username.setForeground(new java.awt.Color(204, 204, 204));
         username.setText("Contain characters and numbers");
@@ -99,22 +123,22 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(username);
-        username.setBounds(50, 190, 317, 26);
+        username.setBounds(40, 270, 270, 26);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel3.setText("Password *");
+        jLabel3.setText("Password ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 220, 83, 21);
+        jLabel3.setBounds(50, 300, 90, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel4.setText("Confirm Password *");
+        jLabel4.setText("Confirm Password ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(60, 270, 149, 21);
+        jLabel4.setBounds(50, 350, 160, 21);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel5.setText("First Name *");
+        jLabel5.setText("First Name ");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 320, 95, 21);
+        jLabel5.setBounds(50, 140, 110, 21);
 
         Fname.setForeground(new java.awt.Color(204, 204, 204));
         Fname.setText("First Name");
@@ -127,12 +151,12 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Fname);
-        Fname.setBounds(50, 340, 317, 26);
+        Fname.setBounds(40, 160, 270, 26);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel6.setText("Last Name *");
+        jLabel6.setText("Last Name ");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(60, 370, 93, 21);
+        jLabel6.setBounds(50, 190, 100, 21);
 
         Lname.setForeground(new java.awt.Color(204, 204, 204));
         Lname.setText("Last Name");
@@ -145,12 +169,12 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Lname);
-        Lname.setBounds(50, 390, 317, 26);
+        Lname.setBounds(40, 210, 270, 26);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Address");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(60, 420, 59, 21);
+        jLabel7.setBounds(50, 400, 70, 21);
 
         addressText.setForeground(new java.awt.Color(204, 204, 204));
         addressText.setText("Building number , street name ...etc");
@@ -169,12 +193,12 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addressText);
-        addressText.setBounds(50, 450, 317, 26);
+        addressText.setBounds(40, 420, 270, 26);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Phone");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(60, 480, 45, 21);
+        jLabel8.setBounds(50, 450, 0, 21);
 
         phoneNumber.setForeground(new java.awt.Color(204, 204, 204));
         phoneNumber.setText("05xxxxxxxx");
@@ -187,7 +211,7 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(phoneNumber);
-        phoneNumber.setBounds(50, 500, 317, 26);
+        phoneNumber.setBounds(40, 470, 270, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("REGISTER");
@@ -197,9 +221,9 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(120, 560, 137, 29);
+        jButton1.setBounds(110, 530, 130, 29);
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(-20, 380, 760, 740);
+        jLabel9.setBounds(280, 530, 760, 740);
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jButton2.setText("<");
@@ -227,7 +251,7 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(password);
-        password.setBounds(50, 240, 320, 26);
+        password.setBounds(40, 320, 270, 26);
 
         confirmPassword.setForeground(new java.awt.Color(204, 204, 204));
         confirmPassword.setText("***************");
@@ -239,8 +263,72 @@ public class IfNew extends javax.swing.JFrame {
                 confirmPasswordFocusLost(evt);
             }
         });
+        confirmPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmPasswordActionPerformed(evt);
+            }
+        });
         getContentPane().add(confirmPassword);
-        confirmPassword.setBounds(50, 290, 320, 26);
+        confirmPassword.setBounds(40, 370, 270, 26);
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel10.setText("Phone Number");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(50, 450, 140, 21);
+
+        jLabel11.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel11.setText("*");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(93, 80, 50, 16);
+
+        jLabel12.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel12.setText("*");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(130, 140, 53, 16);
+
+        jLabel13.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel13.setText("*");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(130, 190, 53, 16);
+
+        jLabel14.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel14.setText("*");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(123, 250, 50, 16);
+
+        jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setText("*");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(190, 350, 9, 22);
+
+        jLabel16.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel16.setText("*");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(170, 370, 9, 30);
+
+        jLabel17.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel17.setText("*");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(110, 400, 9, 22);
+
+        jLabel18.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel18.setText("*");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(120, 300, 9, 22);
+
+        jLabel19.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel19.setText("*");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(160, 450, 10, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,14 +343,18 @@ public class IfNew extends javax.swing.JFrame {
 
     // Sign up
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+           BookBike main = new BookBike();
+            main.setVisible(true);
+            
         String Email = emText.getText();
+        String firstName = Fname.getText();
+        String lastName = Lname.getText();
         String userName = username.getText();
         String Password = password.getText();
         String conPassword = confirmPassword.getText();
-        String firstName = Fname.getText();
-        String lastName = Lname.getText();
         String Address = addressText.getText();
         String phoneNum = phoneNumber.getText();
+        
 
               /* 
     - The password must be at least 8 characters long.
@@ -281,34 +373,112 @@ public class IfNew extends javax.swing.JFrame {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher email = p.matcher(Email);
 
-        
-        if ( lastName.matches(upperCase) && email.matches() && userName.matches(upperCase)&&userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) &&  Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
-                && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("[0-9]{10}")) 
-        {
+        if (lastName.matches(upperCase) && email.matches() && userName.matches(upperCase) && userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
+                && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("[0-9]{10}")) {
 
-
-           BookBike signUp = new BookBike();
+            BookBike signUp = new BookBike();
             signUp.setVisible(true);
-            
+
         }
-        if (Email.isEmpty() && userName.isEmpty()&& Password.isEmpty()&& conPassword.isEmpty()&& firstName.isEmpty()&& lastName.isEmpty()&& Address.isEmpty()&& phoneNum.isEmpty())
-                {
-          ErrorMsg info = new ErrorMsg();
+        if (Email.isEmpty() && userName.isEmpty() && Password.isEmpty() && conPassword.isEmpty() && firstName.isEmpty() && lastName.isEmpty() && Address.isEmpty() && phoneNum.isEmpty()) {
+            ErrorMsg info = new ErrorMsg();
             info.setVisible(true);
-                }
-        else
-        {
+        } else {
 
-         emText.setText(null);
-         username.setText(null);
-         password.setText(null);
-         confirmPassword.setText(null);
-         Fname.setText(null);
-         Lname.setText(null);
-         addressText.setText(null);
-         phoneNumber.setText(null);
+            emText.setText(null);
+            Fname.setText(null);
+            Lname.setText(null);
+            username.setText(null);
+            password.setText(null);
+            confirmPassword.setText(null);
+            addressText.setText(null);
+            phoneNumber.setText(null);
 
         }
+            try {
+        File e_mail = new File("t.txt"); //To create a universal file for Input & Output
+        e_mail.getParentFile().mkdirs(); //To denote the parent file
+        Scanner sc= new Scanner(e_mail).useDelimiter("#"); //To scan the Username file
+         Email = emText.getText();
+        int pos = 0; //Indicates the position of the Username in the save file
+        boolean loggedIn = false; //Flag to check if it's logged in
+
+        while(sc.hasNext()) //Runs files in congruency
+        {
+            if(sc.next().equalsIgnoreCase(Email))
+            {
+                loggedIn = true;
+                sc.close();
+                main.setVisible(true);
+                this.dispose();
+                break;
+            }
+        }
+        sc.close();
+        if(loggedIn == false)
+        {
+            JOptionPane.showMessageDialog(null,"Incorrect Username or Password!");
+        }
+
+    }
+    catch (FileNotFoundException ex)
+    {
+        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+
+        JFrame frame = new JFrame("Demo");
+        frame.setLayout(new FlowLayout());
+ 
+        JTextField emText = new JTextField();
+        emText.setText(Email);
+
+        JTextField Fname = new JTextField();
+        Fname.setText(firstName);
+
+        JTextField Lname = new JTextField();
+        Lname.setText(lastName);
+        
+        JTextField username = new JTextField();
+        username.setText(userName);
+
+        JTextField password = new JTextField();
+        password.setText(Password);
+
+        JTextField confirmPassword = new JTextField();
+        confirmPassword.setText(conPassword);
+
+        JTextField addressText = new JTextField();
+        addressText.setText(Address);
+
+        JTextField phoneNumber = new JTextField();
+        phoneNumber.setText(phoneNum);
+
+        String file = "t.txt";
+        try (FileWriter fileWriter = new FileWriter(file,true)) {
+            
+            emText.write(fileWriter);
+            fileWriter.write(" ");
+            Fname.write(fileWriter);
+            fileWriter.write(" ");
+            Lname.write(fileWriter);
+            fileWriter.write(" ");
+            username.write(fileWriter);
+            fileWriter.write(" ");
+            password.write(fileWriter);
+            fileWriter.write(" ");
+            confirmPassword.write(fileWriter);
+            fileWriter.write(" ");
+            addressText.write(fileWriter);
+            fileWriter.write(" ");
+            phoneNumber.write(fileWriter);
+            fileWriter.write(" ");
+
+        } catch (IOException ex) {
+            Logger.getLogger(IfNew.class.getName()).log(Level.SEVERE, null, ex);
+        
+           }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -471,15 +641,20 @@ public class IfNew extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_phoneNumberFocusLost
 
+    private void confirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+           
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -515,6 +690,16 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -54,6 +54,7 @@ public class PayInterface extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 592));
 
         jButton1.setText("NEXT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +71,14 @@ public class PayInterface extends javax.swing.JFrame {
 
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.setText("4847 **** **** ****");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -80,6 +89,14 @@ public class PayInterface extends javax.swing.JFrame {
 
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
         jTextField2.setText("MM/YY");
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField2FocusLost(evt);
+            }
+        });
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -90,6 +107,14 @@ public class PayInterface extends javax.swing.JFrame {
 
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jTextField3.setText("Name On Card");
+        jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField3FocusLost(evt);
+            }
+        });
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -100,6 +125,14 @@ public class PayInterface extends javax.swing.JFrame {
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("3-4 digit code");
+        jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField4FocusLost(evt);
+            }
+        });
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -114,11 +147,7 @@ public class PayInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +157,10 @@ public class PayInterface extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel6)
                                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2))))
+                                    .addComponent(jTextField2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton1)))
                         .addGap(81, 81, 81))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -138,6 +170,10 @@ public class PayInterface extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap(259, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,9 +198,9 @@ public class PayInterface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         pack();
@@ -172,6 +208,9 @@ public class PayInterface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         Thanku thank = new Thanku();
+            thank.setVisible(true);
+            
         String CarNum = jTextField1.getText();
         String ExDate =jTextField2.getText();
         String NameOnCard = jTextField3.getText();
@@ -196,34 +235,89 @@ public class PayInterface extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        if (jTextField1.getText().equals("")) {
-            jTextField1.setText("4847 **** **** ****");
-            jTextField1.setForeground(new Color(0, 0, 0));
+      
     }//GEN-LAST:event_jTextField1ActionPerformed
-    }
+    
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        if (jTextField2.getText().equals("")) {
-            jTextField2.setText("MM/YY");
-            jTextField2.setForeground(new Color(0, 0, 0));
-        }
+      
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
-        if (jTextField3.getText().equals("")) {
-            jTextField3.setText("Name On Card");
-            jTextField3.setForeground(new Color(0, 0, 0));
-        }
+     
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
-        if (jTextField4.getText().equals("")) {
-            jTextField4.setText("Name On Card");
-            jTextField4.setForeground(new Color(0, 0, 0));
-        }
+     
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+          if (jTextField1.getText().equals("4847 **** **** ****")) {
+            jTextField1.setText("");
+            jTextField1.setForeground(new Color(0, 0, 0));
+          }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+         // TODO add your handling code here:
+              if (jTextField1.getText().equals("")) {
+            jTextField1.setText("4847 **** **** ****");
+            jTextField1.setForeground(new Color(0, 0, 0));
+              }
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
+        // TODO add your handling code here:
+        if (jTextField4.getText().equals("3-4 digit code")) {
+            jTextField4.setText("");
+            jTextField4.setForeground(new Color(0, 0, 0));
+                }
+    }//GEN-LAST:event_jTextField4FocusGained
+
+    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
+        // TODO add your handling code here:
+                if (jTextField4.getText().equals("")) {
+            jTextField4.setText("3-4 digit code");
+            jTextField4.setForeground(new Color(0, 0, 0));
+                }
+    
+    }//GEN-LAST:event_jTextField4FocusLost
+
+    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
+        // TODO add your handling code here:
+           if (jTextField3.getText().equals("Name On Card")) {
+            jTextField3.setText("");
+            jTextField3.setForeground(new Color(0, 0, 0));
+           }
+    }//GEN-LAST:event_jTextField3FocusGained
+
+    private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
+        // TODO add your handling code here:
+                 if (jTextField3.getText().equals("")) {
+            jTextField3.setText("Name On Card");
+            jTextField3.setForeground(new Color(0, 0, 0));
+        
+                 }
+    }//GEN-LAST:event_jTextField3FocusLost
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        // TODO add your handling code here:
+             if (jTextField2.getText().equals("MM/YY")) {
+            jTextField2.setText("");
+            jTextField2.setForeground(new Color(0, 0, 0));
+          }
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+        // TODO add your handling code here:
+           if (jTextField2.getText().equals("")) {
+            jTextField2.setText("MM/YY");
+            jTextField2.setForeground(new Color(0, 0, 0));
+                }
+    }//GEN-LAST:event_jTextField2FocusLost
     
     /**
      * @param args the command line arguments

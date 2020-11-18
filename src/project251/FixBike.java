@@ -56,6 +56,7 @@ public class FixBike extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 592));
 
         jLabel1.setText("Bike Type");
 
@@ -177,8 +178,9 @@ public class FixBike extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Thanku next = new Thanku();
-            next.setVisible(true);
+         PayInterface pay = new PayInterface();
+            pay.setVisible(true);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void DateTimeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusGained

@@ -20,11 +20,13 @@ public class Login {
         this.Password = Password;
     }
     public String getEmail() {
+        
         return Email;
     }
 
     public void setEmail(String Email) {
         this.Email = Email;
+        
     }
 
     public String getUserName() {
