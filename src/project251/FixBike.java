@@ -202,6 +202,7 @@ public class FixBike extends javax.swing.JFrame {
             if (desc.getText().equals("broken bike wheel ,chain falls off …etc")) {
             desc.setText("");
             desc.setForeground(new Color(0, 0, 0));
+          
         }
     }//GEN-LAST:event_descFocusGained
 
