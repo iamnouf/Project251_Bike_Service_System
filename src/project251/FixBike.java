@@ -219,26 +219,25 @@ public class FixBike extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_DateTimeFocusLost
 
-<<<<<<< HEAD
-=======
+
     private void descFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descFocusGained
         // TODO add your handling code here: 
-            if (desc.getText().equals("broken bike wheel ,chain falls off …etc")) {
-            desc.setText("");
-            desc.setForeground(new Color(0, 0, 0));
+//            if (desc.getText().equals("broken bike wheel ,chain falls off …etc")) {
+//            desc.setText("");
+//            desc.setForeground(new Color(0, 0, 0));
           
-        }
+     //   }
     }//GEN-LAST:event_descFocusGained
 
     private void descFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descFocusLost
         // TODO add your handling code here:
-           if (desc.getText().equals("")) {
-            desc.setText("broken bike wheel ,chain falls off …etc");
-            desc.setForeground(new Color(0, 0, 0));
-        }
+//           if (desc.getText().equals("")) {
+//            desc.setText("broken bike wheel ,chain falls off …etc");
+//            desc.setForeground(new Color(0, 0, 0));
+//        }
     }//GEN-LAST:event_descFocusLost
 
->>>>>>> 5251e4b77ffa2f5f33ec48c5698e85fd6bb1d6fa
+
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DateTimeActionPerformed
