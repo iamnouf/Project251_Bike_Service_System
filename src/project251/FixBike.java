@@ -107,7 +107,6 @@ public class FixBike extends javax.swing.JFrame {
         });
 
         jCheckBox1.setText("Tight Brakes");
-        jCheckBox1.setActionCommand("Tight Brakes");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
@@ -222,15 +221,22 @@ public class FixBike extends javax.swing.JFrame {
 
     private void descFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descFocusGained
         // TODO add your handling code here: 
+<<<<<<< HEAD
 //            if (desc.getText().equals("broken bike wheel ,chain falls off …etc")) {
 //            desc.setText("");
 //            desc.setForeground(new Color(0, 0, 0));
           
      //   }
+=======
+       
+          
+        
+>>>>>>> 77decbdc7b0b5f6d3c7dc217c9d2730d59b35c1c
     }//GEN-LAST:event_descFocusGained
 
     private void descFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descFocusLost
         // TODO add your handling code here:
+<<<<<<< HEAD
 //           if (desc.getText().equals("")) {
 //            desc.setText("broken bike wheel ,chain falls off …etc");
 //            desc.setForeground(new Color(0, 0, 0));
@@ -238,6 +244,12 @@ public class FixBike extends javax.swing.JFrame {
     }//GEN-LAST:event_descFocusLost
 
 
+=======
+         
+        
+    }//GEN-LAST:event_descFocusLost
+
+>>>>>>> 77decbdc7b0b5f6d3c7dc217c9d2730d59b35c1c
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DateTimeActionPerformed
