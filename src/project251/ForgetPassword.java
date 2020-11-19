@@ -6,6 +6,7 @@
 package project251;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import project251.IfLogIn;
 /**
  *
@@ -165,8 +166,7 @@ public class ForgetPassword extends javax.swing.JFrame {
             ValidationCode info = new ValidationCode();
             info.setVisible(true);
         } else {
-            ErrorMsg info = new ErrorMsg();
-            info.setVisible(true);
+           JOptionPane.showMessageDialog(null, "Invalid Detalis !" );  
 
             passfield.setText(null);
 

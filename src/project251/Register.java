@@ -32,6 +32,10 @@ public class Register {
 
     }
 
+    Register() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getEmail() {
         return Email;
     }

@@ -69,19 +69,11 @@ public class BookBikeJ extends Bikes {
         return orderCost;
     } 
     /*removes the passed pizza from the pizza array and cost array. */
-    public void removePizza(int pizzaToRemove){
-        BikeList.remove(pizzaToRemove);
-        priceBooking.remove(pizzaToRemove);
+    public void removeOrder(int orderToRemove){
+        BikeList.remove(orderToRemove);
+        priceBooking.remove(orderToRemove);
     }
 
-    /**
-     * @return the BikeType
-     */
-  
-
-    /**
-     * @return the rentalHours
-     */
     public double getRentalHours() {
         return rentalHours;
     }
@@ -93,7 +85,13 @@ public class BookBikeJ extends Bikes {
         this.rentalHours = rentalHours;
     }
 
+<<<<<<< HEAD
   
  
+=======
+
+
+>>>>>>> 25ec947ca5e47ebcea101d1ec4c7cdbc65f2d580
     
+
 }

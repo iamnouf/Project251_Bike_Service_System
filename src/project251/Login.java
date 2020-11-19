@@ -5,6 +5,7 @@
  */
 package project251;
 
+<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,6 +16,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+=======
+>>>>>>> 25ec947ca5e47ebcea101d1ec4c7cdbc65f2d580
 /**
  *
  * @author fatima
@@ -30,6 +33,7 @@ public class Login {
         this.userName = userName;
         this.Password = Password;
     }
+<<<<<<< HEAD
 
     Login() {
     }
@@ -81,6 +85,11 @@ public class Login {
 
         return Email;
 
+=======
+    public String getEmail() {
+        
+        return Email;
+>>>>>>> 25ec947ca5e47ebcea101d1ec4c7cdbc65f2d580
     }
 
     public void setEmail(String Email) {

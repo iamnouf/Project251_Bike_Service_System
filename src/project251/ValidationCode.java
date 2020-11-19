@@ -6,6 +6,7 @@
 package project251;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -130,8 +131,8 @@ public class ValidationCode extends javax.swing.JFrame {
               
                 else
                 {
-                     ErrorMsg info = new ErrorMsg();
-                    info.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Invalid Detalis !" );  
+
                 
                     Codedigit.setText(null);
                 }

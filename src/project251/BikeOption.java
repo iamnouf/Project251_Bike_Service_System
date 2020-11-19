@@ -6,6 +6,16 @@
 package project251;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.im.InputContext;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
+import javax.swing.Icon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import project251.Thanku;
 /**
  *
@@ -187,6 +197,91 @@ public class BikeOption extends javax.swing.JFrame {
   
         PayInterface pay = new PayInterface();
             pay.setVisible(true);
+            
+            String BikeType1 = jCheckBox1.getText();
+            String BikeType2 = jCheckBox2.getText();
+            String BikeType3 = jCheckBox3.getText();
+            String BikeType4 = jCheckBox4.getText();
+            String BikeType5 = jCheckBox5.getText();
+            int qty = (int) jSpinner1.getValue();
+            InputContext RentalHours = jComboBox3.getInputContext();
+            String dateTime = DateTime.getText();
+            
+             JFrame frame = new JFrame("Demo");
+        frame.setLayout(new FlowLayout());
+ 
+        jCheckBox1.setText(BikeType1);
+        jCheckBox2.setText(BikeType2);
+        jCheckBox3.setText(BikeType3);
+        jCheckBox4.setText(BikeType4);
+        jCheckBox5.setText(BikeType5);
+        jSpinner1.setValue(qty);
+       // jComboBox3.setInputContext(RentalHours);
+        DateTime.setText(dateTime);
+
+        String fileRent = "RentInfo.txt";
+        try {
+            BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
+
+            if (jCheckBox1.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1);
+
+            } else if (jCheckBox2.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType2);
+            } else if (jCheckBox3.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType3);
+            } else if (jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType4);
+            } else if (jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType5);
+            } else if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType2);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox3.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType4);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType5);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox3.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType3);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType4);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType5);
+
+            } else if (jCheckBox3.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType3 + " , " + BikeType4);
+
+            } else if (jCheckBox3.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
+
+            } else if (jCheckBox4.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
+
+            }else{
+                              JOptionPane.showMessageDialog(null, "Invalid Detalis !" );  
+
+            }
+                      fileWriter.write(" ");
+
+          fileWriter.write("Qty : " + qty);
+          fileWriter.write(" Rental Hours : " + RentalHours);
+
+           
+            
+                            fileWriter.newLine();
+
+                fileWriter.close();
+
+            }catch (IOException ex) {
+           
+           }
 
 
             
