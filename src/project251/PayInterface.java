@@ -5,6 +5,7 @@
  */
 package project251;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import project251.*;
 /**
  *
@@ -226,8 +227,8 @@ public class PayInterface extends javax.swing.JFrame {
             
         } 
         else if (CarNum.isEmpty() || ExDate.isEmpty() || NameOnCard.isEmpty() || CVV.isEmpty()) {
-               ErrorMsg info = new ErrorMsg();
-               info.setVisible(true);     
+                   JOptionPane.showMessageDialog(null, "Invalid Payment Detalis !" );  
+    
         }
         
         
