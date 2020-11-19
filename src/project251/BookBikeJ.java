@@ -5,6 +5,7 @@
  */
 package project251;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,8 +15,64 @@ import java.util.Date;
 public class BookBikeJ extends Bikes {
    
     private double rentalHours;
-    //Qty
-    private double priceBooking;
+    private int Qty;
+    private ArrayList<Double> priceBooking;
+    private ArrayList<String> BikeList;
+
+    public BookBikeJ(String BikeType, Date date, double time, double price,double rentalHours,int Qty,double priceBooking) {
+        super(BikeType, date, time, price);
+         this.BikeList = new ArrayList<String>();
+         this.Qty=Qty;
+         this.rentalHours=rentalHours;
+         this.priceBooking=new ArrayList<Double>() ;
+    }
+
+    public int getQty() {
+        return Qty;
+    }
+
+    public void setQty(int Qty) {
+        this.Qty = Qty;
+    }
+
+    public ArrayList<Double> getPriceBooking() {
+        return priceBooking;
+    }
+
+    public void setPriceBooking(ArrayList<Double> priceBooking) {
+        this.priceBooking = priceBooking;
+    }
+
+    public ArrayList<String> getBikeList() {
+        return BikeList;
+    }
+
+    public void setBikeList(ArrayList<String> BikeList) {
+        this.BikeList = BikeList;
+    }
+       public String wholeOrder(){
+        String completeOrder = "";
+        for (int i=0;i < BikeList.size();i++)
+        {
+          completeOrder += this.BikeList.get(i);
+        }
+        return completeOrder;
+    }
+    
+    /*Creates a single prices for the wole order by adding all the pizzas cost together. */
+    public Double orderCost(){
+        Double orderCost = 0.0;
+        for (int i=0;i < priceBooking.size();i++)
+        {
+          orderCost += this.priceBooking.get(i);
+        }
+        return orderCost;
+    } 
+    /*removes the passed pizza from the pizza array and cost array. */
+    public void removePizza(int pizzaToRemove){
+        BikeList.remove(pizzaToRemove);
+        priceBooking.remove(pizzaToRemove);
+    }
 
     /**
      * @return the BikeType
@@ -36,19 +93,7 @@ public class BookBikeJ extends Bikes {
         this.rentalHours = rentalHours;
     }
 
-    /**
-     * @return the price
-     */
-    public double getPrice() {
-        return priceBooking;
-    }
-
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(double priceBooking) {
-        this.priceBooking = priceBooking;
-    }
-    
+  
+ 
     
 }
