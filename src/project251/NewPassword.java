@@ -6,6 +6,7 @@
 package project251;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -201,8 +202,8 @@ public class NewPassword extends javax.swing.JFrame {
             login.setVisible(true);
         } 
         else {
-               ErrorMsg info = new ErrorMsg();
-                info.setVisible(true);
+                    JOptionPane.showMessageDialog(null, "Invalid Password Detalis !" );  
+
             
             jPasswordField1.setText(null);
             

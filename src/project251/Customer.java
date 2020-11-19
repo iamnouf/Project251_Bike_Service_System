@@ -29,14 +29,14 @@ public class Customer {
     // view Order
 
     public void viewOrder() {
-      BookBikeJ order = new BookBikeJ();
-      // 
-     //   boolean create = true;
-        String BikeType[] = new String
-        if ()
-       if (order.getBikeType().equals()){
-           System.out.println("hhh");
-       } 
+//      BookBikeJ order = new BookBikeJ();
+//      // 
+//     //   boolean create = true;
+//        String BikeType[] = new String
+//        if ()
+//       if (order.getBikeType().equals()){
+//           System.out.println("hhh");
+//       } 
       
     }
     // pay bill

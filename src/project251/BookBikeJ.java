@@ -16,9 +16,6 @@ public class BookBikeJ extends Bikes {
    
     private double rentalHours;
     private int Qty;
-<<<<<<< HEAD
-    private double priceBooking;
-=======
     private ArrayList<Double> priceBooking;
     private ArrayList<String> BikeList;
 
@@ -72,20 +69,11 @@ public class BookBikeJ extends Bikes {
         return orderCost;
     } 
     /*removes the passed pizza from the pizza array and cost array. */
-    public void removePizza(int pizzaToRemove){
-        BikeList.remove(pizzaToRemove);
-        priceBooking.remove(pizzaToRemove);
+    public void removeOrder(int orderToRemove){
+        BikeList.remove(orderToRemove);
+        priceBooking.remove(orderToRemove);
     }
->>>>>>> 26764dbb4b3e46aa6c4e626607999cde02ff6c1d
 
-    /**
-     * @return the BikeType
-     */
-  
-
-    /**
-     * @return the rentalHours
-     */
     public double getRentalHours() {
         return rentalHours;
     }
@@ -97,52 +85,8 @@ public class BookBikeJ extends Bikes {
         this.rentalHours = rentalHours;
     }
 
-<<<<<<< HEAD
-    /**
-     * @return the price
-     */
-    public double getPrice() {
-        return getPriceBooking();
-    }
 
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(double priceBooking) {
-        this.setPriceBooking(priceBooking);
-    }
 
-    /**
-     * @return the Qty
-     */
-    public int getQty() {
-        return Qty;
-    }
-
-    /**
-     * @param Qty the Qty to set
-     */
-    public void setQty(int Qty) {
-        this.Qty = Qty;
-    }
-
-    /**
-     * @return the priceBooking
-     */
-    public double getPriceBooking() {
-        return priceBooking;
-    }
-
-    /**
-     * @param priceBooking the priceBooking to set
-     */
-    public void setPriceBooking(double priceBooking) {
-        this.priceBooking = priceBooking;
-    }
     
-=======
-  
- 
->>>>>>> 26764dbb4b3e46aa6c4e626607999cde02ff6c1d
-    
+
 }
