@@ -91,12 +91,12 @@ int price = 20;
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 80, 43, 21);
+        jLabel1.setBounds(50, 80, 41, 22);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 160, 69, 21);
+        jLabel2.setBounds(40, 160, 70, 22);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -113,7 +113,7 @@ int price = 20;
 
         jLabel3.setText("Stay signed in");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 310, 88, 16);
+        jLabel3.setBounds(70, 310, 99, 20);
 
         jLabel4.setText("_________________________________________");
         getContentPane().add(jLabel4);
@@ -144,7 +144,7 @@ int price = 20;
             }
         });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 370, 192, 21);
+        jLabel5.setBounds(60, 370, 188, 22);
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
