@@ -14,7 +14,7 @@ import java.util.Date;
 public class BookBikeJ extends Bikes {
    
     private double rentalHours;
-    //Qty
+    private int Qty;
     private double priceBooking;
 
     /**
@@ -40,13 +40,41 @@ public class BookBikeJ extends Bikes {
      * @return the price
      */
     public double getPrice() {
-        return priceBooking;
+        return getPriceBooking();
     }
 
     /**
      * @param price the price to set
      */
     public void setPrice(double priceBooking) {
+        this.setPriceBooking(priceBooking);
+    }
+
+    /**
+     * @return the Qty
+     */
+    public int getQty() {
+        return Qty;
+    }
+
+    /**
+     * @param Qty the Qty to set
+     */
+    public void setQty(int Qty) {
+        this.Qty = Qty;
+    }
+
+    /**
+     * @return the priceBooking
+     */
+    public double getPriceBooking() {
+        return priceBooking;
+    }
+
+    /**
+     * @param priceBooking the priceBooking to set
+     */
+    public void setPriceBooking(double priceBooking) {
         this.priceBooking = priceBooking;
     }
     
