@@ -14,6 +14,7 @@ public class NewClass {
         Login s = new Login ();
       //  s.getEmail();
       s.getPassword();
+        System.out.println("");
     }
     
 }
