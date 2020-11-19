@@ -13,10 +13,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import project251.BookBike;
-import project251.ErrorMsg;
 import project251.MainInerface;
 
 /**
@@ -362,6 +362,7 @@ public class IfNew extends javax.swing.JFrame {
     - The password must not contain spaces
         */
         String upperCase = "(.*[A-Z].*)";
+        String LowUpperCase = "(.*[a-zA-Z].*)";
         String numbers = "(.*[0-9].*)";
         String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
         String space = "(.*[   ].*)";
@@ -370,17 +371,17 @@ public class IfNew extends javax.swing.JFrame {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher email = p.matcher(Email);
 
-        if (lastName.matches(upperCase) && email.matches() && userName.matches(upperCase) && userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8 && conPassword.equals(Password) && firstName.matches(upperCase)
-                && Address.matches(upperCase) && Address.matches(numbers) && phoneNum.matches("[0-9]{10}")) {
+        if (lastName.matches(LowUpperCase) && email.matches() && userName.matches(LowUpperCase) && userName.matches(numbers) && Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8 && conPassword.equals(Password) && firstName.matches(LowUpperCase)
+                && Address.matches(LowUpperCase) && Address.matches(numbers) && phoneNum.matches("[0-9]{10}")) {
 
             BookBike signUp = new BookBike();
             signUp.setVisible(true);
 
         }
         if (Email.isEmpty() && userName.isEmpty() && Password.isEmpty() && conPassword.isEmpty() && firstName.isEmpty() && lastName.isEmpty() && Address.isEmpty() && phoneNum.isEmpty()) {
-            ErrorMsg info = new ErrorMsg();
-            info.setVisible(true);
-        } else {
+              JOptionPane.showMessageDialog(null, "Invalid Register Detalis !" );  
+
+        } else  {
 
             emText.setText(null);
             Fname.setText(null);

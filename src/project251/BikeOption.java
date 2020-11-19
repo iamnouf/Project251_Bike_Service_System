@@ -147,6 +147,11 @@ public class BikeOption extends javax.swing.JFrame {
         jCheckBox4.setBounds(30, 170, 107, 23);
 
         jCheckBox5.setText("Commuter Bike");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jCheckBox5);
         jCheckBox5.setBounds(30, 190, 140, 23);
         getContentPane().add(jSpinner1);
@@ -200,6 +205,10 @@ public class BikeOption extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_jCheckBox1FocusGained
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     /**
      * @param args the command line arguments

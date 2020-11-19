@@ -77,6 +77,8 @@ public class MainInerface extends javax.swing.JFrame {
         
            IfLogIn log = new IfLogIn();
             log.setVisible(true);
+            
+          
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

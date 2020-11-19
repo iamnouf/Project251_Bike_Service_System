@@ -5,6 +5,12 @@
  */
 package project251;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author fatima
@@ -19,9 +25,23 @@ public class Login {
         this.userName = userName;
         this.Password = Password;
     }
+
+    Login() {
+    }
     public String getEmail() {
-        
-        return Email;
+          try {
+              Scanner sc = new Scanner (new File ("userData.txt"));
+              String [] line = sc.next().split(" ");
+
+              for (int i =0; line.length >= i ; i++){
+                  Email += line[i];
+                  System.out.println(Email);
+              }
+          } catch (FileNotFoundException ex) {
+              Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+          }
+                            return Email;
+
     }
 
     public void setEmail(String Email) {

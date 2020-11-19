@@ -6,10 +6,13 @@
 package project251;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import project251.BookBike;
-import project251.ErrorMsg;
 import project251.ForgetPassword;
 /**
  *
@@ -203,9 +206,13 @@ int price = 20;
     // Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-       
+         Scanner sc;
+    try {
+        sc = new Scanner (new File("userData.txt"));
+    
         String Email = EmailText.getText();
         String Password = PasswordText.getText();
+        String[] line = sc.next().split(" ");
         /* 
     - The password must be at least 8 characters long.
     - The password must contain at least:
@@ -214,7 +221,7 @@ int price = 20;
     - one character that is not alpha or numeric, such as ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' " , < . > / ?
     - The password must not contain spaces
         */
-        String upperCase = "(.*[A-Z].*)";
+        String upperCase = "(.*[a-zA-Z].*)";
         String numbers = "(.*[0-9].*)";
         String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
         String space = "(.*[   ].*)";
@@ -222,8 +229,15 @@ int price = 20;
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(Email);
+      	String correctPass = "";
 
-        if (m.matches()&& !Email.isEmpty() && !Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) && Password.length() > 8) {
+              for (int i =0; line.length >= i ; i++){
+                  correctPass += line[i];
+                  System.out.println(correctPass);
+              }
+              
+        if (m.matches()&& !Email.isEmpty() && !Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) 
+                && Email.equalsIgnoreCase(line[0])) {
 
             BookBike login = new BookBike();
             login.setVisible(true);
@@ -232,13 +246,16 @@ int price = 20;
         else {
      JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );  
 
+
             
             EmailText.setText(null);
             PasswordText.setText(null);
             
         }
 
-
+} catch (FileNotFoundException ex) {
+        Logger.getLogger(IfLogIn.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
