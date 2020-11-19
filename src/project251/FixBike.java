@@ -1,3 +1,5 @@
+package project251;
+
 
 import java.util.Date;
 import project251.Bikes;
@@ -12,7 +14,7 @@ import project251.Bikes;
  *
  * @author AmalA
  */
-public class FixBike extends Bikes{
+ public class FixBike  {
 
     private String description;
 

@@ -12,7 +12,8 @@ package project251;
 public class NewClass {
     public static void main (String args []){
         Login s = new Login ();
-        s.getEmail();
+      //  s.getEmail();
+      s.getPassword();
     }
     
 }

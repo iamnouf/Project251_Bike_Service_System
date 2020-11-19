@@ -425,7 +425,7 @@ public class IfNew extends javax.swing.JFrame {
         try{
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(file,true));
                 
-             emText.write(fileWriter);
+            emText.write(fileWriter);
             fileWriter.write(" ");
             Fname.write(fileWriter);
             fileWriter.write(" ");
@@ -440,9 +440,9 @@ public class IfNew extends javax.swing.JFrame {
             addressText.write(fileWriter);
             fileWriter.write(" ");
             phoneNumber.write(fileWriter);
-            fileWriter.newLine();
+           // fileWriter.newLine();
 
-                fileWriter.close();
+            fileWriter.close();
                 
             
          
