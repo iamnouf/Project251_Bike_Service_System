@@ -212,18 +212,20 @@ int price = 20;
          
         String Email = EmailText.getText();
         String Password = PasswordText.getText();
-          String[] line = sc.nextLine().split(" ");
-              
+        String[] line = sc.nextLine().split(" ");
+            
      
-        
-        if(line[0].equalsIgnoreCase(Email) && line[4].equalsIgnoreCase(Password)){
+            while (sc.hasNext()) {
+        if(line[0].equalsIgnoreCase(Email) ){
            BookBike login = new BookBike();
             login.setVisible(true);
-
-        } 
-        else {
+        }  else {
      JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );  
+            System.out.println(line[0].equalsIgnoreCase(Email));
+              System.out.println(line[4].equalsIgnoreCase(Password));
                 }
+        } 
+      
         /* 
     - The password must be at least 8 characters long.
     - The password must contain at least:
