@@ -5,27 +5,64 @@
  */
 package project251;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
  * @author AmalA
  */
 public class BookBikeJ extends Bikes {
-   
-    private double rentalHours;
-    private int Qty;
-    private ArrayList<Double> priceBooking;
-    private ArrayList<String> BikeList;
 
-    public BookBikeJ(String BikeType, Date date, double time, double price,double rentalHours,int Qty,double priceBooking) {
-        super(BikeType, date, time, price);
-         this.BikeList = new ArrayList<String>();
-         this.Qty=Qty;
-         this.rentalHours=rentalHours;
-         this.priceBooking=new ArrayList<Double>() ;
+    private int Qty;
+    ArrayList<String> rentalHours ;
+
+    Bikes total = new Bikes();
+
+    public BookBikeJ(ArrayList<String> BikeList, Date date, double time, double price, double rentalHours, int Qty, Double priceBooking) {
+        super(BikeList, date, time, price);
+        this.Qty = Qty;
+        this.rentalHours = new ArrayList<String>();
+        
     }
+
+    BookBikeJ() {
+    }
+
+   
+
+  
+    public Double getPriceBooking(ArrayList<String> BikeList) {
+    
+        Double cost;
+        if (BikeList.get(0) =="Street Bike"){
+             cost = 30.0;
+          return total.totalCost(cost);
+
+        }
+        else if (BikeList.get(1) == "Sport Bike"){
+             cost = 30.0;
+             return total.totalCost(cost);
+        }
+        else if (BikeList.get(2) == "Naked Bike"){
+             cost = 25.0;
+                 return total.totalCost(cost);
+        } else if (BikeList.get(3) == "Cruiser Bike"){
+             cost = 20.0;
+                 return total.totalCost(cost);
+        } else if (BikeList.get(4) == "Commuter Bike"){
+             cost = 20.0;
+                 return total.totalCost(cost);
+        }
+        else {
+            return cost = 0.0;
+        }
+    }
+
+
 
     public int getQty() {
         return Qty;
@@ -35,63 +72,56 @@ public class BookBikeJ extends Bikes {
         this.Qty = Qty;
     }
 
-    public ArrayList<Double> getPriceBooking() {
-        return priceBooking;
-    }
-
-    public void setPriceBooking(ArrayList<Double> priceBooking) {
-        this.priceBooking = priceBooking;
-    }
-
-    public ArrayList<String> getBikeList() {
-        return BikeList;
-    }
-
-    public void setBikeList(ArrayList<String> BikeList) {
-        this.BikeList = BikeList;
-    }
-       public String wholeOrder(){
-        String completeOrder = "";
-        for (int i=0;i < BikeList.size();i++)
-        {
-          completeOrder += this.BikeList.get(i);
-        }
-        return completeOrder;
-    }
     
-    /*Creates a single prices for the wole order by adding all the pizzas cost together. */
-    public Double orderCost(){
-        Double orderCost = 0.0;
-        for (int i=0;i < priceBooking.size();i++)
-        {
-          orderCost += this.priceBooking.get(i);
-        }
-        return orderCost;
-    } 
-    /*removes the passed pizza from the pizza array and cost array. */
-    public void removeOrder(int orderToRemove){
-        BikeList.remove(orderToRemove);
-        priceBooking.remove(orderToRemove);
-    }
 
-    public double getRentalHours() {
+//    public void setBikeList(ArrayList<String> BikeList) {
+//        this.BikeList = BikeList;
+//    }
+//       public String wholeOrder(){
+//        String completeOrder = "";
+//        for (int i=0;i < BikeList.size();i++)
+//        {
+//          completeOrder += this.BikeList.get(i);
+//        }
+//        return completeOrder;
+//    }
+
+//    /*Creates a single prices for the wole order by adding all the pizzas cost together. */
+//    public Double orderCost(){
+//        Double orderCost = 0.0;
+//        for (int i=0;i < priceBooking.size();i++)
+//        {
+//          orderCost += this.priceBooking.get(i);
+//        }
+//        return orderCost;
+//    } 
+//    /*removes the passed pizza from the pizza array and cost array. */
+//    public void removeOrder(int orderToRemove){
+//        BikeList.remove(orderToRemove);
+//        priceBooking.remove(orderToRemove);
+//    }
+
+    public ArrayList<String> getRentalHours() {
+        
+        rentalHours.add("2 hours");
+        rentalHours.add("3 hours");
+        rentalHours.add("4 hours");
+        rentalHours.add("5 hours");
+        rentalHours.add("6 hours");
+        rentalHours.add("7 hours");
+        rentalHours.add("8 hours");
+        rentalHours.add("9 hours");
+        rentalHours.add("10 hours");
+        rentalHours.add("11 hours");
+        rentalHours.add("12 hours");
+        rentalHours.add("524 hours");
+        
         return rentalHours;
     }
 
-    /**
-     * @param rentalHours the rentalHours to set
-     */
-    public void setRentalHours(double rentalHours) {
+    public void setRentalHours(ArrayList<String> rentalHours) {
         this.rentalHours = rentalHours;
     }
 
-<<<<<<< HEAD
-  
- 
-=======
-
-
->>>>>>> 25ec947ca5e47ebcea101d1ec4c7cdbc65f2d580
-    
 
 }

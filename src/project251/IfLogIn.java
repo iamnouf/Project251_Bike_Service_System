@@ -8,6 +8,7 @@ package project251;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,18 +89,17 @@ int price = 20;
         menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(333, 592));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Email");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 80, 41, 22);
+        jLabel1.setBounds(50, 80, 43, 21);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 160, 70, 22);
+        jLabel2.setBounds(40, 160, 69, 21);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -116,7 +116,7 @@ int price = 20;
 
         jLabel3.setText("Stay signed in");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 310, 99, 20);
+        jLabel3.setBounds(70, 310, 88, 16);
 
         jLabel4.setText("_________________________________________");
         getContentPane().add(jLabel4);
@@ -147,7 +147,7 @@ int price = 20;
             }
         });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 370, 188, 22);
+        jLabel5.setBounds(60, 370, 192, 21);
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
@@ -206,67 +206,46 @@ int price = 20;
     // Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-         Scanner sc;
-    try {
-        sc = new Scanner (new File("userData.txt"));
-         
-        String Email = EmailText.getText();
-        String Password = PasswordText.getText();
-          String[] line = sc.nextLine().split(" ");
-              
-     
+
+//            Scanner read = new Scanner(new File("userData.txt"));
+//            ArrayList al = new ArrayList();
+//            System.out.println("All elements:       " + al);
+//            System.out.println("Number of elements: " + al.size() + "\n");
+//         //   System.out.println(read.hasNext());
+//            while (read.hasNext()) {
+//                     al.remove("A");
+//            }
         
-        if(line[0].equalsIgnoreCase(Email) && line[4].equalsIgnoreCase(Password)){
-           BookBike login = new BookBike();
-            login.setVisible(true);
+       String Email = EmailText.getText();
+        String Password = PasswordText.getText();
+//        String[] line = sc.nextLine().split(" ");
+          Login log = new Login();
+            
 
-        } 
-        else {
-     JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );  
-                }
-        /* 
-    - The password must be at least 8 characters long.
-    - The password must contain at least:
-    - one alpha character [a-zA-Z]
-    - one numeric character [0-9]
-    - one character that is not alpha or numeric, such as ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' " , < . > / ?
-    - The password must not contain spaces
-        */
-        String upperCase = "(.*[a-zA-Z].*)";
-        String numbers = "(.*[0-9].*)";
-        String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
-        String space = "(.*[   ].*)";
-
-        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-        java.util.regex.Matcher m = p.matcher(Email);
-      	String correctPass = "";
-
-              for (int i =0; line.length >= i ; i++){
-                  correctPass += line[i];
-                  System.out.println(correctPass);
-              }
-              
-        if (m.matches()&& !Email.isEmpty() && !Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) 
-                && Email.equalsIgnoreCase(line[0])) {
+            
+       if (log.EmailsList().contains(Email) && log.PasswordList().contains(Password)&&!Email.isEmpty()&&!Password.isEmpty()) {
 
             BookBike login = new BookBike();
             login.setVisible(true);
-
-        } 
+              }
         else {
-     JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );  
-
-
+            
+            JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );
+            
+             System.out.println(log.EmailsList().contains(Email));
+            System.out.println(log.fileList.contains(Password));       
             
             EmailText.setText(null);
             PasswordText.setText(null);
             
+        
         }
 
-} catch (FileNotFoundException ex) {
-        Logger.getLogger(IfLogIn.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    
+
+    
+ 
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
@@ -378,7 +357,7 @@ int price = 20;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField EmailText;
+    public static javax.swing.JTextField EmailText;
     private javax.swing.JPasswordField PasswordText;
     private java.awt.Checkbox checkbox1;
     private javax.swing.JButton jButton1;

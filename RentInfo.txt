@@ -6,3 +6,12 @@ Bike Type : Sport Bike Qty : 0
 Bike Type : Street Bike Qty : 2Rental Hours : comboBoxChanged
 Bike Type : Street Bike Qty : 1 Rental Hours : null
 Bike Type : Street Bike Qty : 2 Rental Hours : comboBoxChanged
+Bike Type : Street Bike Price : 0.0 Qty : 1 Date & Time :
+
+
+
+
+
+
+
+

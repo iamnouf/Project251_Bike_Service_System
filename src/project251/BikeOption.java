@@ -7,12 +7,21 @@ package project251;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
 import java.awt.im.InputContext;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.control.ComboBox;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -50,12 +59,8 @@ public class BikeOption extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
         jSpinner1 = new javax.swing.JSpinner();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(333, 592));
@@ -69,17 +74,17 @@ public class BikeOption extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Quantity:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 220, 68, 21);
+        jLabel2.setBounds(30, 150, 68, 21);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Rental Hours");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 290, 96, 21);
+        jLabel3.setBounds(30, 220, 96, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Date & Time");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 360, 120, 21);
+        jLabel4.setBounds(30, 290, 120, 21);
 
         DateTime.setForeground(new java.awt.Color(204, 204, 204));
         DateTime.setText("Nov 7 at 7:30 PM");
@@ -97,7 +102,7 @@ public class BikeOption extends javax.swing.JFrame {
             }
         });
         getContentPane().add(DateTime);
-        DateTime.setBounds(30, 390, 282, 26);
+        DateTime.setBounds(30, 320, 282, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("Done");
@@ -107,9 +112,9 @@ public class BikeOption extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(130, 480, 79, 29);
+        jButton1.setBounds(130, 410, 79, 29);
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(-60, 440, 790, 610);
+        jLabel6.setBounds(-60, 370, 790, 610);
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
@@ -126,46 +131,15 @@ public class BikeOption extends javax.swing.JFrame {
         jButton3.setBounds(10, 10, 50, 40);
 
         jComboBox3.setMaximumRowCount(24);
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 hour", "2 hours", "3 hours", "4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours", "11 hours", "12 hours", "24 hours" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2 hours", "3 hours", "4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours", "11 hours", "12 hours", "24 hours" }));
         getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(30, 320, 112, 27);
-
-        jCheckBox1.setText("Street Bike");
-        jCheckBox1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jCheckBox1FocusGained(evt);
-            }
-        });
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox1);
-        jCheckBox1.setBounds(30, 110, 240, 23);
-
-        jCheckBox2.setText("Sport Bike");
-        getContentPane().add(jCheckBox2);
-        jCheckBox2.setBounds(30, 130, 95, 23);
-
-        jCheckBox3.setText("Naked Bike");
-        getContentPane().add(jCheckBox3);
-        jCheckBox3.setBounds(30, 150, 102, 23);
-
-        jCheckBox4.setText("Cruiser Bike");
-        getContentPane().add(jCheckBox4);
-        jCheckBox4.setBounds(30, 170, 107, 23);
-
-        jCheckBox5.setText("Commuter Bike");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox5);
-        jCheckBox5.setBounds(30, 190, 140, 23);
+        jComboBox3.setBounds(30, 250, 150, 27);
         getContentPane().add(jSpinner1);
-        jSpinner1.setBounds(40, 250, 40, 26);
+        jSpinner1.setBounds(40, 180, 40, 26);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Street Bike", "Sport Bike", "Naked Bike", "Cruiser Bike", "Commuter Bike" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(30, 120, 150, 27);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,93 +170,94 @@ public class BikeOption extends javax.swing.JFrame {
         // TODO add your handling code here:
   
         PayInterface pay = new PayInterface();
-            pay.setVisible(true);
-            
-            String BikeType1 = jCheckBox1.getText();
-            String BikeType2 = jCheckBox2.getText();
-            String BikeType3 = jCheckBox3.getText();
-            String BikeType4 = jCheckBox4.getText();
-            String BikeType5 = jCheckBox5.getText();
-            int qty = (int) jSpinner1.getValue();
-            InputContext RentalHours = jComboBox3.getInputContext();
-            String dateTime = DateTime.getText();
-            
-             JFrame frame = new JFrame("Demo");
-        frame.setLayout(new FlowLayout());
- 
-        jCheckBox1.setText(BikeType1);
-        jCheckBox2.setText(BikeType2);
-        jCheckBox3.setText(BikeType3);
-        jCheckBox4.setText(BikeType4);
-        jCheckBox5.setText(BikeType5);
+        pay.setVisible(true);
+         BookBikeJ book = new  BookBikeJ();
+        String Bike = (String) jComboBox1.getSelectedItem();
+        ArrayList<String> jComboBox1 = new ArrayList<String>();
+        jComboBox1.add("Street Bike");
+        jComboBox1.add("Sport Bike");
+        jComboBox1.add("Naked Bike");
+        jComboBox1.add("Cruiser Bike");
+        jComboBox1.add("Commuter Bike");
+          
+        int qty = (int) jSpinner1.getValue();
         jSpinner1.setValue(qty);
-       // jComboBox3.setInputContext(RentalHours);
-        DateTime.setText(dateTime);
+        
+        String rent = (String) jComboBox3.getSelectedItem();
+        ArrayList<String> jComboBox3 = new ArrayList<String>();
+                jComboBox3.add("-");
+        jComboBox3.add("-");
+
+        jComboBox3.add("2 hours");
+        jComboBox3.add("3 hours");
+        jComboBox3.add("4 hours");
+        jComboBox3.add("5 hours");
+        jComboBox3.add("6 hours");
+        jComboBox3.add("7 hours");
+        jComboBox3.add("8 hours");
+        jComboBox3.add("9 hours");
+        jComboBox3.add("10 hours");
+        jComboBox3.add("11 hours");
+        jComboBox3.add("12 hours");
+        jComboBox3.add("24 hours");
+
+        String DateandTime = DateTime.getText();
+        DateTime.setText(DateandTime);
 
         String fileRent = "RentInfo.txt";
         try {
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
-
-            if (jCheckBox1.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1);
-
-            } else if (jCheckBox2.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2);
-            } else if (jCheckBox3.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType3);
-            } else if (jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType4);
-            } else if (jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType5);
-            } else if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType2);
-
-            } else if (jCheckBox1.isSelected() && jCheckBox3.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
-
-            } else if (jCheckBox1.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType4);
-
-            } else if (jCheckBox1.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType5);
-
-            } else if (jCheckBox2.isSelected() && jCheckBox3.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType3);
-
-            } else if (jCheckBox2.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType4);
-
-            } else if (jCheckBox2.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType5);
-
-            } else if (jCheckBox3.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType3 + " , " + BikeType4);
-
-            } else if (jCheckBox3.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
-
-            } else if (jCheckBox4.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
-
-            }else{
-                              JOptionPane.showMessageDialog(null, "Invalid Detalis !" );  
-
-            }
-                      fileWriter.write(" ");
-
-          fileWriter.write("Qty : " + qty);
-          fileWriter.write(" Rental Hours : " + RentalHours);
-
-           
+          
+            for (int i = 0 ; jComboBox3.size() > i ; i++){
+        if (jComboBox1.get(0) == Bike && jComboBox3.get(i).equals(rent) ) {
+         System.out.println("Bike = " + jComboBox1.get(0)+" , Price : "+book.getPriceBooking(jComboBox1)*i*qty + " , Qty : "+qty+" , Rental Hours : "+rent+" , Date&Time : " + DateandTime);
             
-                            fileWriter.newLine();
+        } else if (jComboBox1.get(1) == Bike) {
+           fileWriter.write("Bike = " + jComboBox1.get(1)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
 
-                fileWriter.close();
+        } else if (jComboBox1.get(2) == Bike) {
+          fileWriter.write("Bike = " + jComboBox1.get(2)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
 
+        } else if (jComboBox1.get(3) == Bike) {
+          fileWriter.write("Bike = " + jComboBox1.get(3)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
+
+        } else if (jComboBox1.get(4) == Bike) {
+            fileWriter.write("Bike = " + jComboBox1.get(4)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
+
+        }
+            }
+            fileWriter.newLine();
+   
+////        BikeList.addActionListener((ActionListener) this);
+////         System.out.println(BikeList.getSelectedItem());
+//            int qty = (int) jSpinner1.getValue();
+////            ArrayList<String> RentalHours = new ArrayList<>();
+////            RentalHours = (ArrayList<String>) jComboBox3.getModel();
+//            String dateTime = DateTime.getText();
+//            
+//        JFrame frame = new JFrame("Demo");
+//        frame.setLayout(new FlowLayout());
+//        ArrayList<String> fileList = new ArrayList<>();
+//
+////        jComboBox3.setModel((ComboBoxModel<String>) RentalHours);
+//        DateTime.setText(dateTime);
+//
+//        String fileRent = "RentInfo.txt";
+//        try {
+//            BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
+//               if (jComboBox1.is.equals(BikeNames[1]) ){
+//                  System.out.println("Bike Type : "+BikeNames[1]);
+//                  
+//               }
+//  
+//            
+//                            fileWriter.newLine();
+//
+//                fileWriter.close();
+//
             }catch (IOException ex) {
            
            }
-
 
             
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -290,20 +265,6 @@ public class BikeOption extends javax.swing.JFrame {
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DateTimeActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jCheckBox1FocusGained
-
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,11 +306,7 @@ public class BikeOption extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

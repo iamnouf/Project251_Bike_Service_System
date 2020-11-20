@@ -71,9 +71,12 @@ public class IfNew extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(333, 592));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -130,7 +133,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Confirm Password ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 350, 160, 21);
+        jLabel4.setBounds(50, 390, 160, 20);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("First Name ");
@@ -171,7 +174,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Address");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 400, 70, 21);
+        jLabel7.setBounds(50, 440, 70, 21);
 
         addressText.setForeground(new java.awt.Color(204, 204, 204));
         addressText.setText("Building number , street name ...etc");
@@ -190,7 +193,7 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addressText);
-        addressText.setBounds(40, 420, 270, 26);
+        addressText.setBounds(40, 460, 270, 26);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Phone");
@@ -208,7 +211,7 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(phoneNumber);
-        phoneNumber.setBounds(40, 470, 270, 26);
+        phoneNumber.setBounds(40, 510, 270, 26);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("REGISTER");
@@ -218,9 +221,9 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(110, 530, 130, 29);
+        jButton1.setBounds(110, 570, 130, 29);
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(280, 530, 760, 740);
+        jLabel9.setBounds(280, 570, 760, 740);
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jButton2.setText("<");
@@ -266,12 +269,12 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(confirmPassword);
-        confirmPassword.setBounds(40, 370, 270, 26);
+        confirmPassword.setBounds(40, 410, 270, 26);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel10.setText("Phone Number");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(50, 450, 140, 21);
+        jLabel10.setBounds(50, 490, 140, 21);
 
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 0, 0));
@@ -301,19 +304,19 @@ public class IfNew extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 0, 0));
         jLabel15.setText("*");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(190, 350, 9, 22);
+        jLabel15.setBounds(190, 390, 9, 22);
 
         jLabel16.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 0, 0));
         jLabel16.setText("*");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(170, 370, 9, 30);
+        jLabel16.setBounds(170, 410, 9, 30);
 
         jLabel17.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 0, 0));
         jLabel17.setText("*");
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(110, 400, 9, 22);
+        jLabel17.setBounds(110, 440, 9, 22);
 
         jLabel18.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 0));
@@ -325,7 +328,32 @@ public class IfNew extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 0, 0));
         jLabel19.setText("*");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(160, 450, 10, 22);
+        jLabel19.setBounds(160, 490, 10, 22);
+
+        jLabel20.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setText("- The password must be at least 8 characters long");
+        jLabel20.setToolTipText("");
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(40, 350, 380, 10);
+
+        jLabel21.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel21.setText("- one alpha character [a-zA-Z]");
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(40, 360, 170, 10);
+
+        jLabel22.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel22.setText("- one numeric character [0-9]");
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(40, 370, 160, 10);
+
+        jLabel23.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel23.setText("- contain at least on symbol ");
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(40, 380, 170, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -342,6 +370,7 @@ public class IfNew extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
            BookBike main = new BookBike();
             main.setVisible(true);
+            Login log=new Login();
             
         String Email = emText.getText();
         String firstName = Fname.getText();
@@ -378,11 +407,20 @@ public class IfNew extends javax.swing.JFrame {
             signUp.setVisible(true);
 
         }
-        if (Email.isEmpty() && userName.isEmpty() && Password.isEmpty() && conPassword.isEmpty() && firstName.isEmpty() && lastName.isEmpty() && Address.isEmpty() && phoneNum.isEmpty()) {
+        
+        if(log.EmailsList().contains(Email)){
+           JOptionPane.showMessageDialog(null, "Email Already Exists" );  
+            emText.setText(null);
+
+        }else if(log.userNameList().contains(userName)){
+                          JOptionPane.showMessageDialog(null, "Username Already Exists" );  
+            username.setText(null);
+
+        }else if (Email.isEmpty() && userName.isEmpty() && Password.isEmpty() && conPassword.isEmpty() && firstName.isEmpty() && lastName.isEmpty() && Address.isEmpty() && phoneNum.isEmpty()) {
               JOptionPane.showMessageDialog(null, "Invalid Register Detalis !" );  
 
         } else  {
-
+              JOptionPane.showMessageDialog(null, "Invalid Register Detalis !" );  
             emText.setText(null);
             Fname.setText(null);
             Lname.setText(null);
@@ -657,7 +695,7 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JTextField Lname;
     private javax.swing.JTextField addressText;
     private javax.swing.JPasswordField confirmPassword;
-    private javax.swing.JTextField emText;
+    public static javax.swing.JTextField emText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -672,6 +710,10 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
