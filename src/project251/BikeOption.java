@@ -26,6 +26,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import project251.Thanku;
+
 /**
  *
  * @author AmalA
@@ -37,7 +38,7 @@ public class BikeOption extends javax.swing.JFrame {
      */
     public BikeOption() {
         initComponents();
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -146,13 +147,13 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         BookBike main = new BookBike();
-            main.setVisible(true);
+        BookBike main = new BookBike();
+        main.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void DateTimeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusGained
         // TODO add your handling code here:
-          if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
+        if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
             DateTime.setText("");
             DateTime.setForeground(new Color(0, 0, 0));
         }
@@ -160,7 +161,7 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void DateTimeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusLost
         // TODO add your handling code here:
-         if (DateTime.getText().equals("")) {
+        if (DateTime.getText().equals("")) {
             DateTime.setText("Nov 7 at 7:30 PM");
             DateTime.setForeground(new Color(0, 0, 0));
         }
@@ -168,9 +169,10 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-  
+
         PayInterface pay = new PayInterface();
         pay.setVisible(true);
+<<<<<<< HEAD
          BookBikeJ book = new  BookBikeJ();
         String Bike = (String) jComboBox1.getSelectedItem();
         ArrayList<String> jComboBox1 = new ArrayList<String>();
@@ -203,6 +205,38 @@ public class BikeOption extends javax.swing.JFrame {
 
         String DateandTime = DateTime.getText();
         DateTime.setText(DateandTime);
+=======
+
+        //BikeType
+        String BikeType1 = jCheckBox1.getText();
+        String BikeType2 = jCheckBox2.getText();
+        String BikeType3 = jCheckBox3.getText();
+        String BikeType4 = jCheckBox4.getText();
+        String BikeType5 = jCheckBox5.getText();
+        int qty = (int) jSpinner1.getValue();
+
+        //RentalHours
+        String[] RentalHours = new String[]{"1 hour", "2 hours","3 hours","4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours"
+            , "11 hours","12 hours","24 hours"};
+        JComboBox<String> hoursList = new JComboBox<>(RentalHours);
+        // get the selected types:
+        int selectedhours = (int) hoursList.getSelectedItem();
+        System.out.println("RentalHours: " + selectedhours);
+        //Date
+        String dateTime = DateTime.getText();
+
+        JFrame frame = new JFrame("Demo");
+        frame.setLayout(new FlowLayout());
+
+        jCheckBox1.setText(BikeType1);
+        jCheckBox2.setText(BikeType2);
+        jCheckBox3.setText(BikeType3);
+        jCheckBox4.setText(BikeType4);
+        jCheckBox5.setText(BikeType5);
+        jSpinner1.setValue(qty);
+        // jComboBox3.setInputContext(RentalHours);
+        DateTime.setText(dateTime);
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
         String fileRent = "RentInfo.txt";
         try {
@@ -215,6 +249,7 @@ public class BikeOption extends javax.swing.JFrame {
         } else if (jComboBox1.get(1) == Bike) {
            fileWriter.write("Bike = " + jComboBox1.get(1)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
 
+<<<<<<< HEAD
         } else if (jComboBox1.get(2) == Bike) {
           fileWriter.write("Bike = " + jComboBox1.get(2)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
 
@@ -223,9 +258,55 @@ public class BikeOption extends javax.swing.JFrame {
 
         } else if (jComboBox1.get(4) == Bike) {
             fileWriter.write("Bike = " + jComboBox1.get(4)+" Price : "+book.getPriceBooking(jComboBox1)*i*qty+ " , Qty : "+qty+" , Rental Hours : "+rent+" Date&Time : ");
+=======
+            if (jCheckBox1.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1);
+
+            } else if (jCheckBox2.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType2);
+            } else if (jCheckBox3.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType3);
+            } else if (jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType4);
+            } else if (jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType5);
+            } else if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType2);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox3.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType3);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType4);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType5);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox3.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType2 + " , " + BikeType3);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType2 + " , " + BikeType4);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType2 + " , " + BikeType5);
+
+            } else if (jCheckBox3.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType3 + " , " + BikeType4);
+
+            } else if (jCheckBox3.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType3);
+
+            } else if (jCheckBox4.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType3);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Detalis !");
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
         }
             }
+<<<<<<< HEAD
             fileWriter.newLine();
    
 ////        BikeList.addActionListener((ActionListener) this);
@@ -260,12 +341,46 @@ public class BikeOption extends javax.swing.JFrame {
            }
 
             
+=======
+            fileWriter.write(" ");
+
+            fileWriter.write("Qty: " + qty);
+            //    fileWriter.write("Rental Hours: " + RentalHours);
+            fileWriter.write("Date: " + dateTime);
+
+            fileWriter.newLine();
+
+            fileWriter.close();
+
+        } catch (IOException ex) {
+
+        }
+
+
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DateTimeActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jCheckBox1FocusGained
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
     /**
      * @param args the command line arguments
      */

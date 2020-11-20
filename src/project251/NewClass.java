@@ -15,6 +15,9 @@ public class NewClass {
       //  s.getEmail();
       s.getPassword();
         System.out.println("");
+        
+       // BookBikeJ b = new BookBikeJ();
+        
     }
     
 }

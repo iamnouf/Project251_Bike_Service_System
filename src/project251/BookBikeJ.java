@@ -6,10 +6,19 @@
 package project251;
 
 import java.io.File;
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+=======
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
 /**
  *
@@ -20,7 +29,27 @@ public class BookBikeJ extends Bikes {
     private int Qty;
     ArrayList<String> rentalHours ;
 
+<<<<<<< HEAD
     Bikes total = new Bikes();
+=======
+    public int getQty() {
+         ArrayList<String> fileList = new ArrayList<>();
+        try {
+            Scanner read = new Scanner(new File("userData.txt"));
+            //  String line;
+            while (read.hasNext()) {
+                String[] line = read.nextLine().split(" ");
+                fileList.add(line[0]);
+                System.out.println(fileList);
+
+            }
+            read.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return Qty;
+    }
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
     public BookBikeJ(ArrayList<String> BikeList, Date date, double time, double price, double rentalHours, int Qty, Double priceBooking) {
         super(BikeList, date, time, price);
@@ -123,5 +152,9 @@ public class BookBikeJ extends Bikes {
         this.rentalHours = rentalHours;
     }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
 }

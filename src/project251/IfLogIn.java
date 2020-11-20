@@ -206,6 +206,7 @@ int price = 20;
     // Login
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+<<<<<<< HEAD
 
 //            Scanner read = new Scanner(new File("userData.txt"));
 //            ArrayList al = new ArrayList();
@@ -224,6 +225,53 @@ int price = 20;
 
             
        if (log.EmailsList().contains(Email) && log.PasswordList().contains(Password)&&!Email.isEmpty()&&!Password.isEmpty()) {
+=======
+         Scanner sc;
+    try {
+        sc = new Scanner (new File("userData.txt"));
+         
+        String Email = EmailText.getText();
+        String Password = PasswordText.getText();
+        String[] line = sc.nextLine().split(" ");
+            
+     
+            while (sc.hasNext()) {
+        if(line[0].equalsIgnoreCase(Email) ){
+           BookBike login = new BookBike();
+            login.setVisible(true);
+        }  else {
+     JOptionPane.showMessageDialog(null, "Invalid Login Detalis !" );  
+            System.out.println(line[0].equalsIgnoreCase(Email));
+              System.out.println(line[4].equalsIgnoreCase(Password));
+                }
+        } 
+      
+        /* 
+    - The password must be at least 8 characters long.
+    - The password must contain at least:
+    - one alpha character [a-zA-Z]
+    - one numeric character [0-9]
+    - one character that is not alpha or numeric, such as ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' " , < . > / ?
+    - The password must not contain spaces
+        */
+        String upperCase = "(.*[a-zA-Z].*)";
+        String numbers = "(.*[0-9].*)";
+        String specialChars = "(.*[ ! # @ $ % ^ & * ( ) - _ = + [ ] ; : ' \" , < . > / ?].*)";
+        String space = "(.*[   ].*)";
+
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(Email);
+      	String correctPass = "";
+
+              for (int i =0; line.length >= i ; i++){
+                  correctPass += line[i];
+                  System.out.println(correctPass);
+              }
+              
+        if (m.matches()&& !Email.isEmpty() && !Password.isEmpty()&& Password.matches(upperCase) && Password.matches(numbers) && Password.matches(specialChars) && !Password.matches(space) 
+                && Email.equalsIgnoreCase(line[0])) {
+>>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
             BookBike login = new BookBike();
             login.setVisible(true);
