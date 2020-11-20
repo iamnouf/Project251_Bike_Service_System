@@ -5,8 +5,13 @@
  */
 package project251;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,6 +33,20 @@ public class BookBikeJ extends Bikes {
     }
 
     public int getQty() {
+         ArrayList<String> fileList = new ArrayList<>();
+        try {
+            Scanner read = new Scanner(new File("userData.txt"));
+            //  String line;
+            while (read.hasNext()) {
+                String[] line = read.nextLine().split(" ");
+                fileList.add(line[0]);
+                System.out.println(fileList);
+
+            }
+            read.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return Qty;
     }
 
@@ -85,13 +104,6 @@ public class BookBikeJ extends Bikes {
         this.rentalHours = rentalHours;
     }
 
-<<<<<<< HEAD
-  
- 
-=======
-
-
->>>>>>> 25ec947ca5e47ebcea101d1ec4c7cdbc65f2d580
     
 
 }

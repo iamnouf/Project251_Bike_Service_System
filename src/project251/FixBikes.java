@@ -6,6 +6,11 @@
 package project251;
 
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -73,6 +78,11 @@ public class FixBikes extends javax.swing.JFrame {
         jCheckBox5.setText("Drum Brakes");
 
         jButton1.setText("NEXT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,7 +149,7 @@ public class FixBikes extends javax.swing.JFrame {
 
     private void DateTimeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusGained
         // TODO add your handling code here:
-            if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
+        if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
             DateTime.setText("");
             DateTime.setForeground(new Color(0, 0, 0));
         }
@@ -147,11 +157,88 @@ public class FixBikes extends javax.swing.JFrame {
 
     private void DateTimeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusLost
         // TODO add your handling code here:
-          if (DateTime.getText().equals("")) {
+        if (DateTime.getText().equals("")) {
             DateTime.setText("Nov 7 at 7:30 PM");
             DateTime.setForeground(new Color(0, 0, 0));
         }
     }//GEN-LAST:event_DateTimeFocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        //Bike type
+        String[] bikeTypes = new String[]{"Street Bike", "Sport Bike",
+            "Naked Bike", "Cruiser Bike", "Commuter Bike"};
+        JComboBox<String> bikeList = new JComboBox<>(bikeTypes);
+          // get the selected types:
+        String selectedBike = (String) bikeList.getSelectedItem();
+        System.out.println("Bike Type: " + selectedBike);
+        //Date
+        String dateTime = DateTime.getText();
+        //Problems
+        String problem1 = jCheckBox1.getText();
+        String problem2 = jCheckBox2.getText();
+        String problem3 = jCheckBox3.getText();
+        String problem4 = jCheckBox4.getText();
+        String problem5 = jCheckBox5.getText();
+
+        String fixBikefile = "fixBikefile.txt";
+        try {
+            BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fixBikefile, true));
+
+            if (jCheckBox1.isSelected()) {
+                fileWriter.write("Problem: " + problem1);
+
+            } else if (jCheckBox2.isSelected()) {
+                fileWriter.write("Problem: " + problem2);
+            } else if (jCheckBox3.isSelected()) {
+                fileWriter.write("Problem: " + problem3);
+            } else if (jCheckBox4.isSelected()) {
+                fileWriter.write("Problem: " + problem4);
+            } else if (jCheckBox5.isSelected()) {
+                fileWriter.write("Problem: " + problem5);
+            } else if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
+                fileWriter.write("Problem: " + problem1 + " , " + problem2);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox3.isSelected()) {
+                fileWriter.write("Problem: " + problem1 + " , " + problem3);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Problem: " + problem1 + " , " + problem4);
+
+            } else if (jCheckBox1.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Problem: " + problem1 + " , " + problem5);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox3.isSelected()) {
+                fileWriter.write("Problem: " + problem2 + " , " + problem3);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Problem: " + problem2 + " , " + problem4);
+
+            } else if (jCheckBox2.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Problem: " + problem2 + " , " + problem5);
+
+            } else if (jCheckBox3.isSelected() && jCheckBox4.isSelected()) {
+                fileWriter.write("Problem: " + problem3 + " , " + problem4);
+
+            } else if (jCheckBox3.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Problem: " + problem3 + " , " + problem5);
+
+            } else if (jCheckBox4.isSelected() && jCheckBox5.isSelected()) {
+                fileWriter.write("Problem: " + problem4 + " , " + problem5);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Detalis !");
+
+            }
+            fileWriter.write(" ");
+            fileWriter.write("Date: " + dateTime);
+            fileWriter.newLine();
+            fileWriter.close();
+        } catch (IOException ex) {
+
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

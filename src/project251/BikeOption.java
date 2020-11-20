@@ -13,10 +13,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 import javax.swing.Icon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import project251.Thanku;
+
 /**
  *
  * @author AmalA
@@ -28,7 +30,7 @@ public class BikeOption extends javax.swing.JFrame {
      */
     public BikeOption() {
         initComponents();
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -172,13 +174,13 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         BookBike main = new BookBike();
-            main.setVisible(true);
+        BookBike main = new BookBike();
+        main.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void DateTimeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusGained
         // TODO add your handling code here:
-          if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
+        if (DateTime.getText().equals("Nov 7 at 7:30 PM")) {
             DateTime.setText("");
             DateTime.setForeground(new Color(0, 0, 0));
         }
@@ -186,7 +188,7 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void DateTimeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DateTimeFocusLost
         // TODO add your handling code here:
-         if (DateTime.getText().equals("")) {
+        if (DateTime.getText().equals("")) {
             DateTime.setText("Nov 7 at 7:30 PM");
             DateTime.setForeground(new Color(0, 0, 0));
         }
@@ -194,29 +196,38 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-  
+
         PayInterface pay = new PayInterface();
-            pay.setVisible(true);
-            
-            String BikeType1 = jCheckBox1.getText();
-            String BikeType2 = jCheckBox2.getText();
-            String BikeType3 = jCheckBox3.getText();
-            String BikeType4 = jCheckBox4.getText();
-            String BikeType5 = jCheckBox5.getText();
-            int qty = (int) jSpinner1.getValue();
-            InputContext RentalHours = jComboBox3.getInputContext();
-            String dateTime = DateTime.getText();
-            
-             JFrame frame = new JFrame("Demo");
+        pay.setVisible(true);
+
+        //BikeType
+        String BikeType1 = jCheckBox1.getText();
+        String BikeType2 = jCheckBox2.getText();
+        String BikeType3 = jCheckBox3.getText();
+        String BikeType4 = jCheckBox4.getText();
+        String BikeType5 = jCheckBox5.getText();
+        int qty = (int) jSpinner1.getValue();
+
+        //RentalHours
+        String[] RentalHours = new String[]{"1 hour", "2 hours","3 hours","4 hours", "5 hours", "6 hours", "7 hours", "8 hours", "9 hours", "10 hours"
+            , "11 hours","12 hours","24 hours"};
+        JComboBox<String> hoursList = new JComboBox<>(RentalHours);
+        // get the selected types:
+        int selectedhours = (int) hoursList.getSelectedItem();
+        System.out.println("RentalHours: " + selectedhours);
+        //Date
+        String dateTime = DateTime.getText();
+
+        JFrame frame = new JFrame("Demo");
         frame.setLayout(new FlowLayout());
- 
+
         jCheckBox1.setText(BikeType1);
         jCheckBox2.setText(BikeType2);
         jCheckBox3.setText(BikeType3);
         jCheckBox4.setText(BikeType4);
         jCheckBox5.setText(BikeType5);
         jSpinner1.setValue(qty);
-       // jComboBox3.setInputContext(RentalHours);
+        // jComboBox3.setInputContext(RentalHours);
         DateTime.setText(dateTime);
 
         String fileRent = "RentInfo.txt";
@@ -224,67 +235,65 @@ public class BikeOption extends javax.swing.JFrame {
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
 
             if (jCheckBox1.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1);
+                fileWriter.write("Bike Type: " + BikeType1);
 
             } else if (jCheckBox2.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2);
+                fileWriter.write("Bike Type: " + BikeType2);
             } else if (jCheckBox3.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType3);
+                fileWriter.write("Bike Type: " + BikeType3);
             } else if (jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType4);
+                fileWriter.write("Bike Type: " + BikeType4);
             } else if (jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType5);
+                fileWriter.write("Bike Type: " + BikeType5);
             } else if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType2);
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType2);
 
             } else if (jCheckBox1.isSelected() && jCheckBox3.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType3);
 
             } else if (jCheckBox1.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType4);
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType4);
 
             } else if (jCheckBox1.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType5);
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType5);
 
             } else if (jCheckBox2.isSelected() && jCheckBox3.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType3);
+                fileWriter.write("Bike Type: " + BikeType2 + " , " + BikeType3);
 
             } else if (jCheckBox2.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType4);
+                fileWriter.write("Bike Type: " + BikeType2 + " , " + BikeType4);
 
             } else if (jCheckBox2.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType2 + " , " + BikeType5);
+                fileWriter.write("Bike Type: " + BikeType2 + " , " + BikeType5);
 
             } else if (jCheckBox3.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType3 + " , " + BikeType4);
+                fileWriter.write("Bike Type: " + BikeType3 + " , " + BikeType4);
 
             } else if (jCheckBox3.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType3);
 
             } else if (jCheckBox4.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Bike Type : " + BikeType1 + " , " + BikeType3);
+                fileWriter.write("Bike Type: " + BikeType1 + " , " + BikeType3);
 
-            }else{
-                              JOptionPane.showMessageDialog(null, "Invalid Detalis !" );  
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Detalis !");
 
             }
-                      fileWriter.write(" ");
+            fileWriter.write(" ");
 
-          fileWriter.write("Qty : " + qty);
-          fileWriter.write(" Rental Hours : " + RentalHours);
+            fileWriter.write("Qty: " + qty);
+            //    fileWriter.write("Rental Hours: " + RentalHours);
+            fileWriter.write("Date: " + dateTime);
 
-           
-            
-                            fileWriter.newLine();
+            fileWriter.newLine();
 
-                fileWriter.close();
+            fileWriter.close();
 
-            }catch (IOException ex) {
-           
-           }
+        } catch (IOException ex) {
+
+        }
 
 
-            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
@@ -293,7 +302,7 @@ public class BikeOption extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
