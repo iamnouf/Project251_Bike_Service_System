@@ -360,8 +360,8 @@ public class PayInterface extends javax.swing.JFrame {
 //        jTextField5.setText(BookBikeJ.getPriceBooking(BikeOption.jComboBox1.getSelectedItem())*BikeOption.i*BikeOption.qty));
         
         BookBikeJ book = new BookBikeJ();
-        BikeOption pay = new BikeOption();
-        jTextField5.setText(book.getPriceBooking(pay.jComboBox1.getSelectedItem(), WIDTH, WIDTH));
+//        BikeOption pay = new BikeOption();
+//        jTextField5.setText(book.getPriceBooking(BikeOption.jComboBox1, BikeOption.jSpinner1.getValue(), BikeOption.jComboBox3.get));
     }//GEN-LAST:event_jButton2ActionPerformed
     
     /**

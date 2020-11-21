@@ -33,7 +33,6 @@ import project251.Thanku;
  */
 
 public class BikeOption extends javax.swing.JFrame {
-      static ArrayList<String> jComboBox1 = new ArrayList<String>();
 
     /**
      * Creates new form BikeOption
@@ -173,9 +172,10 @@ public class BikeOption extends javax.swing.JFrame {
 
         PayInterface pay = new PayInterface();
         pay.setVisible(true);
-
-        BookBikeJ book = new  BookBikeJ();
-        String Bike = (String) jComboBox1.get(i);
+System.out.println("t");
+BookBikeJ book = new  BookBikeJ();
+        String Bike = (String) jComboBox1.getSelectedItem();
+       ArrayList <String> jComboBox1 = new ArrayList<String>();
         jComboBox1.add("Street Bike");
         jComboBox1.add("Sport Bike");
         jComboBox1.add("Naked Bike");
@@ -187,9 +187,8 @@ public class BikeOption extends javax.swing.JFrame {
         
         String rent = (String) jComboBox3.getSelectedItem();
         ArrayList<String> jComboBox3 = new ArrayList<String>();
-                jComboBox3.add("-");
         jComboBox3.add("-");
-
+        jComboBox3.add("-");
         jComboBox3.add("2 hours");
         jComboBox3.add("3 hours");
         jComboBox3.add("4 hours");
