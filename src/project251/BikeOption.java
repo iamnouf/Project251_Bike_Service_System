@@ -32,6 +32,8 @@ import project251.Thanku;
  * @author AmalA
  */
 public class BikeOption extends javax.swing.JFrame {
+        static String DateandTime;
+                static ArrayList<String> file = new ArrayList<String>();
 
      static Double price;
     /**
@@ -174,6 +176,7 @@ public class BikeOption extends javax.swing.JFrame {
         // Bike Type
         BookBikeJ book = new BookBikeJ();
         String Bike = (String) jComboBox1.getSelectedItem();
+
         ArrayList<String> jComboBox1 = new ArrayList<String>();
         jComboBox1.add("Street Bike");
         jComboBox1.add("Sport Bike");
@@ -203,7 +206,7 @@ public class BikeOption extends javax.swing.JFrame {
         jComboBox3.add("12 hours");
         jComboBox3.add("24 hours");
         // Date&Time
-        String DateandTime = DateTime.getText();
+         DateandTime= DateTime.getText();
         DateTime.setText(DateandTime);
 
         //
@@ -214,8 +217,16 @@ public class BikeOption extends javax.swing.JFrame {
             for (int i = 0; jComboBox3.size() > i; i++)
                 if (jComboBox1.get(0) == Bike && jComboBox3.get(i).equals(rent)) {
                     price =  book.getPriceBooking(jComboBox1, qty, i);
-                    fileWriter.write("Bike = " + jComboBox1.get(0) + " , Price : " +price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
+                   fileWriter.write("Bike = " + jComboBox1.get(0) + " Price : " +price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
 
+//                     file.add("Bike = "+jComboBox1.get(0));
+//                     file.add(" , Price : " +price+" SAR ");
+//                     file.add(" , Qty : " + qty );
+//                     file.add(" , Rental Hours : " + rent );
+//                     file.add(" , Date&Time : " + DateandTime );
+//             for (int j = 0; file.size() > j; j++)
+//                     fileWriter.write(file.get(j));
+//             
                 } else if (jComboBox1.get(1) == Bike && jComboBox3.get(i).equals(rent)) {
                      price =  book.getPriceBooking(jComboBox1, qty, i);
                     fileWriter.write("Bike = " + jComboBox1.get(1) + " Price : " +price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);

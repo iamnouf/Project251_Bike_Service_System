@@ -71,7 +71,6 @@ public class settings extends javax.swing.JFrame {
 
         jLabel7.setText("Language");
 
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.setText("Name");
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -84,7 +83,6 @@ public class settings extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
         jTextField2.setText("someone@example.com");
         jTextField2.setToolTipText("");
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -98,7 +96,6 @@ public class settings extends javax.swing.JFrame {
             }
         });
 
-        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("05xxxxxxx");
         jTextField4.setToolTipText("");
         jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -125,7 +122,6 @@ public class settings extends javax.swing.JFrame {
 
         jLabel8.setText("Address");
 
-        jTextField5.setForeground(new java.awt.Color(204, 204, 204));
         jTextField5.setText("Username");
         jTextField5.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -133,7 +129,6 @@ public class settings extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setForeground(new java.awt.Color(204, 204, 204));
         jPasswordField1.setText("jPasswordField1");
         jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -141,7 +136,6 @@ public class settings extends javax.swing.JFrame {
             }
         });
 
-        jTextField7.setForeground(new java.awt.Color(204, 204, 204));
         jTextField7.setText("Address");
         jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {

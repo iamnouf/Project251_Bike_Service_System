@@ -175,20 +175,20 @@ public class FixBikes extends javax.swing.JFrame {
 
             if (jComboBox2.get(0) == problem) {
                 price =  fix.problem(jComboBox2);
-                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(0) + " Price: " + price + " SAR "+" Date: " + dateTime);
+                fileWriter.write("Fix_Bike , "+"Bike Type: " + Bike + " Problem: " + jComboBox2.get(0) + " Price: " + price + " SAR "+" Date: " + dateTime);
 
             } else if (jComboBox2.get(1) == problem) {
                  price =  fix.problem(jComboBox2);
-                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(1) + " Price: " + price+" SAR "+" Date: " + dateTime);
+                fileWriter.write("Fix_Bike , "+"Bike Type: " + Bike + " Problem: " + jComboBox2.get(1) + " Price: " + price+" SAR "+" Date: " + dateTime);
             } else if (jComboBox2.get(2) == problem) {
                  price =  fix.problem(jComboBox2);
-                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(2) + " Price: " + price+" SAR "+" Date: " + dateTime);
+                fileWriter.write("Fix_Bike , "+"Bike Type: " + Bike + " Problem: " + jComboBox2.get(2) + " Price: " + price+" SAR "+" Date: " + dateTime);
             } else if (jComboBox2.get(3) == problem) {
                  price =  fix.problem(jComboBox2);
-                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(3) + " Price: " + price+" SAR "+" Date: " + dateTime);
+                fileWriter.write("Fix_Bike , "+"Bike Type: " + Bike + " Problem: " + jComboBox2.get(3) + " Price: " + price+" SAR "+" Date: " + dateTime);
             } else if (jComboBox2.get(4) == problem) {
                  price =  fix.problem(jComboBox2);
-                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(4) + " Price: " + price+" SAR "+" Date: " + dateTime);
+                fileWriter.write("Fix_Bike , "+"Bike Type: " + Bike + " Problem: " + jComboBox2.get(4) + " Price: " + price+" SAR "+" Date: " + dateTime);
 
                 
             } 

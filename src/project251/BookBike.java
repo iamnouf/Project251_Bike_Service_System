@@ -50,7 +50,7 @@ public class BookBike extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(60, 110, 190, 31);
+        jButton1.setBounds(60, 110, 190, 29);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton2.setText("Fix your bike");
@@ -60,17 +60,17 @@ public class BookBike extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(60, 160, 190, 31);
+        jButton2.setBounds(60, 160, 190, 29);
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jButton3.setText("View previews orders");
+        jButton3.setText("View orders");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(59, 210, 190, 31);
+        jButton3.setBounds(59, 210, 190, 29);
 
         Settings.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Settings.setText("Settings");
@@ -80,7 +80,7 @@ public class BookBike extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Settings);
-        Settings.setBounds(60, 260, 190, 31);
+        Settings.setBounds(60, 260, 190, 29);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
