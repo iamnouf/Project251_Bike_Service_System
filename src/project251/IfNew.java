@@ -406,15 +406,15 @@ public class IfNew extends javax.swing.JFrame {
             BookBike signUp = new BookBike();
             signUp.setVisible(true);
 
-        }
-        
-        if(log.EmailsList().contains(Email)){
-           JOptionPane.showMessageDialog(null, "Email Already Exists" );  
-            emText.setText(null);
-
-        }else if(log.userNameList().contains(userName)){
-                          JOptionPane.showMessageDialog(null, "Username Already Exists" );  
-            username.setText(null);
+//        }
+//        
+//        if(log.EmailsList().contains(Email)){
+//           JOptionPane.showMessageDialog(null, "Email Already Exists" );  
+//            emText.setText(null);
+//
+//        }else if(log.userNameList().contains(userName)){
+//                          JOptionPane.showMessageDialog(null, "Username Already Exists" );  
+//            username.setText(null);
 
         }else if (Email.isEmpty() && userName.isEmpty() && Password.isEmpty() && conPassword.isEmpty() && firstName.isEmpty() && lastName.isEmpty() && Address.isEmpty() && phoneNum.isEmpty()) {
               JOptionPane.showMessageDialog(null, "Invalid Register Detalis !" );  
@@ -478,7 +478,7 @@ public class IfNew extends javax.swing.JFrame {
             addressText.write(fileWriter);
             fileWriter.write(" ");
             phoneNumber.write(fileWriter);
-           // fileWriter.newLine();
+            fileWriter.newLine();
 
             fileWriter.close();
                 
@@ -691,9 +691,9 @@ public class IfNew extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Fname;
-    private javax.swing.JTextField Lname;
-    private javax.swing.JTextField addressText;
+    public static javax.swing.JTextField Fname;
+    public static javax.swing.JTextField Lname;
+    public static javax.swing.JTextField addressText;
     private javax.swing.JPasswordField confirmPassword;
     public static javax.swing.JTextField emText;
     private javax.swing.JButton jButton1;
@@ -721,8 +721,8 @@ public class IfNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField password;
-    private javax.swing.JTextField phoneNumber;
-    private javax.swing.JTextField username;
+    public static javax.swing.JPasswordField password;
+    public static javax.swing.JTextField phoneNumber;
+    public static javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

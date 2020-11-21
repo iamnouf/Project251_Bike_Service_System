@@ -29,10 +29,7 @@ public class Customer {
     // view Order
 
     public void viewOrder() {
-<<<<<<< HEAD
-=======
 
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
      // BookBikeJ order = new BookBikeJ();
       // 
      //   boolean create = true;
@@ -42,29 +39,13 @@ public class Customer {
 //      // 
 //     //   boolean create = true;
 //        String BikeType[] = new String
-<<<<<<< HEAD
-=======
 
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
-//        if ()
-//       if (order.getBikeType().equals()){
-//           System.out.println("hhh");
-//       } 
-<<<<<<< HEAD
-//      
-      
-=======
-
-//      
-
-      
-
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
-    }
     // pay bill
+//
+//    public void pay() {
+//
+//    }
 
-    public void pay() {
-
-    }
-
+}
+    
 }

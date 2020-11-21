@@ -15,10 +15,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 /**
  *
  * @author fatima
@@ -93,7 +90,6 @@ public class Login {
     }
 
 
-<<<<<<< HEAD
     public String getEmail() {
 //
 ////            Scanner read = new Scanner(new File("userData.txt"));
@@ -144,8 +140,7 @@ public class Login {
         return Email;
 
 
-=======
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
+
     }
 
     public void setEmail(String Email) {

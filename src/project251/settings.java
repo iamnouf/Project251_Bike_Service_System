@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static project251.IfLogIn.EmailText;
 
 /**
  *
@@ -54,9 +55,9 @@ public class settings extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField7 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(333, 592));
 
         jLabel1.setText("Account Information");
 
@@ -84,7 +85,8 @@ public class settings extends javax.swing.JFrame {
         });
 
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("someone@Example");
+        jTextField2.setText("someone@example.com");
+        jTextField2.setToolTipText("");
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField2FocusGained(evt);
@@ -149,6 +151,13 @@ public class settings extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Engilsh", "Arabic" }));
 
+        jButton3.setText("Show Info");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,12 +191,15 @@ public class settings extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(26, 26, 26))))
         );
@@ -229,7 +241,9 @@ public class settings extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
@@ -238,6 +252,7 @@ public class settings extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
+        
    
     }//GEN-LAST:event_jTextField2ActionPerformed
 
@@ -260,79 +275,82 @@ public class settings extends javax.swing.JFrame {
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
         // TODO add your handling code here:
-
-        
-                   try {
-            sc = new Scanner (new File ("userData.txt"));
-            String[] line = sc.nextLine().split(" ");
-            jTextField2.setText(line[0]);
-            jTextField2.setForeground(new Color(0, 0, 0));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
-        }
+     
          
     }//GEN-LAST:event_jTextField2FocusGained
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
     
-                    try {
-            sc = new Scanner (new File ("userData.txt"));
-            String[] line = sc.nextLine().split(" ");
-            jTextField1.setText(line[1]+" "+line[2]);
-            jTextField1.setForeground(new Color(0, 0, 0));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//                    try {
+//            sc = new Scanner (new File ("userData.txt"));
+//            String[] line = sc.nextLine().split(" ");
+//            jTextField1.setText(line[1]+" "+line[2]);
+//            jTextField1.setForeground(new Color(0, 0, 0));
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
         // TODO add your handling code here:
-             try {
-            sc = new Scanner (new File ("userData.txt"));
-            String[] line = sc.nextLine().split(" ");
-            jTextField5.setText(line[3]);
-            jTextField5.setForeground(new Color(0, 0, 0));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//             try {
+//            sc = new Scanner (new File ("userData.txt"));
+//            String[] line = sc.nextLine().split(" ");
+//            jTextField5.setText(line[3]);
+//            jTextField5.setForeground(new Color(0, 0, 0));
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jTextField5FocusGained
 
     private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
         // TODO add your handling code here:
-             try {
-            sc = new Scanner (new File ("userData.txt"));
-            String[] line = sc.nextLine().split(" ");
-            jPasswordField1.setText(line[4]);
-            jPasswordField1.setForeground(new Color(0, 0, 0));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//             try {
+//            sc = new Scanner (new File ("userData.txt"));
+//            String[] line = sc.nextLine().split(" ");
+//            jPasswordField1.setText(line[4]);
+//            jPasswordField1.setForeground(new Color(0, 0, 0));
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jPasswordField1FocusGained
 
     private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
         // TODO add your handling code here:
-             try {
-            sc = new Scanner (new File ("userData.txt"));
-            String[] line = sc.nextLine().split(" ");
-            jTextField7.setText(line[6]);
-            jTextField7.setForeground(new Color(0, 0, 0));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//             try {
+//            sc = new Scanner (new File ("userData.txt"));
+//            String[] line = sc.nextLine().split(" ");
+//            jTextField7.setText(line[6]);
+//            jTextField7.setForeground(new Color(0, 0, 0));
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jTextField7FocusGained
 
     private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
         // TODO add your handling code here:
-             try {
-            sc = new Scanner (new File ("userData.txt"));
-            String[] line = sc.nextLine().split(" ");
-            jTextField4.setText(line[8]);
-            jTextField4.setForeground(new Color(0, 0, 0));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//             try {
+//            sc = new Scanner (new File ("userData.txt"));
+//            String[] line = sc.nextLine().split(" ");
+//            jTextField4.setText(line[8]);
+//            jTextField4.setForeground(new Color(0, 0, 0));
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jTextField4FocusGained
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+
+        jTextField2.setText(IfNew.emText.getText());
+        jTextField1.setText(IfNew.Fname.getText() +" "+IfNew.Lname.getText() );
+        jTextField5.setText(IfNew.username.getText());
+        jPasswordField1.setText(IfNew.password.getText());
+        jTextField7.setText(IfNew.addressText.getText());
+        jTextField4.setText(IfNew.phoneNumber.getText());
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -374,6 +392,7 @@ public class settings extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -385,7 +404,7 @@ public class settings extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;

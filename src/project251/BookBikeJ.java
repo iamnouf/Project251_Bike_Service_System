@@ -6,19 +6,16 @@
 package project251;
 
 import java.io.File;
-<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
-=======
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
 /**
  *
@@ -28,28 +25,9 @@ public class BookBikeJ extends Bikes {
 
     private int Qty;
     ArrayList<String> rentalHours ;
-
-<<<<<<< HEAD
     Bikes total = new Bikes();
-=======
-    public int getQty() {
-         ArrayList<String> fileList = new ArrayList<>();
-        try {
-            Scanner read = new Scanner(new File("userData.txt"));
-            //  String line;
-            while (read.hasNext()) {
-                String[] line = read.nextLine().split(" ");
-                fileList.add(line[0]);
-                System.out.println(fileList);
-
-            }
-            read.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Qty;
-    }
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
+    
+  
 
     public BookBikeJ(ArrayList<String> BikeList, Date date, double time, double price, double rentalHours, int Qty, Double priceBooking) {
         super(BikeList, date, time, price);
@@ -61,29 +39,34 @@ public class BookBikeJ extends Bikes {
     BookBikeJ() {
     }
 
-   
+     
+    public int getQty() {
+       
+        return Qty;
+    }
 
   
-    public Double getPriceBooking(ArrayList<String> BikeList) {
-    
+    public Double getPriceBooking(ArrayList<String> BikeList,int qty,int i) {
+        
         Double cost;
         if (BikeList.get(0) =="Street Bike"){
-             cost = 30.0;
+             cost = 30.0*i*qty;
+             
           return total.totalCost(cost);
 
         }
         else if (BikeList.get(1) == "Sport Bike"){
-             cost = 30.0;
+             cost = 30.0*i*qty;
              return total.totalCost(cost);
         }
         else if (BikeList.get(2) == "Naked Bike"){
-             cost = 25.0;
+             cost = 25.0*i*qty;
                  return total.totalCost(cost);
         } else if (BikeList.get(3) == "Cruiser Bike"){
-             cost = 20.0;
+             cost = 20.0*i*qty;
                  return total.totalCost(cost);
         } else if (BikeList.get(4) == "Commuter Bike"){
-             cost = 20.0;
+             cost = 20.0*i*qty;
                  return total.totalCost(cost);
         }
         else {
@@ -93,9 +76,7 @@ public class BookBikeJ extends Bikes {
 
 
 
-    public int getQty() {
-        return Qty;
-    }
+
 
     public void setQty(int Qty) {
         this.Qty = Qty;
@@ -143,7 +124,7 @@ public class BookBikeJ extends Bikes {
         rentalHours.add("10 hours");
         rentalHours.add("11 hours");
         rentalHours.add("12 hours");
-        rentalHours.add("524 hours");
+        rentalHours.add("24 hours");
         
         return rentalHours;
     }
@@ -151,10 +132,5 @@ public class BookBikeJ extends Bikes {
     public void setRentalHours(ArrayList<String> rentalHours) {
         this.rentalHours = rentalHours;
     }
-
-<<<<<<< HEAD
-=======
-    
->>>>>>> 8a7544978ebc31b2062d8646e25c329389adce48
 
 }
