@@ -4,9 +4,17 @@
  * and open the template in the editor.
  */
 package project251;
+
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import project251.*;
+
 /**
  *
  * @author AmalA
@@ -18,7 +26,7 @@ public class PayInterface extends javax.swing.JFrame {
      */
     public PayInterface() {
         initComponents();
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -236,66 +244,66 @@ public class PayInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         Thanku thank = new Thanku();
-            thank.setVisible(true);
-            
+
+        
+        Thanku thank = new Thanku();
+        thank.setVisible(true);
+
         String CarNum = jTextField1.getText();
-        String ExDate =jTextField2.getText();
+        String ExDate = jTextField2.getText();
         String NameOnCard = jTextField3.getText();
-        String CVV =jTextField4.getText();
+        String CVV = jTextField4.getText();
 
         String upperCase = "(.*[A-Z].*)";
         String numbers = "(.*[0-9].*)";
-        
-        if (!CarNum.isEmpty() && !ExDate.isEmpty() && !NameOnCard.isEmpty() && !CVV.isEmpty() && CarNum.matches(numbers) && ExDate.matches(numbers) && NameOnCard.matches(upperCase) && !CVV.matches(numbers) && CVV.length() ==4 || CVV.length() ==3) {
+
+        if (!CarNum.isEmpty() && !ExDate.isEmpty() && !NameOnCard.isEmpty() && !CVV.isEmpty() && CarNum.matches(numbers) && ExDate.matches(numbers) && NameOnCard.matches(upperCase) && !CVV.matches(numbers) && CVV.length() == 4 || CVV.length() == 3) {
 
             Thanku t = new Thanku();
             t.setVisible(true);
-            
-        } 
-        else if (CarNum.isEmpty() || ExDate.isEmpty() || NameOnCard.isEmpty() || CVV.isEmpty()) {
-                   JOptionPane.showMessageDialog(null, "Invalid Payment Detalis !" );  
-    
+
+        } else if (CarNum.isEmpty() || ExDate.isEmpty() || NameOnCard.isEmpty() || CVV.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Invalid Payment Detalis !");
+
         }
-        
-        
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_jTextField1ActionPerformed
-    
+
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
-     
+
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
-          if (jTextField1.getText().equals("4847 **** **** ****")) {
+        if (jTextField1.getText().equals("4847 **** **** ****")) {
             jTextField1.setText("");
             jTextField1.setForeground(new Color(0, 0, 0));
-          }
+        }
     }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-         // TODO add your handling code here:
-              if (jTextField1.getText().equals("")) {
+        // TODO add your handling code here:
+        if (jTextField1.getText().equals("")) {
             jTextField1.setText("4847 **** **** ****");
             jTextField1.setForeground(new Color(0, 0, 0));
-              }
+        }
     }//GEN-LAST:event_jTextField1FocusLost
 
     private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
@@ -303,67 +311,84 @@ public class PayInterface extends javax.swing.JFrame {
         if (jTextField4.getText().equals("3-4 digit code")) {
             jTextField4.setText("");
             jTextField4.setForeground(new Color(0, 0, 0));
-                }
+        }
     }//GEN-LAST:event_jTextField4FocusGained
 
     private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
         // TODO add your handling code here:
-                if (jTextField4.getText().equals("")) {
+        if (jTextField4.getText().equals("")) {
             jTextField4.setText("3-4 digit code");
             jTextField4.setForeground(new Color(0, 0, 0));
-                }
-    
+        }
+
     }//GEN-LAST:event_jTextField4FocusLost
 
     private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
         // TODO add your handling code here:
-           if (jTextField3.getText().equals("Name On Card")) {
+        if (jTextField3.getText().equals("Name On Card")) {
             jTextField3.setText("");
             jTextField3.setForeground(new Color(0, 0, 0));
-           }
+        }
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
         // TODO add your handling code here:
-                 if (jTextField3.getText().equals("")) {
+        if (jTextField3.getText().equals("")) {
             jTextField3.setText("Name On Card");
             jTextField3.setForeground(new Color(0, 0, 0));
-        
-                 }
+
+        }
     }//GEN-LAST:event_jTextField3FocusLost
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
         // TODO add your handling code here:
-             if (jTextField2.getText().equals("MM/YY")) {
+        if (jTextField2.getText().equals("MM/YY")) {
             jTextField2.setText("");
             jTextField2.setForeground(new Color(0, 0, 0));
-          }
+        }
     }//GEN-LAST:event_jTextField2FocusGained
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         // TODO add your handling code here:
-           if (jTextField2.getText().equals("")) {
+        if (jTextField2.getText().equals("")) {
             jTextField2.setText("MM/YY");
             jTextField2.setForeground(new Color(0, 0, 0));
-                }
+        }
     }//GEN-LAST:event_jTextField2FocusLost
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-            BookBikeJ book = new BookBikeJ();
-            BikeOption op = new BikeOption ();
-            
+        
+
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-//        jTextField5.setText(BookBikeJ.getPriceBooking(BikeOption.jComboBox1.getSelectedItem())*BikeOption.i*BikeOption.qty));
-        
         BookBikeJ book = new BookBikeJ();
-//        BikeOption pay = new BikeOption();
-//        jTextField5.setText(book.getPriceBooking(BikeOption.jComboBox1, BikeOption.jSpinner1.getValue(), BikeOption.jComboBox3.get));
-    }//GEN-LAST:event_jButton2ActionPerformed
+      BikeOption pay = new BikeOption();
+     // jTextField5.setText(BookBikeJ.getPriceBooking(BikeOption.jComboBox1, BikeOption.jSpinner1.getValue(), BikeOption.jComboBox3));
+//   try {
+//            Scanner read = new Scanner(new File("userData.txt"));
+//            //  String line;
+//            while (read.hasNext()) {
+//                String [] line = read.nextLine().split(" ");
+//                fileList.add(line[0]); 
+//                
+//               
+//            }
+//                            read.close();
+//
+//        } catch (IOException ex) {
+//            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//  ArrayList<String> fileList = new ArrayList<>();
+//     Scanner read = new Scanner("RentInfo.txt");
+//      String [] line = read.nextLine().split(" ");
+//       //  fileList.add(line[1]); 
     
+        jTextField5.setText(BikeOption.price.toString());  
+      
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */

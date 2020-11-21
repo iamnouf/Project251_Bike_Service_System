@@ -31,9 +31,9 @@ import project251.Thanku;
  *
  * @author AmalA
  */
-
 public class BikeOption extends javax.swing.JFrame {
 
+     static Double price;
     /**
      * Creates new form BikeOption
      */
@@ -168,23 +168,24 @@ public class BikeOption extends javax.swing.JFrame {
     }//GEN-LAST:event_DateTimeFocusLost
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-
+       //Show payment interface
         PayInterface pay = new PayInterface();
         pay.setVisible(true);
-System.out.println("t");
-BookBikeJ book = new  BookBikeJ();
+        // Bike Type
+        BookBikeJ book = new BookBikeJ();
         String Bike = (String) jComboBox1.getSelectedItem();
-       ArrayList <String> jComboBox1 = new ArrayList<String>();
+        ArrayList<String> jComboBox1 = new ArrayList<String>();
         jComboBox1.add("Street Bike");
         jComboBox1.add("Sport Bike");
         jComboBox1.add("Naked Bike");
         jComboBox1.add("Cruiser Bike");
         jComboBox1.add("Commuter Bike");
-          
+        //Qty
         int qty = (int) jSpinner1.getValue();
         jSpinner1.setValue(qty);
-        
+        //price
+       
+        //Hours
         String rent = (String) jComboBox3.getSelectedItem();
         ArrayList<String> jComboBox3 = new ArrayList<String>();
         jComboBox3.add("-");
@@ -201,39 +202,43 @@ BookBikeJ book = new  BookBikeJ();
         jComboBox3.add("11 hours");
         jComboBox3.add("12 hours");
         jComboBox3.add("24 hours");
-
+        // Date&Time
         String DateandTime = DateTime.getText();
         DateTime.setText(DateandTime);
 
+        //
         String fileRent = "RentInfo.txt";
         try {
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
-          
-            for (int i = 0 ; jComboBox3.size() > i ; i++)
-        if (jComboBox1.get(0) == Bike && jComboBox3.get(i).equals(rent) ) {
-         fileWriter.write("Bike = " + jComboBox1.get(0)+" , Price : "+book.getPriceBooking(jComboBox1,qty,i)+ " , Qty : "+qty+" , Rental Hours : "+rent+" , Date&Time : " + DateandTime);
-            
-        } else if (jComboBox1.get(1) == Bike && jComboBox3.get(i).equals(rent)) {
-           fileWriter.write("Bike = " + jComboBox1.get(1)+" Price : "+book.getPriceBooking(jComboBox1,qty,i)+ " , Qty : "+qty+" , Rental Hours : "+rent+" , Date&Time : "+DateandTime);
 
-        } else if (jComboBox1.get(2) == Bike&& jComboBox3.get(i).equals(rent)) {
-          fileWriter.write("Bike = " + jComboBox1.get(2)+" Price : "+book.getPriceBooking(jComboBox1,qty,i)+ " , Qty : "+qty+" , Rental Hours : "+rent+" , Date&Time : "+DateandTime);
+            for (int i = 0; jComboBox3.size() > i; i++)
+                if (jComboBox1.get(0) == Bike && jComboBox3.get(i).equals(rent)) {
+                    price =  book.getPriceBooking(jComboBox1, qty, i);
+                    fileWriter.write("Bike = " + jComboBox1.get(0) + " , Price : " +price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
 
-        } else if (jComboBox1.get(3) == Bike&& jComboBox3.get(i).equals(rent)) {
-          fileWriter.write("Bike = " + jComboBox1.get(3)+" Price : "+book.getPriceBooking(jComboBox1,qty,i)+ " , Qty : "+qty+" , Rental Hours : "+rent+" , Date&Time : "+DateandTime);
+                } else if (jComboBox1.get(1) == Bike && jComboBox3.get(i).equals(rent)) {
+                     price =  book.getPriceBooking(jComboBox1, qty, i);
+                    fileWriter.write("Bike = " + jComboBox1.get(1) + " Price : " +price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
 
-        } else if (jComboBox1.get(4) == Bike&& jComboBox3.get(i).equals(rent)) {
-           fileWriter.write("Bike = " + jComboBox1.get(4)+" Price : "+book.getPriceBooking(jComboBox1,qty,i)+ " , Qty : "+qty+" , Rental Hours : "+rent+" , Date&Time : "+DateandTime);
+                } else if (jComboBox1.get(2) == Bike && jComboBox3.get(i).equals(rent)) {
+                     price =  book.getPriceBooking(jComboBox1, qty, i);
+                    fileWriter.write("Bike = " + jComboBox1.get(2) + " Price : " + price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
+
+                } else if (jComboBox1.get(3) == Bike && jComboBox3.get(i).equals(rent)) {
+                     price =  book.getPriceBooking(jComboBox1, qty, i);
+                    fileWriter.write("Bike = " + jComboBox1.get(3) + " Price : " + price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
+
+                } else if (jComboBox1.get(4) == Bike && jComboBox3.get(i).equals(rent)) {
+                     price =  book.getPriceBooking(jComboBox1, qty, i);
+                    fileWriter.write("Bike = " + jComboBox1.get(4) + " Price : " + price +" SAR "+ " , Qty : " + qty + " , Rental Hours : " + rent + " , Date&Time : " + DateandTime);
 
     }//GEN-LAST:event_jButton1ActionPerformed
-            
-         fileWriter.newLine();
 
+            fileWriter.newLine();
             fileWriter.close();
-        }
-             catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(BikeOption.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        }
     }
     private void DateTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateTimeActionPerformed
         // TODO add your handling code here:

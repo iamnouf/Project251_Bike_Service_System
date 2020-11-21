@@ -9,8 +9,10 @@ import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import static project251.BikeOption.price;
 
 /**
  *
@@ -18,6 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class FixBikes extends javax.swing.JFrame {
 
+       static Double price;
     /**
      * Creates new form FixBikes
      */
@@ -39,12 +42,8 @@ public class FixBikes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         DateTime = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,16 +66,6 @@ public class FixBikes extends javax.swing.JFrame {
 
         jLabel3.setText("What Kinds of Problem ? ");
 
-        jCheckBox1.setText("Tight Brakes");
-
-        jCheckBox2.setText("Air Filter");
-
-        jCheckBox3.setText("Low engine Oil");
-
-        jCheckBox4.setText("Chain Slack");
-
-        jCheckBox5.setText("Drum Brakes");
-
         jButton1.setText("NEXT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,37 +73,30 @@ public class FixBikes extends javax.swing.JFrame {
             }
         });
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tight Brakes", "Air Filter", "Low engine Oil", "Chain Slack ", "Drum Brakes " }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(27, 27, 27)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(DateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel3)))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox2)
-                                .addComponent(jCheckBox1)
-                                .addComponent(jCheckBox3)
-                                .addComponent(jCheckBox4)
-                                .addComponent(jCheckBox5))
-                            .addGap(24, 24, 24)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
                         .addComponent(jButton1)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,19 +111,11 @@ public class FixBikes extends javax.swing.JFrame {
                 .addComponent(DateTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
                 .addComponent(jButton1)
-                .addGap(30, 30, 30))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,73 +139,61 @@ public class FixBikes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        //Show payment interface
+        PayFixBikes pay = new PayFixBikes();
+        pay.setVisible(true);
+        
+        FixBike fix = new FixBike();
+        String problem = (String) jComboBox2.getSelectedItem();
+        ArrayList<String> jComboBox2 = new ArrayList<String>();
+        jComboBox2.add("Tight Brakes");
+        jComboBox2.add("Air Filter");
+        jComboBox2.add("Low engine Oil");
+        jComboBox2.add("Chain Slack");
+        jComboBox2.add("Drum Brakes");
+
         //Bike type
-        String[] bikeTypes = new String[]{"Street Bike", "Sport Bike",
-            "Naked Bike", "Cruiser Bike", "Commuter Bike"};
-        JComboBox<String> bikeList = new JComboBox<>(bikeTypes);
-          // get the selected types:
-        String selectedBike = (String) bikeList.getSelectedItem();
-        System.out.println("Bike Type: " + selectedBike);
-        //Date
+         String Bike = (String) jComboBox1.getSelectedItem();
+        ArrayList<String> jComboBox1 = new ArrayList<String>();
+        jComboBox1.add("Street Bike");
+        jComboBox1.add("Sport Bike");
+        jComboBox1.add("Naked Bike");
+        jComboBox1.add("Cruiser Bike");
+        jComboBox1.add("Commuter Bike");
+//        String[] bikeTypes = new String[]{"Street Bike", "Sport Bike",
+//            "Naked Bike", "Cruiser Bike", "Commuter Bike"};
+//        JComboBox<String> bikeList = new JComboBox<>(bikeTypes);
+//        // get the selected types:
+//        String selectedBike = (String) bikeList.getSelectedItem();
+//        System.out.println("Bike Type: " + selectedBike);
+        //Date&Time
         String dateTime = DateTime.getText();
-        //Problems
-        String problem1 = jCheckBox1.getText();
-        String problem2 = jCheckBox2.getText();
-        String problem3 = jCheckBox3.getText();
-        String problem4 = jCheckBox4.getText();
-        String problem5 = jCheckBox5.getText();
 
         String fixBikefile = "fixBikefile.txt";
         try {
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fixBikefile, true));
 
-            if (jCheckBox1.isSelected()) {
-                fileWriter.write("Problem: " + problem1);
+            if (jComboBox2.get(0) == problem) {
+                price =  fix.problem(jComboBox2);
+                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(0) + " Price: " + price + " SAR "+" Date: " + dateTime);
 
-            } else if (jCheckBox2.isSelected()) {
-                fileWriter.write("Problem: " + problem2);
-            } else if (jCheckBox3.isSelected()) {
-                fileWriter.write("Problem: " + problem3);
-            } else if (jCheckBox4.isSelected()) {
-                fileWriter.write("Problem: " + problem4);
-            } else if (jCheckBox5.isSelected()) {
-                fileWriter.write("Problem: " + problem5);
-            } else if (jCheckBox1.isSelected() && jCheckBox2.isSelected()) {
-                fileWriter.write("Problem: " + problem1 + " , " + problem2);
+            } else if (jComboBox2.get(1) == problem) {
+                 price =  fix.problem(jComboBox2);
+                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(1) + " Price: " + price+" SAR "+" Date: " + dateTime);
+            } else if (jComboBox2.get(2) == problem) {
+                 price =  fix.problem(jComboBox2);
+                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(2) + " Price: " + price+" SAR "+" Date: " + dateTime);
+            } else if (jComboBox2.get(3) == problem) {
+                 price =  fix.problem(jComboBox2);
+                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(3) + " Price: " + price+" SAR "+" Date: " + dateTime);
+            } else if (jComboBox2.get(4) == problem) {
+                 price =  fix.problem(jComboBox2);
+                fileWriter.write("Bike Type: " + Bike + " Problem: " + jComboBox2.get(4) + " Price: " + price+" SAR "+" Date: " + dateTime);
 
-            } else if (jCheckBox1.isSelected() && jCheckBox3.isSelected()) {
-                fileWriter.write("Problem: " + problem1 + " , " + problem3);
-
-            } else if (jCheckBox1.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Problem: " + problem1 + " , " + problem4);
-
-            } else if (jCheckBox1.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Problem: " + problem1 + " , " + problem5);
-
-            } else if (jCheckBox2.isSelected() && jCheckBox3.isSelected()) {
-                fileWriter.write("Problem: " + problem2 + " , " + problem3);
-
-            } else if (jCheckBox2.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Problem: " + problem2 + " , " + problem4);
-
-            } else if (jCheckBox2.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Problem: " + problem2 + " , " + problem5);
-
-            } else if (jCheckBox3.isSelected() && jCheckBox4.isSelected()) {
-                fileWriter.write("Problem: " + problem3 + " , " + problem4);
-
-            } else if (jCheckBox3.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Problem: " + problem3 + " , " + problem5);
-
-            } else if (jCheckBox4.isSelected() && jCheckBox5.isSelected()) {
-                fileWriter.write("Problem: " + problem4 + " , " + problem5);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Invalid Detalis !");
-
-            }
+                
+            } 
             fileWriter.write(" ");
-            fileWriter.write("Date: " + dateTime);
+
             fileWriter.newLine();
             fileWriter.close();
         } catch (IOException ex) {
@@ -278,12 +240,8 @@ public class FixBikes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DateTime;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

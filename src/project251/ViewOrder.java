@@ -6,6 +6,12 @@
 package project251;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -468,6 +474,20 @@ public class ViewOrder extends javax.swing.JFrame {
         if (jTextField1.getText().equals("")) {
             jTextField1.setText("Type of service");
             jTextField1.setForeground(new Color(0, 0, 0));
+        }
+         ArrayList<String> fileList = new ArrayList<>();
+         try {
+            Scanner read = new Scanner(new File("userData.txt"));
+            while (read.hasNext()) {
+                String [] line = read.nextLine().split(" ");
+                fileList.add(line[0]); 
+                
+               
+            }
+                            read.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jTextField1ActionPerformed
 

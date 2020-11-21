@@ -46,27 +46,27 @@ public class BookBikeJ extends Bikes {
     }
 
   
-    public Double getPriceBooking(ArrayList<String> BikeList,int qty,int i) {
+    public Double getPriceBooking(ArrayList<String> BikeList,int qty,int hours) {
         
         Double cost;
         if (BikeList.get(0) =="Street Bike"){
-             cost = 30.0*i*qty;
+             cost = 30.0*hours*qty;
              
           return total.totalCost(cost);
 
         }
         else if (BikeList.get(1) == "Sport Bike"){
-             cost = 30.0*i*qty;
+             cost = 30.0*hours*qty;
              return total.totalCost(cost);
         }
         else if (BikeList.get(2) == "Naked Bike"){
-             cost = 25.0*i*qty;
+             cost = 25.0*hours*qty;
                  return total.totalCost(cost);
         } else if (BikeList.get(3) == "Cruiser Bike"){
-             cost = 20.0*i*qty;
+             cost = 20.0*hours*qty;
                  return total.totalCost(cost);
         } else if (BikeList.get(4) == "Commuter Bike"){
-             cost = 20.0*i*qty;
+             cost = 20.0*hours*qty;
                  return total.totalCost(cost);
         }
         else {
@@ -74,6 +74,7 @@ public class BookBikeJ extends Bikes {
         }
     }
 
+    
 
 
 
