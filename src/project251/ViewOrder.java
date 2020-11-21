@@ -8,13 +8,19 @@ package project251;
 import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import static project251.settings.jTextField2;
 
 /**
@@ -81,7 +87,7 @@ public class ViewOrder extends javax.swing.JFrame {
         jTextField22 = new javax.swing.JTextField();
         jTextField23 = new javax.swing.JTextField();
         jTextField24 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Button = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -164,13 +170,23 @@ public class ViewOrder extends javax.swing.JFrame {
 
         jLabel4.setText("Manage");
 
+        jTextField1.setEditable(false);
         jTextField1.setText("Type of service");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
+        jTextField2.setEditable(false);
         jTextField2.setText("Type of service");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,6 +194,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField3.setEditable(false);
         jTextField3.setText("Type of service");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,6 +202,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField4.setEditable(false);
         jTextField4.setText("Type of service");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +210,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField5.setEditable(false);
         jTextField5.setText("Type of service");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +218,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField6.setEditable(false);
         jTextField6.setText("Type of service");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +226,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField7.setEditable(false);
         jTextField7.setText("Type of service");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +234,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField8.setEditable(false);
         jTextField8.setText("Type of service");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +242,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField9.setEditable(false);
         jTextField9.setText("Date");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,6 +250,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField10.setEditable(false);
         jTextField10.setText("Date");
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,6 +258,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField11.setEditable(false);
         jTextField11.setText("Date");
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,6 +266,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField12.setEditable(false);
         jTextField12.setText("Date");
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +274,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField13.setEditable(false);
         jTextField13.setText("Date");
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,6 +282,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField14.setEditable(false);
         jTextField14.setText("Date");
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,6 +290,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField15.setEditable(false);
         jTextField15.setText("Date");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,6 +298,7 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField16.setEditable(false);
         jTextField16.setText("Date");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,16 +306,31 @@ public class ViewOrder extends javax.swing.JFrame {
             }
         });
 
+        jTextField17.setEditable(false);
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField17ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField18.setEditable(false);
+
+        jTextField19.setEditable(false);
+
+        jTextField20.setEditable(false);
+
+        jTextField21.setEditable(false);
+
+        jTextField22.setEditable(false);
+
+        jTextField23.setEditable(false);
+
+        jTextField24.setEditable(false);
+
+        Button.setText("Cancel");
+        Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButtonActionPerformed(evt);
             }
         });
 
@@ -380,16 +425,19 @@ public class ViewOrder extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(20, 20, 20)
                                         .addComponent(jLabel1)))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField9)
-                                    .addComponent(jTextField10)
-                                    .addComponent(jTextField11)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(17, 17, 17)
-                                        .addComponent(jLabel2)))
-                                .addGap(18, 18, 18)
+                                        .addComponent(jLabel2)
+                                        .addGap(43, 43, 43))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField9))
+                                        .addGap(18, 18, 18)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -404,7 +452,7 @@ public class ViewOrder extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addGap(21, 21, 21))
                                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)))))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -438,8 +486,8 @@ public class ViewOrder extends javax.swing.JFrame {
                                 .addComponent(jButton9)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGap(111, 111, 111)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5)
                             .addGap(183, 183, 183))
                         .addGroup(layout.createSequentialGroup()
@@ -450,13 +498,10 @@ public class ViewOrder extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -468,7 +513,7 @@ public class ViewOrder extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(Button))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -531,16 +576,15 @@ public class ViewOrder extends javax.swing.JFrame {
             jTextField1.setText("Type of service");
             jTextField1.setForeground(new Color(0, 0, 0));
         }
-         ArrayList<String> fileList = new ArrayList<>();
-         try {
+        ArrayList<String> fileList = new ArrayList<>();
+        try {
             Scanner read = new Scanner(new File("userData.txt"));
             while (read.hasNext()) {
-                String [] line = read.nextLine().split(" ");
-                fileList.add(line[0]); 
-                
-               
+                String[] line = read.nextLine().split(" ");
+                fileList.add(line[0]);
+
             }
-                            read.close();
+            read.close();
 
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -669,86 +713,126 @@ public class ViewOrder extends javax.swing.JFrame {
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here: 
+
     }//GEN-LAST:event_jTextField17ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActionPerformed
+if (ViewOrder.Button.isEnabled()) {
+            ViewOrder.jTextField1.setText(null);
+            ViewOrder.jTextField9.setText(null);
+            ViewOrder.jTextField17.setText("Cancelled");
+          
+             JOptionPane.showMessageDialog(null, "Your order has been cancelled !");
+ 
+ }
+//        try {
+////            //        CancelMsg c = new CancelMsg();
+//////            c.setVisible(true);
+//            Customer c1 = new Customer();
+//////if (Button.isEnabled()){
+//////    jTextField17.setText("Cancelled");
+//////      jTextField1.setText(null);
+//////      jTextField9.setText(null);
+//////
+//////    
+//////}
+//            JOptionPane.showMessageDialog(null, "Your order has been cancelled !");
+//////        System.exit(0);
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(ViewOrder.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
-//        CancelMsg c = new CancelMsg();
-//            c.setVisible(true);
-        Customer c1 = new Customer();
-        c1.cancelOrder();
 
-        JOptionPane.showMessageDialog(null, "Your order has been cancelled !");
-        System.exit(0);
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        BufferedWriter fileWriter = null;
-        try {
-            // TODO add your handling code here:
-//        CancelMsg c = new CancelMsg();
-//            c.setVisible(true);
-Customer c1 = new Customer();
-String fileRent = "RentInfo.txt";
-            fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
-            c1.cancelOrder();
-            
-            
-            JOptionPane.showMessageDialog(null, "Your order has been cancelled !");
-            System.exit(0);
-        } catch (IOException ex) {
-            Logger.getLogger(ViewOrder.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fileWriter.close();
-            } catch (IOException ex) {
-                Logger.getLogger(ViewOrder.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        BufferedWriter fileWriter = null;
+//        try {
+//            // TODO add your handling code here:
+////        CancelMsg c = new CancelMsg();
+//////            c.setVisible(true);
+////            Customer c1 = new Customer();
+////            String fileRent = "RentInfo.txt";
+////            fileWriter = new BufferedWriter(new FileWriter(fileRent, true));
+////            c1.cancelOrder();
+////
+////            JOptionPane.showMessageDialog(null, "Your order has been cancelled !");
+////            System.exit(0);
+////            
+////        } catch (IOException ex) {
+////            Logger.getLogger(ViewOrder.class.getName()).log(Level.SEVERE, null, ex);
+////        } finally {
+////            try {
+////                fileWriter.close();
+////            } catch (IOException ex) {
+////                Logger.getLogger(ViewOrder.class.getName()).log(Level.SEVERE, null, ex);
+////            }
+//        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-        c.setVisible(true);
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-        c.setVisible(true);
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-        c.setVisible(true);
+       
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-        c.setVisible(true);
+       
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-        c.setVisible(true);
+       
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        CancelMsg c = new CancelMsg();
-        c.setVisible(true);
+       
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-        // TODO add your handling code here:
-        jTextField1.setText(BikeOption.jComboBox1.getSelectedItem().toString());
-        jTextField9.setText(BikeOption.DateandTime.toString());
+//        try {
+            // TODO add your handling code here:
+            Customer c1 = new Customer();
+            c1.cancelOrder();
+                  jTextField1.setText(BikeOption.jComboBox1.toString());
+                  jTextField9.setText(BikeOption.DateandTime.toString());
+                  
+
+//            jTextField1.setText(BikeOption.jComboBox1.getSelectedItem().toString());
+//            jTextField9.setText(BikeOption.DateTime.getText());
+
+//        jTextField1.setText(BikeOption.jComboBox1.getSelectedItem().toString());
+//        jTextField9.setText(BikeOption.DateandTime.toString());
+//                           try {
+//            Scanner sc = new Scanner (new File ("RentInfo.txt"));
+//            String[] line = sc.nextLine().split(" ");
+//            if (Update.isEnabled()) {
+//             jTextField1.setText(line[2]+" "+line[3]);
+//            jTextField9.setText(line[23]+" "+line[24]+" "+line[25]+" "+line[26]+" "+line[27]);
+//
+//    
+//                                   jTextField17.setText("Process");
+//
+//                               } 
+//                jTextField2.setText(line[2]+" "+line[3]);
+//            jTextField10.setText(line[28]+" "+line[29]+" "+line[30]+" "+line[31]+" "+line[32]);
+//            jTextField18.setText("Process");
+//            
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(settings.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+
 
     }//GEN-LAST:event_UpdateActionPerformed
 
@@ -757,6 +841,16 @@ String fileRent = "RentInfo.txt";
         BookBike main = new BookBike();
         main.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+  
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_jTextField1FocusLost
 
     /**
      * @param args the command line arguments
@@ -794,8 +888,8 @@ String fileRent = "RentInfo.txt";
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Update;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton Button;
+    public static javax.swing.JButton Update;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -824,30 +918,30 @@ String fileRent = "RentInfo.txt";
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
+    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField10;
+    public static javax.swing.JTextField jTextField11;
+    public static javax.swing.JTextField jTextField12;
+    public static javax.swing.JTextField jTextField13;
+    public static javax.swing.JTextField jTextField14;
+    public static javax.swing.JTextField jTextField15;
+    public static javax.swing.JTextField jTextField16;
+    public static javax.swing.JTextField jTextField17;
+    public static javax.swing.JTextField jTextField18;
+    public static javax.swing.JTextField jTextField19;
+    public static javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    public static javax.swing.JTextField jTextField3;
+    public static javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    public static javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     // End of variables declaration//GEN-END:variables

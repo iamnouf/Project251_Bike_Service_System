@@ -10,7 +10,7 @@ package project251;
  * @author AmalA
  */
 public class BookBike extends javax.swing.JFrame {
-
+    static String b ;
     /**
      * Creates new form BookBike
      */
@@ -87,11 +87,11 @@ public class BookBike extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      
-        System.out.println("Hello World");
+      b ="Booking";
         
            BikeOption rent = new BikeOption();
             rent.setVisible(true);
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
