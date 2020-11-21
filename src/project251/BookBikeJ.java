@@ -83,34 +83,7 @@ public class BookBikeJ extends Bikes {
         this.Qty = Qty;
     }
 
-    
 
-//    public void setBikeList(ArrayList<String> BikeList) {
-//        this.BikeList = BikeList;
-//    }
-//       public String wholeOrder(){
-//        String completeOrder = "";
-//        for (int i=0;i < BikeList.size();i++)
-//        {
-//          completeOrder += this.BikeList.get(i);
-//        }
-//        return completeOrder;
-//    }
-
-//    /*Creates a single prices for the wole order by adding all the pizzas cost together. */
-//    public Double orderCost(){
-//        Double orderCost = 0.0;
-//        for (int i=0;i < priceBooking.size();i++)
-//        {
-//          orderCost += this.priceBooking.get(i);
-//        }
-//        return orderCost;
-//    } 
-//    /*removes the passed pizza from the pizza array and cost array. */
-//    public void removeOrder(int orderToRemove){
-//        BikeList.remove(orderToRemove);
-//        priceBooking.remove(orderToRemove);
-//    }
 
     public ArrayList<String> getRentalHours() {
         

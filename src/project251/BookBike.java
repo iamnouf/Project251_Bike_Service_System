@@ -40,6 +40,7 @@ public class BookBike extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 204));
+        setPreferredSize(new java.awt.Dimension(333, 600));
         getContentPane().setLayout(null);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -54,6 +55,7 @@ public class BookBike extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton2.setText("Fix your bike");
+        jButton2.setPreferredSize(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -87,7 +89,6 @@ public class BookBike extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      b ="Booking";
         
            BikeOption rent = new BikeOption();
             rent.setVisible(true);
@@ -96,9 +97,9 @@ public class BookBike extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-           BikeOption rent = new BikeOption();
+           FixBikes rent = new FixBikes();
             rent.setVisible(true);
+         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

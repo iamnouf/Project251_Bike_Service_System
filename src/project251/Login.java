@@ -91,51 +91,6 @@ public class Login {
 
 
     public String getEmail() {
-//
-////            Scanner read = new Scanner(new File("userData.txt"));
-////            ArrayList al = new ArrayList();
-////            System.out.println("All elements:       " + al);
-////            System.out.println("Number of elements: " + al.size() + "\n");
-////         //   System.out.println(read.hasNext());
-////            while (read.hasNext()) {
-////                     al.remove("A");
-////            }
-//        try {
-//            Scanner read = new Scanner(new File("userData.txt"));
-//            //  String line;
-//            while (read.hasNext()) {
-//                String [] line = read.nextLine().split(" ");
-//                fileList.add(line[0]); 
-//                for(int i =0 ; fileList.size() > i ;i++){
-//                System.out.println(fileList.get(i));
-//
-//                }
-//            }
-//                            read.close();
-//
-//        } catch (IOException ex) {
-//            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-////            }
-////            while (sc.hasNext()) {
-////                String[] line = sc.nextLine().split(" ");
-////                Email = line[0];
-////                System.out.println(line[0]);
-////            }
-////              for(int i =0; line.length >i; i++){
-////            // String str = "Amalalsefri@gmail.com ";
-////              int firstSpace = line[i].indexOf(" ");
-////              String firstWord = line[i].substring(0, firstSpace);
-////              String lastWord = line[i].substring(line[i].lastIndexOf(" ")+1);
-////              System.out.println(firstWord);
-////              System.out.println("--------------");
-////              System.out.println(lastWord);
-////              }
-////             for (int i =0; line.length >= i ; i++){
-////                  String [] line = sc.next().split(" ");
-////                  Email = line[0];
-////                  System.out.println(line[0]);
-////              }
 
         return Email;
 
@@ -157,22 +112,6 @@ public class Login {
     }
 
     public String getPassword() {
-//        ArrayList<String> fileList = new ArrayList<>();
-//        try {
-//            Scanner read = new Scanner(new File("userData.txt"));
-//            //  String line;
-//            while (read.hasNext()) {
-//                String[] line = read.nextLine().split(" ");
-//                fileList.add(line[4]);
-//            for(int i =0 ; fileList.size() > i ;i++){
-//                System.out.println(fileList.get(i));
-//
-//                }
-//            }
-//            read.close();
-//        } catch (IOException ex) {
-//            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-//        }
 
         return Password;
     }

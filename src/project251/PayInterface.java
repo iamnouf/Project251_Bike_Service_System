@@ -364,26 +364,7 @@ public class PayInterface extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         BookBikeJ book = new BookBikeJ();
       BikeOption pay = new BikeOption();
-     // jTextField5.setText(BookBikeJ.getPriceBooking(BikeOption.jComboBox1, BikeOption.jSpinner1.getValue(), BikeOption.jComboBox3));
-//   try {
-//            Scanner read = new Scanner(new File("userData.txt"));
-//            //  String line;
-//            while (read.hasNext()) {
-//                String [] line = read.nextLine().split(" ");
-//                fileList.add(line[0]); 
-//                
-//               
-//            }
-//                            read.close();
-//
-//        } catch (IOException ex) {
-//            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//  ArrayList<String> fileList = new ArrayList<>();
-//     Scanner read = new Scanner("RentInfo.txt");
-//      String [] line = read.nextLine().split(" ");
-//       //  fileList.add(line[1]); 
-    
+
         jTextField5.setText(BikeOption.price.toString());  
       
        

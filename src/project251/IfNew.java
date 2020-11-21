@@ -77,6 +77,7 @@ public class IfNew extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 600));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -221,7 +222,7 @@ public class IfNew extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(110, 570, 130, 29);
+        jButton1.setBounds(110, 540, 130, 29);
         getContentPane().add(jLabel9);
         jLabel9.setBounds(280, 570, 760, 740);
 
@@ -368,8 +369,7 @@ public class IfNew extends javax.swing.JFrame {
 
     // Sign up
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           BookBike main = new BookBike();
-            main.setVisible(true);
+           
             Login log=new Login();
             
         String Email = emText.getText();
@@ -406,15 +406,15 @@ public class IfNew extends javax.swing.JFrame {
             BookBike signUp = new BookBike();
             signUp.setVisible(true);
 
-//        }
-//        
-//        if(log.EmailsList().contains(Email)){
-//           JOptionPane.showMessageDialog(null, "Email Already Exists" );  
-//            emText.setText(null);
-//
-//        }else if(log.userNameList().contains(userName)){
-//                          JOptionPane.showMessageDialog(null, "Username Already Exists" );  
-//            username.setText(null);
+        }
+        
+        else if(log.EmailsList().contains(Email)){
+           JOptionPane.showMessageDialog(null, "Email Already Exists" );  
+            emText.setText(null);
+
+        }else if(log.userNameList().contains(userName)){
+                          JOptionPane.showMessageDialog(null, "Username Already Exists" );  
+            username.setText(null);
 
         }else if (Email.isEmpty() && userName.isEmpty() && Password.isEmpty() && conPassword.isEmpty() && firstName.isEmpty() && lastName.isEmpty() && Address.isEmpty() && phoneNum.isEmpty()) {
               JOptionPane.showMessageDialog(null, "Invalid Register Detalis !" );  

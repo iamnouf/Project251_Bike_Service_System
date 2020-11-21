@@ -36,7 +36,7 @@ public class ValidationCode extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(333, 592));
+        setPreferredSize(new java.awt.Dimension(333, 600));
 
         code.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         code.setText("ValidationCode");

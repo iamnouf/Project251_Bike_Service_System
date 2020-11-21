@@ -44,8 +44,10 @@ public class FixBikes extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(333, 600));
 
         jLabel1.setText("Bike Type");
 
@@ -75,6 +77,13 @@ public class FixBikes extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tight Brakes", "Air Filter", "Low engine Oil", "Chain Slack ", "Drum Brakes " }));
 
+        jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,14 +103,19 @@ public class FixBikes extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addContainerGap()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
                         .addComponent(jButton1)))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,9 +127,9 @@ public class FixBikes extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGap(83, 83, 83)
                 .addComponent(jButton1)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,6 +156,9 @@ public class FixBikes extends javax.swing.JFrame {
         //Show payment interface
         PayFixBikes pay = new PayFixBikes();
         pay.setVisible(true);
+         //Date&Time
+        String dateTime = DateTime.getText();
+        DateTime.setText(dateTime);
         
         FixBike fix = new FixBike();
         String problem = (String) jComboBox2.getSelectedItem();
@@ -160,15 +177,8 @@ public class FixBikes extends javax.swing.JFrame {
         jComboBox1.add("Naked Bike");
         jComboBox1.add("Cruiser Bike");
         jComboBox1.add("Commuter Bike");
-//        String[] bikeTypes = new String[]{"Street Bike", "Sport Bike",
-//            "Naked Bike", "Cruiser Bike", "Commuter Bike"};
-//        JComboBox<String> bikeList = new JComboBox<>(bikeTypes);
-//        // get the selected types:
-//        String selectedBike = (String) bikeList.getSelectedItem();
-//        System.out.println("Bike Type: " + selectedBike);
-        //Date&Time
-        String dateTime = DateTime.getText();
 
+       
         String fixBikefile = "fixBikefile.txt";
         try {
             BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fixBikefile, true));
@@ -201,6 +211,12 @@ public class FixBikes extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        BookBike book= new BookBike();
+        book.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,8 +254,9 @@ public class FixBikes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DateTime;
+    public static javax.swing.JTextField DateTime;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

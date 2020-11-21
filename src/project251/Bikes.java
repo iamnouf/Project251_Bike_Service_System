@@ -56,14 +56,6 @@ public class Bikes {
         return BikeList;
     }
 
-//    public ArrayList<String> getFixList() {
-//        BikeList.add("Street Bike");
-//        BikeList.add("Sport Bike");
-//        BikeList.add("Naked Bike");
-//        BikeList.add("Cruiser Bike");
-//        BikeList.add("Commuter Bike");
-//        return FixList;
-//    }
     public void setBikeList(ArrayList<String> BikeList) {
         this.BikeList = BikeList;
     }
