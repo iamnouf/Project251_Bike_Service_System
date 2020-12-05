@@ -1,2 +1,9 @@
 Book_Bike Bike = Sport Bike Price : 180.0 SAR  , Qty : 2 , Rental Hours : 2 hours , Date&Time : Nov 7 at 7:30 PM
-Book_Bike Bike = Naked Bike Price : 180.0 SAR  , Qty : 2 , Rental Hours : 2 hours , Date&Time : Nov 8 at 7:30 AM
+Book_Bike Bike = Naked Bike Price : 180.0 SAR  , Qty : 2 , Rental Hours : 2 hours , Date&Time : Nov 8 at 7:30 AMBook_Bike Bike = Street Bike Price : 180.0 SAR  , Qty : 2 , Rental Hours : 2 hours , Date&Time : 2/22/22
+Book_Bike Bike = Street Bike Price : 90.0 SAR  , Qty : 1 , Rental Hours : 2 hours , Date : 22/22/22
+Book_Bike Bike = Street Bike Price : 270.0 SAR  , Qty : 3 , Rental Hours : 2 hours , Date : 22/22/22
+Book_Bike Bike = Street Bike Price : 135.0 SAR  , Qty : 2 , Rental Hours : 2 hours , Date : 22/22/22
+Book_Bike Bike = Street Bike Price : 202.5 SAR  , Qty : 3 , Rental Hours : 2 hours , Date : 22/22/22
+Book_Bike Bike = Street Bike Price : 90.0 SAR  , Qty : 1 , Rental Hours : 2 hours , Date : 22/22/22
+Book_Bike Bike = Street Bike Price : 202.5 SAR  , Qty : 3 , Rental Hours : 2 hours , Date : 22/22/22
+Book_Bike Bike = Street Bike Price : 90.0 SAR  , Qty : 1 , Rental Hours : 2 hours , Date : 22/22/22
